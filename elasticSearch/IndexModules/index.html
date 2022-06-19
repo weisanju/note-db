@@ -1,0 +1,529 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>IndexModules</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">数据存储</a></li><li class="chapter-item expanded affix "><li class="part-title"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> oracle</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../oracle/Oracle小知识点.html"><strong aria-hidden="true">1.1.</strong> Oracle小知识点</a></li><li class="chapter-item expanded "><a href="../../oracle/oracledocker快速搭建.html"><strong aria-hidden="true">1.2.</strong> oracledocker快速搭建</a></li><li class="chapter-item expanded "><a href="../../oracle/oracle多表更新方法.html"><strong aria-hidden="true">1.3.</strong> oracle多表更新方法</a></li></ol></li><li class="chapter-item expanded "><a href="../../MongoDB/index.html"><strong aria-hidden="true">2.</strong> MongoDB</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../MongoDB/mongodb基本操作.html"><strong aria-hidden="true">2.1.</strong> mongodb基本操作</a></li><li class="chapter-item expanded "><a href="../../MongoDB/mongodb高级语法.html"><strong aria-hidden="true">2.2.</strong> mongodb高级语法</a></li><li class="chapter-item expanded "><a href="../../MongoDB/权限管理.html"><strong aria-hidden="true">2.3.</strong> 权限管理</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> mysql</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../mysql/mysqlfunction.html"><strong aria-hidden="true">3.1.</strong> mysqlfunction</a></li><li class="chapter-item expanded "><a href="../../mysql/mysqlpdump.html"><strong aria-hidden="true">3.2.</strong> mysqlpdump</a></li><li class="chapter-item expanded "><a href="../../mysql/mysqlzip安装.html"><strong aria-hidden="true">3.3.</strong> mysqlzip安装</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql公用表达式.html"><strong aria-hidden="true">3.4.</strong> mysql公用表达式</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql学习.html"><strong aria-hidden="true">3.5.</strong> mysql学习</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql执行计划.html"><strong aria-hidden="true">3.6.</strong> mysql执行计划</a></li><li class="chapter-item expanded "><a href="../../mysql/空值处理函数.html"><strong aria-hidden="true">3.7.</strong> 空值处理函数</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.8.</strong> mysql官方文档</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../mysql/mysql官方文档/mysql程序.html"><strong aria-hidden="true">3.8.1.</strong> mysql程序</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql官方文档/客户端.html"><strong aria-hidden="true">3.8.2.</strong> 客户端</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql官方文档/mysql程序/index.html"><strong aria-hidden="true">3.8.3.</strong> mysql程序</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../mysql/mysql官方文档/mysql程序/使用mysql相关程序.html"><strong aria-hidden="true">3.8.3.1.</strong> 使用mysql相关程序</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../mysql/mysql日志/index.html"><strong aria-hidden="true">3.9.</strong> mysql日志</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../mysql/mysql日志/mysql日志及分类.html"><strong aria-hidden="true">3.9.1.</strong> mysql日志及分类</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql日志/二进制日志.html"><strong aria-hidden="true">3.9.2.</strong> 二进制日志</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql日志/慢sql日志.html"><strong aria-hidden="true">3.9.3.</strong> 慢sql日志</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql日志/通用日志.html"><strong aria-hidden="true">3.9.4.</strong> 通用日志</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql日志/错误日志.html"><strong aria-hidden="true">3.9.5.</strong> 错误日志</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/index.html"><strong aria-hidden="true">4.</strong> elasticSearch</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/BackUpACluster.html"><strong aria-hidden="true">4.1.</strong> BackUpACluster</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/KQL.html"><strong aria-hidden="true">4.2.</strong> KQL</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/dataStream.html"><strong aria-hidden="true">4.3.</strong> dataStream</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/es堆内存如何分配.html"><strong aria-hidden="true">4.4.</strong> es堆内存如何分配</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/scroll查询.html"><strong aria-hidden="true">4.5.</strong> scroll查询</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/乐观并发控制.html"><strong aria-hidden="true">4.6.</strong> 乐观并发控制</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/分布式检索.html"><strong aria-hidden="true">4.7.</strong> 分布式检索</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/分片内部原理.html"><strong aria-hidden="true">4.8.</strong> 分片内部原理</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/分词.html"><strong aria-hidden="true">4.9.</strong> 分词</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/前缀搜索与模糊搜索.html"><strong aria-hidden="true">4.10.</strong> 前缀搜索与模糊搜索</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/数据分片.html"><strong aria-hidden="true">4.11.</strong> 数据分片</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/映射.html"><strong aria-hidden="true">4.12.</strong> 映射</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/杂项学习.html"><strong aria-hidden="true">4.13.</strong> 杂项学习</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引和分片.html"><strong aria-hidden="true">4.14.</strong> 索引和分片</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引管理.html"><strong aria-hidden="true">4.15.</strong> 索引管理</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/评分标准与相关性.html"><strong aria-hidden="true">4.16.</strong> 评分标准与相关性</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/集群内原理.html"><strong aria-hidden="true">4.17.</strong> 集群内原理</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/Datamanagement/index.html"><strong aria-hidden="true">4.18.</strong> Datamanagement</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/Datamanagement/DataTier.html"><strong aria-hidden="true">4.18.1.</strong> DataTier</a></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/index.html"><strong aria-hidden="true">4.19.</strong> ILM</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/1.AutomateRolloverWithILM.html"><strong aria-hidden="true">4.19.1.</strong> AutomateRolloverWithILM</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/FrozenIndices.html"><strong aria-hidden="true">4.19.2.</strong> FrozenIndices</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/ILM.html"><strong aria-hidden="true">4.19.3.</strong> ILM</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/RolloverAPI.html"><strong aria-hidden="true">4.19.4.</strong> RolloverAPI</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/ShrinkIndexAPI.html"><strong aria-hidden="true">4.19.5.</strong> ShrinkIndexAPI</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/ILMConcepts/index.html"><strong aria-hidden="true">4.19.6.</strong> ILMConcepts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/ILMConcepts/1.Rollover.html"><strong aria-hidden="true">4.19.6.1.</strong> Rollover</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/ILMConcepts/2.LifeCycleUpdates.html"><strong aria-hidden="true">4.19.6.2.</strong> LifeCycleUpdates</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/index.html" class="active"><strong aria-hidden="true">4.20.</strong> IndexModules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/1.Analysis.html"><strong aria-hidden="true">4.20.1.</strong> Analysis</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/2.IndexShardAllocation.html"><strong aria-hidden="true">4.20.2.</strong> IndexShardAllocation</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/3.Indexblocks.html"><strong aria-hidden="true">4.20.3.</strong> Indexblocks</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/4.Mapper.html"><strong aria-hidden="true">4.20.4.</strong> Mapper</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/5.Merge.html"><strong aria-hidden="true">4.20.5.</strong> Merge</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/6.SimilarityModule.html"><strong aria-hidden="true">4.20.6.</strong> SimilarityModule</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/7.Slowlog.html"><strong aria-hidden="true">4.20.7.</strong> Slowlog</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/8.Store.html"><strong aria-hidden="true">4.20.8.</strong> Store</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/9.Translog.html"><strong aria-hidden="true">4.20.9.</strong> Translog</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/10.HistoryRetention.html"><strong aria-hidden="true">4.20.10.</strong> HistoryRetention</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/11.IndexSorting.html"><strong aria-hidden="true">4.20.11.</strong> IndexSorting</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/12.IndexPressure.html"><strong aria-hidden="true">4.20.12.</strong> IndexPressure</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.21.</strong> IngestPipeline</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/IngestPipeline/1.IngestPipelines.html"><strong aria-hidden="true">4.21.1.</strong> IngestPipelines</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IngestPipeline/2.pipeLineExample.html"><strong aria-hidden="true">4.21.2.</strong> pipeLineExample</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IngestPipeline/3.EnrichYourData.html"><strong aria-hidden="true">4.21.3.</strong> EnrichYourData</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IngestPipeline/4.ExampleEnrichYourDataBasedOnGeolocation.html"><strong aria-hidden="true">4.21.4.</strong> ExampleEnrichYourDataBasedOnGeolocation</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IngestPipeline/5.IngestProcessorReference.html"><strong aria-hidden="true">4.21.5.</strong> IngestProcessorReference</a></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/queryDSL/index.html"><strong aria-hidden="true">4.22.</strong> queryDSL</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/queryDSL/1.QueryAndFilterContext.html"><strong aria-hidden="true">4.22.1.</strong> QueryAndFilterContext</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/queryDSL/2.CompoundQueries.html"><strong aria-hidden="true">4.22.2.</strong> CompoundQueries</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/queryDSL/SearchAfter.html"><strong aria-hidden="true">4.22.3.</strong> SearchAfter</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/queryDSL/FullTextQueries/index.html"><strong aria-hidden="true">4.22.4.</strong> FullTextQueries</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/queryDSL/FullTextQueries/1.IntervalsQuery.html"><strong aria-hidden="true">4.22.4.1.</strong> IntervalsQuery</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/queryDSL/FullTextQueries/2.MatchQuery.html"><strong aria-hidden="true">4.22.4.2.</strong> MatchQuery</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/index.html"><strong aria-hidden="true">4.23.</strong> snapshotAndRestore</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/CleanUpSnapshotRepo.html"><strong aria-hidden="true">4.23.1.</strong> CleanUpSnapshotRepo</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/CloneSnapshot.html"><strong aria-hidden="true">4.23.2.</strong> CloneSnapshot</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/CreateOrUpdateSnapshotAPI.html"><strong aria-hidden="true">4.23.3.</strong> CreateOrUpdateSnapshotAPI</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/CreateSnapshot.html"><strong aria-hidden="true">4.23.4.</strong> CreateSnapshot</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/DeleteSnapShot.html"><strong aria-hidden="true">4.23.5.</strong> DeleteSnapShot</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/DeleteSnapshotRepository.html"><strong aria-hidden="true">4.23.6.</strong> DeleteSnapshotRepository</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/GetSnapshotAPI.html"><strong aria-hidden="true">4.23.7.</strong> GetSnapshotAPI</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/RegisterASnapshot.html"><strong aria-hidden="true">4.23.8.</strong> RegisterASnapshot</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/RestoreSnapshot.html"><strong aria-hidden="true">4.23.9.</strong> RestoreSnapshot</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/SLM.html"><strong aria-hidden="true">4.23.10.</strong> SLM</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/SearchableSnapshots.html"><strong aria-hidden="true">4.23.11.</strong> SearchableSnapshots</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/SearchableSnapshotsMountAPI.html"><strong aria-hidden="true">4.23.12.</strong> SearchableSnapshotsMountAPI</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/repository-s3.html"><strong aria-hidden="true">4.23.13.</strong> repository-s3</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/使用OSS备份恢复集群实战.html"><strong aria-hidden="true">4.23.14.</strong> 使用OSS备份恢复集群实战</a></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/安装/index.html"><strong aria-hidden="true">4.24.</strong> 安装</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/安装/1.InstallingFromRpm.html"><strong aria-hidden="true">4.24.1.</strong> InstallingFromRpm</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/安装/2.InstallFromDeb.html"><strong aria-hidden="true">4.24.2.</strong> InstallFromDeb</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.25.</strong> 深入搜索</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/深入搜索/全文搜索.html"><strong aria-hidden="true">4.25.1.</strong> 全文搜索</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/深入搜索/多字段搜索.html"><strong aria-hidden="true">4.25.2.</strong> 多字段搜索</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/深入搜索/结构化搜索.html"><strong aria-hidden="true">4.25.3.</strong> 结构化搜索</a></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/index.html"><strong aria-hidden="true">4.26.</strong> 索引分片分配</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/1.索引级别的分片分配控制.html"><strong aria-hidden="true">4.26.1.</strong> 索引级别的分片分配控制</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/2.节点离开延迟分配.html"><strong aria-hidden="true">4.26.2.</strong> 节点离开延迟分配</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/3.索引恢复优先级.html"><strong aria-hidden="true">4.26.3.</strong> 索引恢复优先级</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/4.每个节点的总分片.html"><strong aria-hidden="true">4.26.4.</strong> 每个节点的总分片</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/5.索引级别数据层分配过滤.html"><strong aria-hidden="true">4.26.5.</strong> 索引级别数据层分配过滤</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/6.手动分配分片clusterRerouteAPI.html"><strong aria-hidden="true">4.26.6.</strong> 手动分配分片clusterRerouteAPI</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/7.cluster-allocation-explain.html"><strong aria-hidden="true">4.26.7.</strong> cluster-allocation-explain</a></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/考纲解读/index.html"><strong aria-hidden="true">4.27.</strong> 考纲解读</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/考纲解读/1.ClusterManagement.html"><strong aria-hidden="true">4.27.1.</strong> ClusterManagement</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/考纲解读/2.DataManagement.html"><strong aria-hidden="true">4.27.2.</strong> DataManagement</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.28.</strong> 聚合</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/聚合/RareTermsAggregation.html"><strong aria-hidden="true">4.28.1.</strong> RareTermsAggregation</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/聚合/Term.html"><strong aria-hidden="true">4.28.2.</strong> Term</a></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/配置/index.html"><strong aria-hidden="true">4.29.</strong> 配置</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/配置/1.重要配置.html"><strong aria-hidden="true">4.29.1.</strong> 重要配置</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/配置/2.elasticsearch.yml核心配置.html"><strong aria-hidden="true">4.29.2.</strong> elasticsearch.yml核心配置</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/配置/3.es系统参数修改.html"><strong aria-hidden="true">4.29.3.</strong> es系统参数修改</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.30.</strong> 集群</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/集群/Health.html"><strong aria-hidden="true">4.30.1.</strong> Health</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.31.</strong> 高可用专题</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/高可用专题/弹性设计.html"><strong aria-hidden="true">4.31.1.</strong> 弹性设计</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/高可用专题/跨集群复制.html"><strong aria-hidden="true">4.31.2.</strong> 跨集群复制</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/高可用专题/集群备份.html"><strong aria-hidden="true">4.31.3.</strong> 集群备份</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="index-modules"><a class="header" href="#index-modules">Index modules</a></h1>
+<p>索引模块是每个索引创建的模块，可控制与索引相关的所有方面。</p>
+<h2 id="先验知识"><a class="header" href="#先验知识">先验知识</a></h2>
+<ol>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/indices-open-close.html">closed index</a> </li>
+<li>索引拆分 <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/indices-split-index.html">split</a></li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/mapping-routing-field.html">routing field</a></li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/query-filter-context.html">cached filters</a></li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/shard-allocation-filtering.html">allocation filtering</a> </li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/allocation-total-shards.html">total shards per node</a></li>
+</ol>
+<h2 id="index-settings"><a class="header" href="#index-settings">Index Settings</a></h2>
+<p>索引级别的设置可能是:</p>
+<ul>
+<li>
+<p>static</p>
+<p>它们只能在索引创建时或在 <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/indices-open-close.html">closed index</a> 索引上设置。</p>
+</li>
+<li>
+<p>dynamic</p>
+<p>可以通过 <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/indices-update-settings.html">update-index-settings</a> API 改变的设置</p>
+</li>
+</ul>
+<p>更改已关闭索引上的静态或动态索引设置可能会导致不正确的设置，而如果不删除和重新创建索引，则无法纠正这些设置。</p>
+<h3 id="static-index-settings"><a class="header" href="#static-index-settings">Static index settings</a></h3>
+<p>以下是索引通用的静态设置的列表:</p>
+<ul>
+<li>
+<p><strong><code>index.number_of_shards</code></strong></p>
+<ol>
+<li>索引应具有的主分片数量</li>
+<li>默认1。只能在索引创建时设置。可以作用于closed index</li>
+<li>每个索引的主分片数最多 <code>1024</code> </li>
+<li>此限制是一个安全限制，以防止意外创建索引，这些索引会由于资源分配而使群集不稳定。</li>
+<li>这个限制可以通过  <code>export ES_JAVA_OPTS=&quot;-Des.index.max_number_of_shards=128&quot;</code> 系统变量修改（每个节点都要修改）</li>
+</ol>
+</li>
+<li>
+<p><strong><code>index.number_of_routing_shards</code></strong></p>
+<ol>
+<li>
+<p>用于拆分 <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/indices-split-index.html">split</a>  索引的路由分片数</p>
+</li>
+<li>
+<p>五分片的索引，设置  number_of_routing_shards 为 30 （5x2x3）</p>
+</li>
+<li>
+<p>换句话说，</p>
+<pre><code>`5` → `10` → `30`
+
+`5` → `15` → `30` 
+
+`5` → `30`
+</code></pre>
+</li>
+<li>
+<p>此设置的默认值取决于索引中主分片的数量。</p>
+</li>
+<li>
+<p>默认值旨在允许您按2的因子拆分，最多1024个分片</p>
+</li>
+<li>
+<p>在Elasticsearch 7.0.0及更高版本中，此设置会影响文档在各个分片之间的分布方式</p>
+</li>
+<li>
+<p>使用自定义路由重新索引较旧的索引时，您必须显式设置<em>index.number_of_routing_shards</em>以保持相同的文档分布 See the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.0/breaking-changes-7.0.html#_document_distribution_changes">related breaking change</a>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong><code>index.shard.check_on_startup</code></strong></p>
+<p>Whether or not shards should be checked for corruption before opening.</p>
+<ol>
+<li>打开分片前 是否检查 分片是否损坏。如果一损坏则不会打开</li>
+<li>默认，false。不检查</li>
+<li>checksum：检查物理 校验和</li>
+<li>true： 既检查物理也检查逻辑损坏。这个很耗CPU跟内存、仅限专家。在大型索引上检查分片可能需要大量时间。</li>
+</ol>
+</li>
+<li>
+<p><strong><code>index.codec</code></strong></p>
+<ol>
+<li>默认值使用LZ4压缩来压缩存储的数据，</li>
+<li>但这可以设置为<em>best_compression</em>，它使用 <a href="https://en.wikipedia.org/wiki/DEFLATE">DEFLATE</a> 来获得更高的压缩比，但以较慢的存储字段性能为代价。</li>
+<li>如果要更新compression type，则在合并段后将应用新的压缩类型</li>
+<li>Segment merging can be forced using <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/indices-forcemerge.html">force merge</a>.</li>
+</ol>
+</li>
+<li>
+<p><strong><code>index.routing_partition_size</code></strong></p>
+<p>The number of shards a custom <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/mapping-routing-field.html">routing</a> value can go to. </p>
+<ol>
+<li>自定义路由值。可以 <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/mapping-routing-field.html">routing</a>  的分片数。</li>
+<li>默认为1，只能在索引创建时设置。</li>
+<li>必须小于  <code>index.number_of_shards</code> 。除非  <code>index.number_of_shards</code>设置为1 </li>
+<li>详见： <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/mapping-routing-field.html#routing-index-partition">Routing to an index partition</a> </li>
+</ol>
+</li>
+<li>
+<p><strong><code>index.soft_deletes.enabled</code></strong></p>
+<ol>
+<li>[7.6.0] Deprecated in 7.6.0. </li>
+<li>不建议使用禁用软删除的创建索引，并且将在以后的Elasticsearch版本中删除。</li>
+<li>指示是否在索引上启用了软删除</li>
+<li>软删除只能在索引创建时配置，并且只能在Elasticsearch 6.5.0上或之后创建的索引上配置。默认为true。</li>
+</ol>
+</li>
+<li>
+<p><strong><code>index.soft_deletes.retention_lease.period</code></strong></p>
+<ol>
+<li>保留分片历史记录的最长时间</li>
+<li>碎片历史记录保留租约确保在合并Lucene索引期间保留软删除。</li>
+<li>如果软删除在可以复制到flollower 之前被合并了</li>
+<li>以下过程将由于 leader 的历史记录不完整而失败. </li>
+<li>Defaults to <code>12h</code></li>
+</ol>
+</li>
+<li>
+<p><strong><code>index.load_fixed_bitset_filters_eagerly</code></strong></p>
+<ol>
+<li>load_fixed_bitset_filters_eagerly</li>
+<li>是否对 嵌套查询 预加载  <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/query-filter-context.html">cached filters</a></li>
+<li>默认FALSE</li>
+</ol>
+</li>
+<li>
+<p><strong><code>index.hidden</code></strong></p>
+<ol>
+<li>指示默认情况下是否应该隐藏索引</li>
+<li>使用通配符表达式时，默认情况下不返回隐藏索引。</li>
+<li>通过使用<em>expand_wildcards</em>参数来控制此行为。</li>
+<li>默认FALSE</li>
+</ol>
+</li>
+</ul>
+<h3 id="dynamic-index-settings"><a class="header" href="#dynamic-index-settings">Dynamic index settings</a></h3>
+<p>以下是与任何特定索引模块不关联的所有动态索引设置</p>
+<ul>
+<li>
+<p><strong><code>index.number_of_replicas</code></strong></p>
+<ol>
+<li>每个主分片的副本数。默认为1。</li>
+</ol>
+</li>
+<li>
+<p><strong><code>index.auto_expand_replicas</code></strong></p>
+<ol>
+<li>根据集群中的数据节点数自动扩展副本数</li>
+<li>设置为限定下限和上限的破折号 (例如. <code>0-5</code>) or use <code>all</code> for the upper bound (e.g. <code>0-all</code>). </li>
+<li>默认FALSE禁用。</li>
+<li>分片自动扩展数量 只 会考虑  <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/shard-allocation-filtering.html">allocation filtering</a>  会忽略  <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/allocation-total-shards.html">total shards per node</a>, 如果适用的规则阻止分配所有副本，则这可能导致群集运行状况变为黄色。</li>
+<li>If the upper bound is <code>all</code> then <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/modules-cluster.html#shard-allocation-awareness">shard allocation awareness</a> and <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/modules-cluster.html#cluster-routing-allocation-same-shard-host"><code>cluster.routing.allocation.same_shard.host</code></a> are ignored for this index.</li>
+</ol>
+</li>
+<li>
+<p><strong><code>index.search.idle.after</code></strong></p>
+<ol>
+<li>在被认为搜索空闲之前，分片无法接收搜索或获取请求多长时间。(默认为30秒)</li>
+</ol>
+</li>
+<li>
+<p><strong><code>index.refresh_interval</code></strong></p>
+<ol>
+<li>执行刷新操作的频率，这使索引的最新更改对搜索可见</li>
+<li>默认1s。-1 则是禁止刷新</li>
+<li>如果未明确设置此设置，则至少在<em>index.search.idle</em>秒前。没有看到搜索流量的分片，在收到搜索请求之前，它们将不会收到后台刷新。</li>
+<li>命中空闲且刷新被阻塞的分片的搜索请求。将会在下次后台刷新（1s）</li>
+<li>此行为旨在在不执行搜索的默认情况下自动优化批量索引。</li>
+<li>为了选择退出此行为，应将此值显示的设置为 1</li>
+</ol>
+</li>
+<li>
+<p><strong><code>index.max_result_window</code></strong></p>
+<ol>
+<li>from+size 搜索的最大大小</li>
+<li>默认1w</li>
+<li>搜索请求 消耗大量堆、跟时间</li>
+<li>详见： <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/paginate-search-results.html#scroll-search-results">Scroll</a> or <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/paginate-search-results.html#search-after">Search After</a> </li>
+</ol>
+</li>
+<li>
+<p><strong><code>index.max_inner_result_window</code></strong></p>
+<ol>
+<li>The maximum value of <code>from + size</code> for inner hits definition and top hits aggregations to this index. </li>
+<li>分片内部返回的最大值</li>
+<li>默认100。</li>
+</ol>
+</li>
+<li>
+<p><strong><code>index.max_rescore_window</code></strong></p>
+<ol>
+<li>The maximum value of <code>window_size</code> for <code>rescore</code> requests in searches of this index.</li>
+<li>. Defaults to <code>index.max_result_window</code> which defaults to <code>10000</code>. </li>
+<li>Search requests take heap memory and time proportional to <code>max(window_size, from + size)</code> and this limits that memory.</li>
+</ol>
+</li>
+<li>
+<p><strong><code>index.max_docvalue_fields_search</code></strong></p>
+<ol>
+<li>The maximum number of <code>docvalue_fields</code> that are allowed in a query. </li>
+<li>Defaults to <code>100</code>. Doc-value fields are costly since they might incur a per-field per-document seek.</li>
+</ol>
+</li>
+<li>
+<p><strong><code>index.max_script_fields</code></strong></p>
+<p>The maximum number of <code>script_fields</code> that are allowed in a query. Defaults to <code>32</code>.</p>
+</li>
+<li>
+<p><strong><code>index.max_ngram_diff</code></strong></p>
+<p>对于NGramTokenizer和NGramTokenFilter，min_gram和max_gram之间的最大允许差。默认为1。</p>
+</li>
+<li>
+<p><strong><code>index.max_shingle_diff</code></strong></p>
+<p>The maximum allowed difference between max_shingle_size and min_shingle_size for the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/analysis-shingle-tokenfilter.html"><code>shingle</code> token filter</a>. Defaults to <code>3</code>.</p>
+</li>
+<li>
+<p><strong><code>index.max_refresh_listeners</code></strong></p>
+<p>Maximum number of refresh listeners available on each shard of the index. These listeners are used to implement <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/docs-refresh.html"><code>refresh=wait_for</code></a>.</p>
+</li>
+<li>
+<p><strong><code>index.analyze.max_token_count</code></strong></p>
+<p>The maximum number of tokens that can be produced using _analyze API. Defaults to <code>10000</code>.</p>
+</li>
+<li>
+<p><strong><code>index.highlight.max_analyzed_offset</code></strong></p>
+<p>The maximum number of characters that will be analyzed for a highlight request. This setting is only applicable when highlighting is requested on a text that was indexed without offsets or term vectors. Defaults to <code>1000000</code>.</p>
+</li>
+<li>
+<p><strong><code>index.max_terms_count</code></strong></p>
+<p>The maximum number of terms that can be used in Terms Query. Defaults to <code>65536</code>.</p>
+</li>
+<li>
+<p><strong><code>index.max_regex_length</code></strong></p>
+<p>The maximum length of regex that can be used in Regexp Query. Defaults to <code>1000</code>.</p>
+</li>
+<li>
+<p><strong><code>index.query.default_field</code></strong></p>
+<p>(string or array of strings) Wildcard (<code>*</code>) patterns matching one or more fields. The following query types search these matching fields by default:<a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/query-dsl-mlt-query.html">More like this</a><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/query-dsl-multi-match-query.html">Multi-match</a><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/query-dsl-query-string-query.html">Query string</a><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/query-dsl-simple-query-string-query.html">Simple query string</a>Defaults to <code>*</code>, which matches all fields eligible for <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/term-level-queries.html">term-level queries</a>, excluding metadata fields.</p>
+</li>
+<li>
+<p><strong><code>index.routing.allocation.enable</code></strong></p>
+<ol>
+<li>控制此索引的分片分配。</li>
+<li>It can be set to:<code>all</code> (default) - 允许所有分片的分片分配。</li>
+<li><code>primaries</code> -仅允许主分片分配.</li>
+<li><code>new_primaries</code> - 只允许新创建的主分片分配.</li>
+<li><code>none</code> - 不允许分片分配。</li>
+</ol>
+</li>
+<li>
+<p><strong><code>index.routing.rebalance.enable</code></strong></p>
+<ol>
+<li>启用此索引的分片再平衡</li>
+<li>It can be set to:<code>all</code> (default) - Allows shard rebalancing for all shards.</li>
+<li><code>primaries</code> - Allows shard rebalancing only for primary shards.</li>
+<li><code>replicas</code> - Allows shard rebalancing only for replica shards.</li>
+<li><code>none</code> - No shard rebalancing is allowed.</li>
+</ol>
+</li>
+<li>
+<p><strong><code>index.gc_deletes</code></strong></p>
+<p>The length of time that a <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/docs-delete.html#delete-versioning">deleted document’s version number</a> remains available for <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/docs-index_.html#index-versioning">further versioned operations</a>. Defaults to <code>60s</code>.</p>
+</li>
+<li>
+<p><strong><code>index.default_pipeline</code></strong></p>
+<ol>
+<li>The default <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/ingest.html">ingest node</a> pipeline for this index. </li>
+<li>Index requests will fail if the default pipeline is set and the pipeline does not exist. </li>
+<li>The default may be overridden using the <code>pipeline</code> parameter. </li>
+<li>The special pipeline name <code>_none</code> indicates no ingest pipeline should be run.</li>
+</ol>
+</li>
+<li>
+<p><strong><code>index.final_pipeline</code></strong></p>
+<ol>
+<li>The final <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/ingest.html">ingest node</a> pipeline for this index. </li>
+<li>Indexing requests will fail if the final pipeline is set and the pipeline does not exist. </li>
+<li>The final pipeline always runs after the request pipeline (if specified) and the default pipeline (if it exists). </li>
+<li>The special pipeline name <code>_none</code> indicates no ingest pipeline will run.</li>
+<li>You can’t use a final pipelines to change the <code>_index</code> field. If the pipeline attempts to change the <code>_index</code> field, the indexing request will fail.</li>
+</ol>
+</li>
+</ul>
+<h3 id="settings-in-other-index-modules"><a class="header" href="#settings-in-other-index-modules">Settings in other index modules</a></h3>
+<p>Other index settings are available in index modules:</p>
+<ul>
+<li>
+<p><strong><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/analysis.html">Analysis</a></strong></p>
+<p>Settings to define analyzers, tokenizers, token filters and character filters.</p>
+</li>
+<li>
+<p><strong><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/index-modules-allocation.html">Index shard allocation</a></strong></p>
+<p>Control over where, when, and how shards are allocated to nodes.</p>
+</li>
+<li>
+<p><strong><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/index-modules-mapper.html">Mapping</a></strong></p>
+<p>Enable or disable dynamic mapping for an index.</p>
+</li>
+<li>
+<p><strong><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/index-modules-merge.html">Merging</a></strong></p>
+<p>Control over how shards are merged by the background merge process.</p>
+</li>
+<li>
+<p><strong><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/index-modules-similarity.html">Similarities</a></strong></p>
+<p>Configure custom similarity settings to customize how search results are scored.</p>
+</li>
+<li>
+<p><strong><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/index-modules-slowlog.html">Slowlog</a></strong></p>
+<p>Control over how slow queries and fetch requests are logged.</p>
+</li>
+<li>
+<p><strong><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/index-modules-store.html">Store</a></strong></p>
+<p>Configure the type of filesystem used to access shard data.</p>
+</li>
+<li>
+<p><strong><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/index-modules-translog.html">Translog</a></strong></p>
+<p>Control over the transaction log and background flush operations.</p>
+</li>
+<li>
+<p><strong><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/index-modules-history-retention.html">History retention</a></strong></p>
+<p>Control over the retention of a history of operations in the index.</p>
+</li>
+<li>
+<p><strong><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/index-modules-indexing-pressure.html">Indexing pressure</a></strong></p>
+<p>Configure indexing back pressure limits.</p>
+</li>
+</ul>
+<h3 id="x-pack-index-settings"><a class="header" href="#x-pack-index-settings">X-Pack index settings</a></h3>
+<ul>
+<li>
+<p><strong><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/ilm-settings.html">Index lifecycle management</a></strong></p>
+<p>Specify the lifecycle policy and rollover alias for an index.</p>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../elasticSearch/ILM/ILMConcepts/2.LifeCycleUpdates.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../elasticSearch/IndexModules/1.Analysis.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../elasticSearch/ILM/ILMConcepts/2.LifeCycleUpdates.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../elasticSearch/IndexModules/1.Analysis.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

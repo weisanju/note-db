@@ -1,0 +1,490 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>repository-s3</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">数据存储</a></li><li class="chapter-item expanded affix "><li class="part-title"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> oracle</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../oracle/Oracle小知识点.html"><strong aria-hidden="true">1.1.</strong> Oracle小知识点</a></li><li class="chapter-item expanded "><a href="../../oracle/oracledocker快速搭建.html"><strong aria-hidden="true">1.2.</strong> oracledocker快速搭建</a></li><li class="chapter-item expanded "><a href="../../oracle/oracle多表更新方法.html"><strong aria-hidden="true">1.3.</strong> oracle多表更新方法</a></li></ol></li><li class="chapter-item expanded "><a href="../../MongoDB/index.html"><strong aria-hidden="true">2.</strong> MongoDB</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../MongoDB/mongodb基本操作.html"><strong aria-hidden="true">2.1.</strong> mongodb基本操作</a></li><li class="chapter-item expanded "><a href="../../MongoDB/mongodb高级语法.html"><strong aria-hidden="true">2.2.</strong> mongodb高级语法</a></li><li class="chapter-item expanded "><a href="../../MongoDB/权限管理.html"><strong aria-hidden="true">2.3.</strong> 权限管理</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> mysql</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../mysql/mysqlfunction.html"><strong aria-hidden="true">3.1.</strong> mysqlfunction</a></li><li class="chapter-item expanded "><a href="../../mysql/mysqlpdump.html"><strong aria-hidden="true">3.2.</strong> mysqlpdump</a></li><li class="chapter-item expanded "><a href="../../mysql/mysqlzip安装.html"><strong aria-hidden="true">3.3.</strong> mysqlzip安装</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql公用表达式.html"><strong aria-hidden="true">3.4.</strong> mysql公用表达式</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql学习.html"><strong aria-hidden="true">3.5.</strong> mysql学习</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql执行计划.html"><strong aria-hidden="true">3.6.</strong> mysql执行计划</a></li><li class="chapter-item expanded "><a href="../../mysql/空值处理函数.html"><strong aria-hidden="true">3.7.</strong> 空值处理函数</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.8.</strong> mysql官方文档</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../mysql/mysql官方文档/mysql程序.html"><strong aria-hidden="true">3.8.1.</strong> mysql程序</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql官方文档/客户端.html"><strong aria-hidden="true">3.8.2.</strong> 客户端</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql官方文档/mysql程序/index.html"><strong aria-hidden="true">3.8.3.</strong> mysql程序</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../mysql/mysql官方文档/mysql程序/使用mysql相关程序.html"><strong aria-hidden="true">3.8.3.1.</strong> 使用mysql相关程序</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../mysql/mysql日志/index.html"><strong aria-hidden="true">3.9.</strong> mysql日志</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../mysql/mysql日志/mysql日志及分类.html"><strong aria-hidden="true">3.9.1.</strong> mysql日志及分类</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql日志/二进制日志.html"><strong aria-hidden="true">3.9.2.</strong> 二进制日志</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql日志/慢sql日志.html"><strong aria-hidden="true">3.9.3.</strong> 慢sql日志</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql日志/通用日志.html"><strong aria-hidden="true">3.9.4.</strong> 通用日志</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql日志/错误日志.html"><strong aria-hidden="true">3.9.5.</strong> 错误日志</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/index.html"><strong aria-hidden="true">4.</strong> elasticSearch</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/BackUpACluster.html"><strong aria-hidden="true">4.1.</strong> BackUpACluster</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/KQL.html"><strong aria-hidden="true">4.2.</strong> KQL</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/dataStream.html"><strong aria-hidden="true">4.3.</strong> dataStream</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/es堆内存如何分配.html"><strong aria-hidden="true">4.4.</strong> es堆内存如何分配</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/scroll查询.html"><strong aria-hidden="true">4.5.</strong> scroll查询</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/乐观并发控制.html"><strong aria-hidden="true">4.6.</strong> 乐观并发控制</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/分布式检索.html"><strong aria-hidden="true">4.7.</strong> 分布式检索</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/分片内部原理.html"><strong aria-hidden="true">4.8.</strong> 分片内部原理</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/分词.html"><strong aria-hidden="true">4.9.</strong> 分词</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/前缀搜索与模糊搜索.html"><strong aria-hidden="true">4.10.</strong> 前缀搜索与模糊搜索</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/数据分片.html"><strong aria-hidden="true">4.11.</strong> 数据分片</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/映射.html"><strong aria-hidden="true">4.12.</strong> 映射</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/杂项学习.html"><strong aria-hidden="true">4.13.</strong> 杂项学习</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引和分片.html"><strong aria-hidden="true">4.14.</strong> 索引和分片</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引管理.html"><strong aria-hidden="true">4.15.</strong> 索引管理</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/评分标准与相关性.html"><strong aria-hidden="true">4.16.</strong> 评分标准与相关性</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/集群内原理.html"><strong aria-hidden="true">4.17.</strong> 集群内原理</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/Datamanagement/index.html"><strong aria-hidden="true">4.18.</strong> Datamanagement</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/Datamanagement/DataTier.html"><strong aria-hidden="true">4.18.1.</strong> DataTier</a></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/index.html"><strong aria-hidden="true">4.19.</strong> ILM</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/1.AutomateRolloverWithILM.html"><strong aria-hidden="true">4.19.1.</strong> AutomateRolloverWithILM</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/FrozenIndices.html"><strong aria-hidden="true">4.19.2.</strong> FrozenIndices</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/ILM.html"><strong aria-hidden="true">4.19.3.</strong> ILM</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/RolloverAPI.html"><strong aria-hidden="true">4.19.4.</strong> RolloverAPI</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/ShrinkIndexAPI.html"><strong aria-hidden="true">4.19.5.</strong> ShrinkIndexAPI</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/ILMConcepts/index.html"><strong aria-hidden="true">4.19.6.</strong> ILMConcepts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/ILMConcepts/1.Rollover.html"><strong aria-hidden="true">4.19.6.1.</strong> Rollover</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/ILMConcepts/2.LifeCycleUpdates.html"><strong aria-hidden="true">4.19.6.2.</strong> LifeCycleUpdates</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/index.html"><strong aria-hidden="true">4.20.</strong> IndexModules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/1.Analysis.html"><strong aria-hidden="true">4.20.1.</strong> Analysis</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/2.IndexShardAllocation.html"><strong aria-hidden="true">4.20.2.</strong> IndexShardAllocation</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/3.Indexblocks.html"><strong aria-hidden="true">4.20.3.</strong> Indexblocks</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/4.Mapper.html"><strong aria-hidden="true">4.20.4.</strong> Mapper</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/5.Merge.html"><strong aria-hidden="true">4.20.5.</strong> Merge</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/6.SimilarityModule.html"><strong aria-hidden="true">4.20.6.</strong> SimilarityModule</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/7.Slowlog.html"><strong aria-hidden="true">4.20.7.</strong> Slowlog</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/8.Store.html"><strong aria-hidden="true">4.20.8.</strong> Store</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/9.Translog.html"><strong aria-hidden="true">4.20.9.</strong> Translog</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/10.HistoryRetention.html"><strong aria-hidden="true">4.20.10.</strong> HistoryRetention</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/11.IndexSorting.html"><strong aria-hidden="true">4.20.11.</strong> IndexSorting</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/12.IndexPressure.html"><strong aria-hidden="true">4.20.12.</strong> IndexPressure</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.21.</strong> IngestPipeline</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/IngestPipeline/1.IngestPipelines.html"><strong aria-hidden="true">4.21.1.</strong> IngestPipelines</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IngestPipeline/2.pipeLineExample.html"><strong aria-hidden="true">4.21.2.</strong> pipeLineExample</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IngestPipeline/3.EnrichYourData.html"><strong aria-hidden="true">4.21.3.</strong> EnrichYourData</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IngestPipeline/4.ExampleEnrichYourDataBasedOnGeolocation.html"><strong aria-hidden="true">4.21.4.</strong> ExampleEnrichYourDataBasedOnGeolocation</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IngestPipeline/5.IngestProcessorReference.html"><strong aria-hidden="true">4.21.5.</strong> IngestProcessorReference</a></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/queryDSL/index.html"><strong aria-hidden="true">4.22.</strong> queryDSL</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/queryDSL/1.QueryAndFilterContext.html"><strong aria-hidden="true">4.22.1.</strong> QueryAndFilterContext</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/queryDSL/2.CompoundQueries.html"><strong aria-hidden="true">4.22.2.</strong> CompoundQueries</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/queryDSL/SearchAfter.html"><strong aria-hidden="true">4.22.3.</strong> SearchAfter</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/queryDSL/FullTextQueries/index.html"><strong aria-hidden="true">4.22.4.</strong> FullTextQueries</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/queryDSL/FullTextQueries/1.IntervalsQuery.html"><strong aria-hidden="true">4.22.4.1.</strong> IntervalsQuery</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/queryDSL/FullTextQueries/2.MatchQuery.html"><strong aria-hidden="true">4.22.4.2.</strong> MatchQuery</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/index.html"><strong aria-hidden="true">4.23.</strong> snapshotAndRestore</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/CleanUpSnapshotRepo.html"><strong aria-hidden="true">4.23.1.</strong> CleanUpSnapshotRepo</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/CloneSnapshot.html"><strong aria-hidden="true">4.23.2.</strong> CloneSnapshot</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/CreateOrUpdateSnapshotAPI.html"><strong aria-hidden="true">4.23.3.</strong> CreateOrUpdateSnapshotAPI</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/CreateSnapshot.html"><strong aria-hidden="true">4.23.4.</strong> CreateSnapshot</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/DeleteSnapShot.html"><strong aria-hidden="true">4.23.5.</strong> DeleteSnapShot</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/DeleteSnapshotRepository.html"><strong aria-hidden="true">4.23.6.</strong> DeleteSnapshotRepository</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/GetSnapshotAPI.html"><strong aria-hidden="true">4.23.7.</strong> GetSnapshotAPI</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/RegisterASnapshot.html"><strong aria-hidden="true">4.23.8.</strong> RegisterASnapshot</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/RestoreSnapshot.html"><strong aria-hidden="true">4.23.9.</strong> RestoreSnapshot</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/SLM.html"><strong aria-hidden="true">4.23.10.</strong> SLM</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/SearchableSnapshots.html"><strong aria-hidden="true">4.23.11.</strong> SearchableSnapshots</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/SearchableSnapshotsMountAPI.html"><strong aria-hidden="true">4.23.12.</strong> SearchableSnapshotsMountAPI</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/repository-s3.html" class="active"><strong aria-hidden="true">4.23.13.</strong> repository-s3</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/使用OSS备份恢复集群实战.html"><strong aria-hidden="true">4.23.14.</strong> 使用OSS备份恢复集群实战</a></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/安装/index.html"><strong aria-hidden="true">4.24.</strong> 安装</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/安装/1.InstallingFromRpm.html"><strong aria-hidden="true">4.24.1.</strong> InstallingFromRpm</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/安装/2.InstallFromDeb.html"><strong aria-hidden="true">4.24.2.</strong> InstallFromDeb</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.25.</strong> 深入搜索</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/深入搜索/全文搜索.html"><strong aria-hidden="true">4.25.1.</strong> 全文搜索</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/深入搜索/多字段搜索.html"><strong aria-hidden="true">4.25.2.</strong> 多字段搜索</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/深入搜索/结构化搜索.html"><strong aria-hidden="true">4.25.3.</strong> 结构化搜索</a></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/index.html"><strong aria-hidden="true">4.26.</strong> 索引分片分配</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/1.索引级别的分片分配控制.html"><strong aria-hidden="true">4.26.1.</strong> 索引级别的分片分配控制</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/2.节点离开延迟分配.html"><strong aria-hidden="true">4.26.2.</strong> 节点离开延迟分配</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/3.索引恢复优先级.html"><strong aria-hidden="true">4.26.3.</strong> 索引恢复优先级</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/4.每个节点的总分片.html"><strong aria-hidden="true">4.26.4.</strong> 每个节点的总分片</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/5.索引级别数据层分配过滤.html"><strong aria-hidden="true">4.26.5.</strong> 索引级别数据层分配过滤</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/6.手动分配分片clusterRerouteAPI.html"><strong aria-hidden="true">4.26.6.</strong> 手动分配分片clusterRerouteAPI</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/7.cluster-allocation-explain.html"><strong aria-hidden="true">4.26.7.</strong> cluster-allocation-explain</a></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/考纲解读/index.html"><strong aria-hidden="true">4.27.</strong> 考纲解读</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/考纲解读/1.ClusterManagement.html"><strong aria-hidden="true">4.27.1.</strong> ClusterManagement</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/考纲解读/2.DataManagement.html"><strong aria-hidden="true">4.27.2.</strong> DataManagement</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.28.</strong> 聚合</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/聚合/RareTermsAggregation.html"><strong aria-hidden="true">4.28.1.</strong> RareTermsAggregation</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/聚合/Term.html"><strong aria-hidden="true">4.28.2.</strong> Term</a></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/配置/index.html"><strong aria-hidden="true">4.29.</strong> 配置</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/配置/1.重要配置.html"><strong aria-hidden="true">4.29.1.</strong> 重要配置</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/配置/2.elasticsearch.yml核心配置.html"><strong aria-hidden="true">4.29.2.</strong> elasticsearch.yml核心配置</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/配置/3.es系统参数修改.html"><strong aria-hidden="true">4.29.3.</strong> es系统参数修改</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.30.</strong> 集群</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/集群/Health.html"><strong aria-hidden="true">4.30.1.</strong> Health</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.31.</strong> 高可用专题</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/高可用专题/弹性设计.html"><strong aria-hidden="true">4.31.1.</strong> 弹性设计</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/高可用专题/跨集群复制.html"><strong aria-hidden="true">4.31.2.</strong> 跨集群复制</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/高可用专题/集群备份.html"><strong aria-hidden="true">4.31.3.</strong> 集群备份</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="s3-repository-plugin"><a class="header" href="#s3-repository-plugin">S3 Repository Plugin</a></h2>
+<p>该插件添加了 对 AWS S3 的 快照备份恢复的 支持</p>
+<h3 id="installation"><a class="header" href="#installation">Installation</a></h3>
+<pre><code>sudo bin/elasticsearch-plugin install repository-s3
+</code></pre>
+<h3 id="removal"><a class="header" href="#removal">Removal</a></h3>
+<pre><code>sudo bin/elasticsearch-plugin remove repository-s3
+</code></pre>
+<p>插件必须安装在集群中的每个节点上，并且每个节点都必须在安装后重新启动。</p>
+<pre><code class="language-shell">multipass exec primary sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install repository-s3
+
+multipass exec primary sudo systemctl restart elasticsearch
+
+multipass exec node-2 sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install repository-s3
+multipass exec node-2 sudo systemctl restart elasticsearch
+
+multipass exec node-3 sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install repository-s3
+multipass exec node-3 sudo systemctl restart elasticsearch
+</code></pre>
+<h2 id="配置"><a class="header" href="#配置">配置</a></h2>
+<p>The plugin provides a repository type named <code>s3</code> which may be used when creating a repository. </p>
+<p>The repository defaults to using <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">ECS IAM Role</a> or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html">EC2 IAM Role</a> credentials for authentication. </p>
+<p>The only mandatory setting is the bucket name:</p>
+<pre><code class="language-console">PUT _snapshot/my_s3_repository
+{
+  &quot;type&quot;: &quot;s3&quot;,
+  &quot;settings&quot;: {
+    &quot;bucket&quot;: &quot;my-bucket&quot;
+  }
+}
+</code></pre>
+<h3 id="客户端配置"><a class="header" href="#客户端配置">客户端配置</a></h3>
+<ol>
+<li>
+<p>用于连接到S3的客户端具有许多可用设置。</p>
+</li>
+<li>
+<p>The settings have the form <code>s3.client.CLIENT_NAME.SETTING_NAME</code>. </p>
+</li>
+<li>
+<p>By default, <code>s3</code> repositories use a client named <code>default</code>, but this can be modified using the <a href="https://www.elastic.co/guide/en/elasticsearch/plugins/7.13/repository-s3-repository.html">repository setting</a> <code>client</code>. For example:</p>
+</li>
+</ol>
+<pre><code>PUT _snapshot/my_s3_repository
+{
+  &quot;type&quot;: &quot;s3&quot;,
+  &quot;settings&quot;: {
+    &quot;bucket&quot;: &quot;my-bucket&quot;,
+    &quot;client&quot;: &quot;my-alternate-client&quot;
+  }
+}
+</code></pre>
+<ol>
+<li>
+<p>大多数配置可以添加到 <code>elasticsearch.yml</code>，除了安全配置（他们被添加到Elasticsearch keystore ）</p>
+</li>
+<li>
+<p>For more information about creating and updating the Elasticsearch keystore, see <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/secure-settings.html">Secure settings</a>.</p>
+</li>
+</ol>
+<p>例如，如果要使用特定凭据访问S3，则运行以下命令将这些凭据添加到密钥库:</p>
+<pre><code>bin/elasticsearch-keystore add s3.client.default.access_key
+bin/elasticsearch-keystore add s3.client.default.secret_key
+# a session token is optional so the following command may not be needed
+bin/elasticsearch-keystore add s3.client.default.session_token
+</code></pre>
+<p>相反，如果要使用实例角色或容器角色来访问S3，则应清空这些设置</p>
+<p>可以通过 移除以下设置，来从特定凭据   切换回  instance role or container role 的默认凭据</p>
+<pre><code class="language-sh">bin/elasticsearch-keystore remove s3.client.default.access_key
+bin/elasticsearch-keystore remove s3.client.default.secret_key
+# a session token is optional so the following command may not be needed
+bin/elasticsearch-keystore remove s3.client.default.session_token
+</code></pre>
+<ol>
+<li><strong>All</strong> client secure settings of this plugin are <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/secure-settings.html#reloadable-secure-settings">reloadable</a>. </li>
+<li>当你手动 重载配置后。内部S3客户端也会重载</li>
+<li>正在进行的快照/还原任务不会被  客户端安全设置的重新加载所抢占。</li>
+<li>该任务将使用客户端完成，因为它是在操作开始时构建的。</li>
+</ol>
+<p>以下列表包含可用的客户端设置，必须存储在密钥库中的配置，且被标记为 “安全” 可以重新加载; 其他设置属于elasticsearch.yml文件。</p>
+<ul>
+<li>
+<p><strong><code>access_key</code> (<a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/secure-settings.html">Secure</a>, <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/secure-settings.html#reloadable-secure-settings">reloadable</a>)</strong></p>
+<p>An S3 access key. If set, the <code>secret_key</code> setting must also be specified. If unset, the client will use the instance or container role instead.</p>
+</li>
+<li>
+<p><strong><code>secret_key</code> (<a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/secure-settings.html">Secure</a>, <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/secure-settings.html#reloadable-secure-settings">reloadable</a>)</strong></p>
+<p>An S3 secret key. If set, the <code>access_key</code> setting must also be specified.</p>
+</li>
+<li>
+<p><strong><code>session_token</code> (<a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/secure-settings.html">Secure</a>, <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/secure-settings.html#reloadable-secure-settings">reloadable</a>)</strong></p>
+<p>An S3 session token. If set, the <code>access_key</code> and <code>secret_key</code> settings must also be specified.</p>
+</li>
+<li>
+<p><strong><code>endpoint</code></strong></p>
+<p>The S3 service endpoint to connect to. This defaults to <code>s3.amazonaws.com</code> but the <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">AWS documentation</a> lists alternative S3 endpoints. If you are using an <a href="https://www.elastic.co/guide/en/elasticsearch/plugins/7.13/repository-s3-client.html#repository-s3-compatible-services">S3-compatible service</a> then you should set this to the service’s endpoint.</p>
+</li>
+<li>
+<p><strong><code>protocol</code></strong></p>
+<p>The protocol to use to connect to S3. Valid values are either <code>http</code> or <code>https</code>. Defaults to <code>https</code>.</p>
+</li>
+<li>
+<p><strong><code>proxy.host</code></strong></p>
+<p>The host name of a proxy to connect to S3 through.</p>
+</li>
+<li>
+<p><strong><code>proxy.port</code></strong></p>
+<p>The port of a proxy to connect to S3 through.</p>
+</li>
+<li>
+<p><strong><code>proxy.username</code> (<a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/secure-settings.html">Secure</a>, <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/secure-settings.html#reloadable-secure-settings">reloadable</a>)</strong></p>
+<p>The username to connect to the <code>proxy.host</code> with.</p>
+</li>
+<li>
+<p><strong><code>proxy.password</code> (<a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/secure-settings.html">Secure</a>, <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/secure-settings.html#reloadable-secure-settings">reloadable</a>)</strong></p>
+<p>The password to connect to the <code>proxy.host</code> with.</p>
+</li>
+<li>
+<p><strong><code>read_timeout</code></strong></p>
+<p>The socket timeout for connecting to S3. The value should specify the unit. For example, a value of <code>5s</code> specifies a 5 second timeout. The default value is 50 seconds.</p>
+</li>
+<li>
+<p><strong><code>max_retries</code></strong></p>
+<p>The number of retries to use when an S3 request fails. The default value is <code>3</code>.</p>
+</li>
+<li>
+<p><strong><code>use_throttle_retries</code></strong></p>
+<p>Whether retries should be throttled (i.e. should back off). Must be <code>true</code> or <code>false</code>. Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><strong><code>path_style_access</code></strong></p>
+<p>Whether to force the use of the path style access pattern. If <code>true</code>, the path style access pattern will be used. If <code>false</code>, the access pattern will be automatically determined by the AWS Java SDK (See <a href="https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/AmazonS3Builder.html#setPathStyleAccessEnabled-java.lang.Boolean-">AWS documentation</a> for details). Defaults to <code>false</code>.</p>
+</li>
+</ul>
+<p>In versions <code>7.0</code>, <code>7.1</code>, <code>7.2</code> and <code>7.3</code> all bucket operations used the <a href="https://aws.amazon.com/blogs/aws/amazon-s3-path-deprecation-plan-the-rest-of-the-story/">now-deprecated</a> path style access pattern. If your deployment requires the path style access pattern then you should set this setting to <code>true</code> when upgrading.</p>
+<ul>
+<li>
+<p><strong><code>disable_chunked_encoding</code></strong></p>
+<p>Whether chunked encoding should be disabled or not. If <code>false</code>, chunked encoding is enabled and will be used where appropriate. If <code>true</code>, chunked encoding is disabled and will not be used, which may mean that snapshot operations consume more resources and take longer to complete. It should only be set to <code>true</code> if you are using a storage service that does not support chunked encoding. See the <a href="https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/AmazonS3Builder.html#disableChunkedEncoding--">AWS Java SDK documentation</a> for details. Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><strong><code>region</code></strong></p>
+<p>Allows specifying the signing region to use. Specificing this setting manually should not be necessary for most use cases. Generally, the SDK will correctly guess the signing region to use. It should be considered an expert level setting to support S3-compatible APIs that require <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">v4 signatures</a> and use a region other than the default <code>us-east-1</code>. Defaults to empty string which means that the SDK will try to automatically determine the correct signing region.</p>
+</li>
+<li>
+<p><strong><code>signer_override</code></strong></p>
+<p>Allows specifying the name of the signature algorithm to use for signing requests by the S3 client. Specifying this setting should not be necessary for most use cases. It should be considered an expert level setting to support S3-compatible APIs that do not support the signing algorithm that the SDK automatically determines for them. See the <a href="https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/ClientConfiguration.html#setSignerOverride-java.lang.String-">AWS Java SDK documentation</a> for details. Defaults to empty string which means that no signing algorithm override will be used.</p>
+</li>
+</ul>
+<h3 id="s3-compatible-services"><a class="header" href="#s3-compatible-services">S3-compatible services</a></h3>
+<ol>
+<li>有许多存储系统提供了S3-compatible的API</li>
+<li><code>repository-s3</code> plugin 可以使 这些系统 与 AWS S3 开箱即用</li>
+<li>需要提供 <code>s3.client.CLIENT_NAME.endpoint</code></li>
+<li>也可以提供  <code>s3.client.CLIENT_NAME.protocol</code> </li>
+</ol>
+<p><strong>Minio兼容</strong></p>
+<p><a href="https://minio.io/">Minio</a> is an example of a storage system that provides an S3-compatible API. The <code>repository-s3</code> plugin allows Elasticsearch to work with Minio-backed repositories as well as repositories stored on AWS S3. Other S3-compatible storage systems may also work with Elasticsearch, but these are not covered by the Elasticsearch test suite.</p>
+<p><strong>完全的S3API兼容</strong></p>
+<p>Note that some storage systems claim to be S3-compatible without correctly supporting the full S3 API. The <code>repository-s3</code> plugin requires full compatibility with S3. In particular it must support the same set of API endpoints, return the same errors in case of failures, and offer a consistency model no weaker than S3’s when accessed concurrently by multiple nodes. Incompatible error codes and consistency models may be particularly hard to track down since errors and consistency failures are usually rare and hard to reproduce.</p>
+<p><strong>使用仓库分析来检查兼容性</strong></p>
+<p>You can perform some basic checks of the suitability of your storage system using the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/repo-analysis-api.html">repository analysis API</a>. If this API does not complete successfully, or indicates poor performance, then your storage system is not fully compatible with AWS S3 and therefore unsuitable for use as a snapshot repository. You will need to work with the supplier of your storage system to address any incompatibilities you encounter.</p>
+<h3 id="repository-settings"><a class="header" href="#repository-settings">Repository Settings</a></h3>
+<pre><code class="language-console">PUT _snapshot/my_s3_repository
+{
+  &quot;type&quot;: &quot;s3&quot;,
+  &quot;settings&quot;: {
+    &quot;bucket&quot;: &quot;my-bucket&quot;,
+    &quot;another_setting&quot;: &quot;setting-value&quot;
+  }
+}
+</code></pre>
+<p><strong><code>bucket</code></strong></p>
+<p>(Required) Name of the S3 bucket to use for snapshots.</p>
+<p>The bucket name must adhere to Amazon’s <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">S3 bucket naming rules</a>.</p>
+<p><strong><code>client</code></strong></p>
+<p>The name of the <a href="https://www.elastic.co/guide/en/elasticsearch/plugins/7.13/repository-s3-client.html">S3 client</a> to use to connect to S3. Defaults to <code>default</code>.</p>
+<p><strong><code>base_path</code></strong></p>
+<p>Specifies the path to the repository data within its bucket. Defaults to an empty string, meaning that the repository is at the root of the bucket. The value of this setting should not start or end with a <code>/</code>.</p>
+<p><strong><code>chunk_size</code></strong></p>
+<p>Big files can be broken down into chunks during snapshotting if needed. Specify the chunk size as a value and unit, for example: <code>1TB</code>, <code>1GB</code>, <code>10MB</code>. Defaults to the maximum size of a blob in the S3 which is <code>5TB</code>.</p>
+<p><strong><code>compress</code></strong></p>
+<p>When set to <code>true</code> metadata files are stored in compressed format. This setting doesn’t affect index files that are already compressed by default. Defaults to <code>false</code>.</p>
+<p><strong><code>max_restore_bytes_per_sec</code></strong></p>
+<p>Throttles per node restore rate. Defaults to unlimited. Note that restores are also throttled through <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/recovery.html">recovery settings</a>.</p>
+<p><strong><code>max_snapshot_bytes_per_sec</code></strong></p>
+<p>Throttles per node snapshot rate. Defaults to <code>40mb</code> per second.</p>
+<p><strong><code>readonly</code></strong></p>
+<p>Makes repository read-only. Defaults to <code>false</code>.</p>
+<p><strong><code>server_side_encryption</code></strong></p>
+<p>When set to <code>true</code> files are encrypted on server side using AES256 algorithm. Defaults to <code>false</code>.</p>
+<p><strong><code>buffer_size</code></strong></p>
+<p>Minimum threshold below which the chunk is uploaded using a single request. Beyond this threshold, the S3 repository will use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">AWS Multipart Upload API</a> to split the chunk into several parts, each of <code>buffer_size</code> length, and to upload each part in its own request. Note that setting a buffer size lower than <code>5mb</code> is not allowed since it will prevent the use of the Multipart API and may result in upload errors. It is also not possible to set a buffer size greater than <code>5gb</code> as it is the maximum upload size allowed by S3. Defaults to <code>100mb</code> or <code>5%</code> of JVM heap, whichever is smaller.</p>
+<p><strong><code>canned_acl</code></strong></p>
+<p>The S3 repository supports all <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a> : <code>private</code>, <code>public-read</code>, <code>public-read-write</code>, <code>authenticated-read</code>, <code>log-delivery-write</code>, <code>bucket-owner-read</code>, <code>bucket-owner-full-control</code>. Defaults to <code>private</code>. You could specify a canned ACL using the <code>canned_acl</code> setting. When the S3 repository creates buckets and objects, it adds the canned ACL into the buckets and objects.</p>
+<p><strong><code>storage_class</code></strong></p>
+<p>Sets the S3 storage class for objects stored in the snapshot repository. Values may be <code>standard</code>, <code>reduced_redundancy</code>, <code>standard_ia</code>, <code>onezone_ia</code> and <code>intelligent_tiering</code>. Defaults to <code>standard</code>. Changing this setting on an existing repository only affects the storage class for newly created objects, resulting in a mixed usage of storage classes. Additionally, S3 Lifecycle Policies can be used to manage the storage class of existing objects. Due to the extra complexity with the Glacier class lifecycle, it is not currently supported by the plugin. For more information about the different classes, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">AWS Storage Classes Guide</a></p>
+<ol>
+<li>除了上述设置之外，您还可以在存储库设置中指定所有非安全客户端设置。</li>
+<li>repository settings 优先级 大于 客户端设置</li>
+</ol>
+<pre><code>PUT _snapshot/my_s3_repository
+{
+  &quot;type&quot;: &quot;s3&quot;,
+  &quot;settings&quot;: {
+    &quot;client&quot;: &quot;my-client&quot;,
+    &quot;bucket&quot;: &quot;my-bucket&quot;,
+    &quot;endpoint&quot;: &quot;my.s3.endpoint&quot;
+  }
+}
+</code></pre>
+<h4 id="recommended-s3-permissions"><a class="header" href="#recommended-s3-permissions">Recommended S3 Permissions</a></h4>
+<ol>
+<li>
+<p>为了将Elasticsearch快照进程限制为所需的最低资源</p>
+</li>
+<li>
+<p>我们建议将Amazon IAM与预先存在的S3存储桶结合使用。</p>
+</li>
+<li>
+<p>Here is an example policy which will allow the snapshot access to an S3 bucket named &quot;snaps.example.com&quot;. This may be configured through the AWS IAM console, by creating a Custom Policy, and using a Policy Document similar to this (changing snaps.example.com to your bucket name).</p>
+</li>
+</ol>
+<pre><code class="language-js">{
+  &quot;Statement&quot;: [
+    {
+      &quot;Action&quot;: [
+        &quot;s3:ListBucket&quot;,
+        &quot;s3:GetBucketLocation&quot;,
+        &quot;s3:ListBucketMultipartUploads&quot;,
+        &quot;s3:ListBucketVersions&quot;
+      ],
+      &quot;Effect&quot;: &quot;Allow&quot;,
+      &quot;Resource&quot;: [
+        &quot;arn:aws:s3:::snaps.example.com&quot;
+      ]
+    },
+    {
+      &quot;Action&quot;: [
+        &quot;s3:GetObject&quot;,
+        &quot;s3:PutObject&quot;,
+        &quot;s3:DeleteObject&quot;,
+        &quot;s3:AbortMultipartUpload&quot;,
+        &quot;s3:ListMultipartUploadParts&quot;
+      ],
+      &quot;Effect&quot;: &quot;Allow&quot;,
+      &quot;Resource&quot;: [
+        &quot;arn:aws:s3:::snaps.example.com/*&quot;
+      ]
+    }
+  ],
+  &quot;Version&quot;: &quot;2012-10-17&quot;
+}
+</code></pre>
+<pre><code class="language-js">{
+  &quot;Statement&quot;: [
+    {
+      &quot;Action&quot;: [
+        &quot;s3:ListBucket&quot;,
+        &quot;s3:GetBucketLocation&quot;,
+        &quot;s3:ListBucketMultipartUploads&quot;,
+        &quot;s3:ListBucketVersions&quot;
+      ],
+      &quot;Condition&quot;: {
+        &quot;StringLike&quot;: {
+          &quot;s3:prefix&quot;: [
+            &quot;foo/*&quot;
+          ]
+        }
+      },
+      &quot;Effect&quot;: &quot;Allow&quot;,
+      &quot;Resource&quot;: [
+        &quot;arn:aws:s3:::snaps.example.com&quot;
+      ]
+    },
+    {
+      &quot;Action&quot;: [
+        &quot;s3:GetObject&quot;,
+        &quot;s3:PutObject&quot;,
+        &quot;s3:DeleteObject&quot;,
+        &quot;s3:AbortMultipartUpload&quot;,
+        &quot;s3:ListMultipartUploadParts&quot;
+      ],
+      &quot;Effect&quot;: &quot;Allow&quot;,
+      &quot;Resource&quot;: [
+        &quot;arn:aws:s3:::snaps.example.com/foo/*&quot;
+      ]
+    }
+  ],
+  &quot;Version&quot;: &quot;2012-10-17&quot;
+}
+</code></pre>
+<h3 id="aws-vpc-bandwidth-settings"><a class="header" href="#aws-vpc-bandwidth-settings">AWS VPC Bandwidth Settings</a></h3>
+<p>AWS instances resolve S3 endpoints to a public IP. If the Elasticsearch instances reside in a private subnet in an AWS VPC then all traffic to S3 will go through the VPC’s NAT instance. If your VPC’s NAT instance is a smaller instance size (e.g. a t2.micro) or is handling a high volume of network traffic your bandwidth to S3 may be limited by that NAT instance’s networking bandwidth limitations. Instead we recommend creating a <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html">VPC endpoint</a> that enables connecting to S3 in instances that reside in a private subnet in an AWS VPC. This will eliminate any limitations imposed by the network bandwidth of your VPC’s NAT instance.</p>
+<p>Instances residing in a public subnet in an AWS VPC will connect to S3 via the VPC’s internet gateway and not be bandwidth limited by the VPC’s NAT instance.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../elasticSearch/snapshotAndRestore/SearchableSnapshotsMountAPI.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../elasticSearch/snapshotAndRestore/使用OSS备份恢复集群实战.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../elasticSearch/snapshotAndRestore/SearchableSnapshotsMountAPI.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../elasticSearch/snapshotAndRestore/使用OSS备份恢复集群实战.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>SearchableSnapshots</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">数据存储</a></li><li class="chapter-item expanded affix "><li class="part-title"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> oracle</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../oracle/Oracle小知识点.html"><strong aria-hidden="true">1.1.</strong> Oracle小知识点</a></li><li class="chapter-item expanded "><a href="../../oracle/oracledocker快速搭建.html"><strong aria-hidden="true">1.2.</strong> oracledocker快速搭建</a></li><li class="chapter-item expanded "><a href="../../oracle/oracle多表更新方法.html"><strong aria-hidden="true">1.3.</strong> oracle多表更新方法</a></li></ol></li><li class="chapter-item expanded "><a href="../../MongoDB/index.html"><strong aria-hidden="true">2.</strong> MongoDB</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../MongoDB/mongodb基本操作.html"><strong aria-hidden="true">2.1.</strong> mongodb基本操作</a></li><li class="chapter-item expanded "><a href="../../MongoDB/mongodb高级语法.html"><strong aria-hidden="true">2.2.</strong> mongodb高级语法</a></li><li class="chapter-item expanded "><a href="../../MongoDB/权限管理.html"><strong aria-hidden="true">2.3.</strong> 权限管理</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> mysql</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../mysql/mysqlfunction.html"><strong aria-hidden="true">3.1.</strong> mysqlfunction</a></li><li class="chapter-item expanded "><a href="../../mysql/mysqlpdump.html"><strong aria-hidden="true">3.2.</strong> mysqlpdump</a></li><li class="chapter-item expanded "><a href="../../mysql/mysqlzip安装.html"><strong aria-hidden="true">3.3.</strong> mysqlzip安装</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql公用表达式.html"><strong aria-hidden="true">3.4.</strong> mysql公用表达式</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql学习.html"><strong aria-hidden="true">3.5.</strong> mysql学习</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql执行计划.html"><strong aria-hidden="true">3.6.</strong> mysql执行计划</a></li><li class="chapter-item expanded "><a href="../../mysql/空值处理函数.html"><strong aria-hidden="true">3.7.</strong> 空值处理函数</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.8.</strong> mysql官方文档</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../mysql/mysql官方文档/mysql程序.html"><strong aria-hidden="true">3.8.1.</strong> mysql程序</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql官方文档/客户端.html"><strong aria-hidden="true">3.8.2.</strong> 客户端</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql官方文档/mysql程序/index.html"><strong aria-hidden="true">3.8.3.</strong> mysql程序</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../mysql/mysql官方文档/mysql程序/使用mysql相关程序.html"><strong aria-hidden="true">3.8.3.1.</strong> 使用mysql相关程序</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../mysql/mysql日志/index.html"><strong aria-hidden="true">3.9.</strong> mysql日志</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../mysql/mysql日志/mysql日志及分类.html"><strong aria-hidden="true">3.9.1.</strong> mysql日志及分类</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql日志/二进制日志.html"><strong aria-hidden="true">3.9.2.</strong> 二进制日志</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql日志/慢sql日志.html"><strong aria-hidden="true">3.9.3.</strong> 慢sql日志</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql日志/通用日志.html"><strong aria-hidden="true">3.9.4.</strong> 通用日志</a></li><li class="chapter-item expanded "><a href="../../mysql/mysql日志/错误日志.html"><strong aria-hidden="true">3.9.5.</strong> 错误日志</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/index.html"><strong aria-hidden="true">4.</strong> elasticSearch</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/BackUpACluster.html"><strong aria-hidden="true">4.1.</strong> BackUpACluster</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/KQL.html"><strong aria-hidden="true">4.2.</strong> KQL</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/dataStream.html"><strong aria-hidden="true">4.3.</strong> dataStream</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/es堆内存如何分配.html"><strong aria-hidden="true">4.4.</strong> es堆内存如何分配</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/scroll查询.html"><strong aria-hidden="true">4.5.</strong> scroll查询</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/乐观并发控制.html"><strong aria-hidden="true">4.6.</strong> 乐观并发控制</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/分布式检索.html"><strong aria-hidden="true">4.7.</strong> 分布式检索</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/分片内部原理.html"><strong aria-hidden="true">4.8.</strong> 分片内部原理</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/分词.html"><strong aria-hidden="true">4.9.</strong> 分词</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/前缀搜索与模糊搜索.html"><strong aria-hidden="true">4.10.</strong> 前缀搜索与模糊搜索</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/数据分片.html"><strong aria-hidden="true">4.11.</strong> 数据分片</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/映射.html"><strong aria-hidden="true">4.12.</strong> 映射</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/杂项学习.html"><strong aria-hidden="true">4.13.</strong> 杂项学习</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引和分片.html"><strong aria-hidden="true">4.14.</strong> 索引和分片</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引管理.html"><strong aria-hidden="true">4.15.</strong> 索引管理</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/评分标准与相关性.html"><strong aria-hidden="true">4.16.</strong> 评分标准与相关性</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/集群内原理.html"><strong aria-hidden="true">4.17.</strong> 集群内原理</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/Datamanagement/index.html"><strong aria-hidden="true">4.18.</strong> Datamanagement</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/Datamanagement/DataTier.html"><strong aria-hidden="true">4.18.1.</strong> DataTier</a></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/index.html"><strong aria-hidden="true">4.19.</strong> ILM</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/1.AutomateRolloverWithILM.html"><strong aria-hidden="true">4.19.1.</strong> AutomateRolloverWithILM</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/FrozenIndices.html"><strong aria-hidden="true">4.19.2.</strong> FrozenIndices</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/ILM.html"><strong aria-hidden="true">4.19.3.</strong> ILM</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/RolloverAPI.html"><strong aria-hidden="true">4.19.4.</strong> RolloverAPI</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/ShrinkIndexAPI.html"><strong aria-hidden="true">4.19.5.</strong> ShrinkIndexAPI</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/ILMConcepts/index.html"><strong aria-hidden="true">4.19.6.</strong> ILMConcepts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/ILMConcepts/1.Rollover.html"><strong aria-hidden="true">4.19.6.1.</strong> Rollover</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/ILM/ILMConcepts/2.LifeCycleUpdates.html"><strong aria-hidden="true">4.19.6.2.</strong> LifeCycleUpdates</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/index.html"><strong aria-hidden="true">4.20.</strong> IndexModules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/1.Analysis.html"><strong aria-hidden="true">4.20.1.</strong> Analysis</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/2.IndexShardAllocation.html"><strong aria-hidden="true">4.20.2.</strong> IndexShardAllocation</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/3.Indexblocks.html"><strong aria-hidden="true">4.20.3.</strong> Indexblocks</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/4.Mapper.html"><strong aria-hidden="true">4.20.4.</strong> Mapper</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/5.Merge.html"><strong aria-hidden="true">4.20.5.</strong> Merge</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/6.SimilarityModule.html"><strong aria-hidden="true">4.20.6.</strong> SimilarityModule</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/7.Slowlog.html"><strong aria-hidden="true">4.20.7.</strong> Slowlog</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/8.Store.html"><strong aria-hidden="true">4.20.8.</strong> Store</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/9.Translog.html"><strong aria-hidden="true">4.20.9.</strong> Translog</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/10.HistoryRetention.html"><strong aria-hidden="true">4.20.10.</strong> HistoryRetention</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/11.IndexSorting.html"><strong aria-hidden="true">4.20.11.</strong> IndexSorting</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IndexModules/12.IndexPressure.html"><strong aria-hidden="true">4.20.12.</strong> IndexPressure</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.21.</strong> IngestPipeline</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/IngestPipeline/1.IngestPipelines.html"><strong aria-hidden="true">4.21.1.</strong> IngestPipelines</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IngestPipeline/2.pipeLineExample.html"><strong aria-hidden="true">4.21.2.</strong> pipeLineExample</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IngestPipeline/3.EnrichYourData.html"><strong aria-hidden="true">4.21.3.</strong> EnrichYourData</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IngestPipeline/4.ExampleEnrichYourDataBasedOnGeolocation.html"><strong aria-hidden="true">4.21.4.</strong> ExampleEnrichYourDataBasedOnGeolocation</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/IngestPipeline/5.IngestProcessorReference.html"><strong aria-hidden="true">4.21.5.</strong> IngestProcessorReference</a></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/queryDSL/index.html"><strong aria-hidden="true">4.22.</strong> queryDSL</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/queryDSL/1.QueryAndFilterContext.html"><strong aria-hidden="true">4.22.1.</strong> QueryAndFilterContext</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/queryDSL/2.CompoundQueries.html"><strong aria-hidden="true">4.22.2.</strong> CompoundQueries</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/queryDSL/SearchAfter.html"><strong aria-hidden="true">4.22.3.</strong> SearchAfter</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/queryDSL/FullTextQueries/index.html"><strong aria-hidden="true">4.22.4.</strong> FullTextQueries</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/queryDSL/FullTextQueries/1.IntervalsQuery.html"><strong aria-hidden="true">4.22.4.1.</strong> IntervalsQuery</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/queryDSL/FullTextQueries/2.MatchQuery.html"><strong aria-hidden="true">4.22.4.2.</strong> MatchQuery</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/index.html"><strong aria-hidden="true">4.23.</strong> snapshotAndRestore</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/CleanUpSnapshotRepo.html"><strong aria-hidden="true">4.23.1.</strong> CleanUpSnapshotRepo</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/CloneSnapshot.html"><strong aria-hidden="true">4.23.2.</strong> CloneSnapshot</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/CreateOrUpdateSnapshotAPI.html"><strong aria-hidden="true">4.23.3.</strong> CreateOrUpdateSnapshotAPI</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/CreateSnapshot.html"><strong aria-hidden="true">4.23.4.</strong> CreateSnapshot</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/DeleteSnapShot.html"><strong aria-hidden="true">4.23.5.</strong> DeleteSnapShot</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/DeleteSnapshotRepository.html"><strong aria-hidden="true">4.23.6.</strong> DeleteSnapshotRepository</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/GetSnapshotAPI.html"><strong aria-hidden="true">4.23.7.</strong> GetSnapshotAPI</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/RegisterASnapshot.html"><strong aria-hidden="true">4.23.8.</strong> RegisterASnapshot</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/RestoreSnapshot.html"><strong aria-hidden="true">4.23.9.</strong> RestoreSnapshot</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/SLM.html"><strong aria-hidden="true">4.23.10.</strong> SLM</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/SearchableSnapshots.html" class="active"><strong aria-hidden="true">4.23.11.</strong> SearchableSnapshots</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/SearchableSnapshotsMountAPI.html"><strong aria-hidden="true">4.23.12.</strong> SearchableSnapshotsMountAPI</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/repository-s3.html"><strong aria-hidden="true">4.23.13.</strong> repository-s3</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/snapshotAndRestore/使用OSS备份恢复集群实战.html"><strong aria-hidden="true">4.23.14.</strong> 使用OSS备份恢复集群实战</a></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/安装/index.html"><strong aria-hidden="true">4.24.</strong> 安装</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/安装/1.InstallingFromRpm.html"><strong aria-hidden="true">4.24.1.</strong> InstallingFromRpm</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/安装/2.InstallFromDeb.html"><strong aria-hidden="true">4.24.2.</strong> InstallFromDeb</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.25.</strong> 深入搜索</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/深入搜索/全文搜索.html"><strong aria-hidden="true">4.25.1.</strong> 全文搜索</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/深入搜索/多字段搜索.html"><strong aria-hidden="true">4.25.2.</strong> 多字段搜索</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/深入搜索/结构化搜索.html"><strong aria-hidden="true">4.25.3.</strong> 结构化搜索</a></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/index.html"><strong aria-hidden="true">4.26.</strong> 索引分片分配</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/1.索引级别的分片分配控制.html"><strong aria-hidden="true">4.26.1.</strong> 索引级别的分片分配控制</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/2.节点离开延迟分配.html"><strong aria-hidden="true">4.26.2.</strong> 节点离开延迟分配</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/3.索引恢复优先级.html"><strong aria-hidden="true">4.26.3.</strong> 索引恢复优先级</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/4.每个节点的总分片.html"><strong aria-hidden="true">4.26.4.</strong> 每个节点的总分片</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/5.索引级别数据层分配过滤.html"><strong aria-hidden="true">4.26.5.</strong> 索引级别数据层分配过滤</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/6.手动分配分片clusterRerouteAPI.html"><strong aria-hidden="true">4.26.6.</strong> 手动分配分片clusterRerouteAPI</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/索引分片分配/7.cluster-allocation-explain.html"><strong aria-hidden="true">4.26.7.</strong> cluster-allocation-explain</a></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/考纲解读/index.html"><strong aria-hidden="true">4.27.</strong> 考纲解读</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/考纲解读/1.ClusterManagement.html"><strong aria-hidden="true">4.27.1.</strong> ClusterManagement</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/考纲解读/2.DataManagement.html"><strong aria-hidden="true">4.27.2.</strong> DataManagement</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.28.</strong> 聚合</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/聚合/RareTermsAggregation.html"><strong aria-hidden="true">4.28.1.</strong> RareTermsAggregation</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/聚合/Term.html"><strong aria-hidden="true">4.28.2.</strong> Term</a></li></ol></li><li class="chapter-item expanded "><a href="../../elasticSearch/配置/index.html"><strong aria-hidden="true">4.29.</strong> 配置</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/配置/1.重要配置.html"><strong aria-hidden="true">4.29.1.</strong> 重要配置</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/配置/2.elasticsearch.yml核心配置.html"><strong aria-hidden="true">4.29.2.</strong> elasticsearch.yml核心配置</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/配置/3.es系统参数修改.html"><strong aria-hidden="true">4.29.3.</strong> es系统参数修改</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.30.</strong> 集群</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/集群/Health.html"><strong aria-hidden="true">4.30.1.</strong> Health</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.31.</strong> 高可用专题</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../elasticSearch/高可用专题/弹性设计.html"><strong aria-hidden="true">4.31.1.</strong> 弹性设计</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/高可用专题/跨集群复制.html"><strong aria-hidden="true">4.31.2.</strong> 跨集群复制</a></li><li class="chapter-item expanded "><a href="../../elasticSearch/高可用专题/集群备份.html"><strong aria-hidden="true">4.31.3.</strong> 集群备份</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="searchable-snapshots"><a class="header" href="#searchable-snapshots">Searchable snapshots</a></h2>
+<ol>
+<li>可搜索快照使您可以使用快照以非常经济高效的方式搜索不经常访问的数据和只读数据。</li>
+<li>冷数据层和冻结数据层使用可搜索的快照来降低存储和运营成本。</li>
+<li>可搜索的快照 消除了对副本分片的需求，从而可能将搜索数据所需的本地存储减半。可搜索的快照依赖于您已经用于备份的相同快照机制，并且对快照存储库存储成本的影响最小。</li>
+</ol>
+<h3 id="using-searchable-snapshots"><a class="header" href="#using-searchable-snapshots">Using searchable snapshots</a></h3>
+<ol>
+<li>搜索可搜索的快照索引与搜索任何其他索引相同。</li>
+<li>默认情况下，可搜索的快照索引没有副本</li>
+<li>底层快照提供了弹性，并且预计查询量足够低，以至于单个分片副本就足够了。</li>
+<li>但是，如果您需要支持更高的查询量，则可以通过调整<em>index.number_of_replicas</em>索引设置来添加副本。</li>
+<li>如果某个节点发生故障，并且需要在其他地方恢复可搜索快照的分片，则在Elasticsearch将分片分配的其他节点时，集群运行状况不为绿色，会有一个短暂的时间窗口。击中这些分片的搜索可能会失败或返回部分结果，直到将分片重新分配给健康节点为止。</li>
+<li>您通常通过ILM管理可搜索的快照。可搜索快照操作在到达冷或冻结阶段时会自动将常规索引转换为可搜索快照索引。</li>
+<li>您还可以通过使用 <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/searchable-snapshots-api-mount-snapshot.html">mount snapshot</a> API. 手动挂载索引来使现有快照中的索引可搜索。</li>
+<li>要从包含多个索引的快照中挂载索引，我们建议创建快照的克隆 <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/clone-snapshot-api.html">clone</a> ，该克隆仅包含要搜索的索引，并挂载该克隆的快照</li>
+<li>如果快照有任何已挂在的索引，则不应删除该快照，因此，创建克隆使您能够独立于任何可搜索的快照来管理备份快照的生命周期。如果您使用ILM来管理您的可搜索快照，那么它将在根据需要克隆快照后自动查看。</li>
+<li>您可以使用与常规索引相同的机制来控制可搜索快照索引的分片的分配。</li>
+<li>例如可以使用  <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/shard-allocation-filtering.html">Index-level shard allocation filtering</a>  设置 将可搜索的快照分片数限制为节点数的子集。</li>
+<li>可搜索快照索引的恢复速度受到  repository setting： max_restore_bytes_per_sec 和节点设置 indices.recovery.max_bytes_per_sec的限制，就像正常的还原操作一样</li>
+<li>默认情况下，<em>max_restore_bytes_per_sec</em>是无限的，但<em>indices.recovery.max_bytes_per_sec</em>的默认值取决于节点的配置。See <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/recovery.html#recovery-settings">Recovery settings</a>.</li>
+<li>我们建议您在  获取快照之前，将索引强制合并，使得每个分片 单个片段，该快照将作为可搜索的快照索引挂载</li>
+<li>从快照存储库中的每次读取都会花费时间并花费金钱，并且段越少，恢复快照或响应搜索所需的读取就越少。</li>
+<li>可搜索的快照是管理大量历史数据档案的理想选择。历史信息的搜索频率通常低于最近的数据，因此可能不需要副本来获得其性能优势。</li>
+<li>对于更复杂或耗时的搜索，您可以将异步搜索 <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/async-search.html">Async search</a>  与可搜索快照一起使用。</li>
+</ol>
+<p>将以下任何存储库类型与可搜索的快照一起使用:</p>
+<ul>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/plugins/7.13/repository-s3.html">AWS S3</a></li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/plugins/7.13/repository-gcs.html">Google Cloud Storage</a></li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/plugins/7.13/repository-azure.html">Azure Blob Storage</a></li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/plugins/7.13/repository-hdfs.html">Hadoop Distributed File Store (HDFS)</a></li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/snapshots-register-repository.html#snapshots-filesystem-repository">Shared filesystems</a> such as NFS</li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/snapshots-register-repository.html#snapshots-read-only-repository">Read-only HTTP and HTTPS repositories</a></li>
+</ul>
+<p>您还可以使用这些存储库类型的替代实现，例如 <a href="https://www.elastic.co/guide/en/elasticsearch/plugins/7.13/repository-s3-client.html#repository-s3-compatible-services">Minio</a>，只要它们完全兼容即可。使用存储库分析API分析您的存储库是否适合与可搜索快照一起使用。</p>
+<h3 id="how-searchable-snapshots-work"><a class="header" href="#how-searchable-snapshots-work">How searchable snapshots work</a></h3>
+<blockquote>
+<p>可搜索快照如何工作</p>
+</blockquote>
+<p>When an index is mounted from a snapshot, Elasticsearch allocates its shards to data nodes within the cluster.</p>
+<ol>
+<li>从快照挂载索引时，Elasticsearch将其分片分配给集群内的 data nodes</li>
+<li>然后，数据节点自动将相关的分片数据从存储库中检索到本地存储,基于 <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/searchable-snapshots.html#searchable-snapshot-mount-storage-options">mount options</a> .如果可能，搜索使用来自本地存储的数据.  如果数据在本地不可用，Elasticsearch将从快照存储库中下载所需的数据。</li>
+<li>如果持有其中一个分片的节点发生故障，Elasticsearch会自动将受影响的分片分配到另一个节点上，并且该节点会从存储库中恢复相关的分片数据。</li>
+<li>不需要副本，也不需要复杂的监视或编排来恢复丢失的分片</li>
+<li>尽管默认情况下可搜索的快照索引没有副本，您可以通过调整index.number_of_replicas将副本添加到这些索引。</li>
+<li>通过从快照存储库中复制数据来恢复可搜索快照分片的副本。就像可搜索快照 分片的主分片一样。</li>
+<li>相反，常规索引的副本 通过从主分片 复制数据来恢复。</li>
+</ol>
+<h4 id="mount-options"><a class="header" href="#mount-options">Mount options</a></h4>
+<p>要搜索快照，您必须首先将其作为索引在本地挂载。通常ILM会自动执行此操作，但是您也可以自己调用 <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/searchable-snapshots-api-mount-snapshot.html">mount snapshot</a> API </p>
+<p>从快照挂载索引有两个选项，每个选项都具有不同的性能特征和本地存储足迹:</p>
+<ul>
+<li>
+<p><strong>Fully mounted index</strong></p>
+<ol>
+<li>将快照索引的分片的完整副本加载到群集内的节点本地存储中，ILM在 热和冷阶段 使用此选项</li>
+<li>完全挂载索引的搜索性能通常与常规索引相当，因为访问快照存储库的需求最小。</li>
+<li>在恢复过程中，搜索性能可能比常规索引慢，因为搜索可能需要一些尚未检索到本地副本中的数据，如果发生这种情况，Elasticsearch将急切地检索与正在进行的恢复  并行完成搜索所需的数据。</li>
+</ol>
+</li>
+<li>
+<p><strong>Partially mounted index</strong></p>
+<ol>
+<li>使用仅包含最近搜索的快照索引数据部分的本地缓存。</li>
+<li>此缓存具有固定大小，并且在冻结层中的节点之间共享。ILM在冻结阶段使用此选项，</li>
+<li>如果搜索需要不在缓存中的数据，则Elasticsearch会从快照存储库中获取丢失的数据，需要这些提取的搜索速度较慢，但是提取的数据存储在缓存中，以便将来可以更快地提供类似的搜索。</li>
+<li>Elasticsearch将从缓存中逐出不经常使用的数据以释放空间</li>
+<li>虽然比完全挂载索引或常规索引慢，部分挂载的索引仍然会快速返回搜索结果，即使对于大型数据集，因为存储库中数据的布局针对搜索进行了大量优化</li>
+<li>在返回结果之前，许多搜索将只需要检索总分片数据的一小部分。</li>
+<li>要部分挂载索引，必须有一个或多个具有共享缓存的节点。</li>
+<li>默认情况下，专用冻结数据层节点（具有data_frozen角色且没有其他数据角色的节点）具有 共享缓存，可以使用 总磁盘空间的90%，以及 总磁盘空间减100GB的净空</li>
+<li>强烈建议在生产中使用专用的冷冻层</li>
+<li>如果没有专用的冻结层，则必须配置<em>xpack.searchable.snapshot.shared_cache.size</em>设置为一个或多个节点上的缓存预留空间。部分挂载的索引仅分配给具有共享缓存的节点。</li>
+</ol>
+</li>
+<li>
+<p><strong><code>xpack.searchable.snapshot.shared_cache.size</code></strong></p>
+<p>(<a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/settings.html#static-cluster-setting">Static</a>) Disk space reserved for the shared cache of partially mounted indices. Accepts a percentage of total disk space or an absolute <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/common-options.html#byte-units">byte value</a>. Defaults to <code>90%</code> of total disk space for dedicated frozen data tier nodes. Otherwise defaults to <code>0b</code>.</p>
+</li>
+<li>
+<p><strong><code>xpack.searchable.snapshot.shared_cache.size.max_headroom</code></strong></p>
+<p>(<a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/settings.html#static-cluster-setting">Static</a>, <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/common-options.html#byte-units">byte value</a>) For dedicated frozen tier nodes, the max headroom to maintain. If <code>xpack.searchable.snapshot.shared_cache.size</code> is not explicitly set, this setting defaults to <code>100GB</code>. Otherwise it defaults to <code>-1</code> (not set). You can only configure this setting if <code>xpack.searchable.snapshot.shared_cache.size</code> is set as a percentage.</p>
+</li>
+</ul>
+<p>为了说明这些设置如何协同工作，让我们看两个示例，当在专用冻结节点上使用设置的默认值时:</p>
+<ul>
+<li>A 4000 GB disk will result in a shared cache sized at 3900 GB. 90% of 4000 GB is 3600 GB, leaving 400 GB headroom. The default <code>max_headroom</code> of 100 GB takes effect, and the result is therefore 3900 GB.</li>
+<li>A 400 GB disk will result in a shared cache sized at 360 GB.</li>
+</ul>
+<p>You can configure the settings in <code>elasticsearch.yml</code>:</p>
+<pre><code class="language-yaml">xpack.searchable.snapshot.shared_cache.size: 4TB
+</code></pre>
+<ol>
+<li>目前，您可以在任何节点上配置 xpack.searchable.snapshot.shared_cache.size。</li>
+<li>如果在 没有  <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/modules-node.html#data-frozen-node"><code>data_frozen</code></a>  角色 的节点上设置 该 设置 它将被视为设置为0b。</li>
+<li>此外，具有共享缓存的节点只能具有单个数据路径 <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/important-settings.html#path-settings">data path</a>.</li>
+</ol>
+<h3 id="back-up-and-restore-searchable-snapshots"><a class="header" href="#back-up-and-restore-searchable-snapshots">Back up and restore searchable snapshots</a></h3>
+<ol>
+<li>您可以使用常规快照 <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/snapshot-lifecycle-management.html">regular snapshots</a>  来备份包含可搜索快照索引的集群。</li>
+<li>恢复包含可搜索快照索引的快照时，这些索引将再次恢复为可搜索快照索引。</li>
+<li>在还原包含可搜索快照索引的快照之前，必须先注册  <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.13/snapshots-register-repository.html">register the repository</a>  包含原始索引快照的存储库。</li>
+<li>恢复后，可搜索的快照索引将从其原始存储库中挂载原始索引快照。</li>
+<li>如果需要，您可以将单独的存储库用于常规快照和可搜索快照。</li>
+<li>可搜索快照索引的快照仅包含少量元数据，这些元数据标识其原始索引快照，它不包含来自原始索引的任何数据</li>
+<li>备份的恢复将  无法恢复任何   原始索引快照不可用的  可搜索快照索引</li>
+</ol>
+<h3 id="reliability-of-searchable-snapshots"><a class="header" href="#reliability-of-searchable-snapshots">Reliability of searchable snapshots</a></h3>
+<blockquote>
+<p>可搜索快照的可靠性</p>
+</blockquote>
+<ol>
+<li>
+<p>可搜索快照索引中数据的唯一副本是存储在存储库中的基础快照。</p>
+</li>
+<li>
+<p>如果存储库失败或损坏快照的内容，则数据将丢失</p>
+</li>
+<li>
+<p>尽管Elasticsearch可能已将数据复制到本地存储中，但这些副本可能不完整，并且在存储库失败后无法用于恢复任何数据。</p>
+</li>
+<li>
+<p>您必须确保您的存储库是可靠的，并在存储库中的数据处于静止状态时防止数据损坏。</p>
+</li>
+<li>
+<p>所有主要的公共云提供商 提供的blob存储通常提供非常好的保护，防止数据丢失或损坏。如果您管理自己的存储库存储，则应对其可靠性负责。</p>
+</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../elasticSearch/snapshotAndRestore/SLM.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../elasticSearch/snapshotAndRestore/SearchableSnapshotsMountAPI.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../elasticSearch/snapshotAndRestore/SLM.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../elasticSearch/snapshotAndRestore/SearchableSnapshotsMountAPI.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

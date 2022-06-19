@@ -1,0 +1,582 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>mysql执行计划</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">数据存储</a></li><li class="chapter-item expanded affix "><li class="part-title"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> oracle</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../oracle/Oracle小知识点.html"><strong aria-hidden="true">1.1.</strong> Oracle小知识点</a></li><li class="chapter-item expanded "><a href="../oracle/oracledocker快速搭建.html"><strong aria-hidden="true">1.2.</strong> oracledocker快速搭建</a></li><li class="chapter-item expanded "><a href="../oracle/oracle多表更新方法.html"><strong aria-hidden="true">1.3.</strong> oracle多表更新方法</a></li></ol></li><li class="chapter-item expanded "><a href="../MongoDB/index.html"><strong aria-hidden="true">2.</strong> MongoDB</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MongoDB/mongodb基本操作.html"><strong aria-hidden="true">2.1.</strong> mongodb基本操作</a></li><li class="chapter-item expanded "><a href="../MongoDB/mongodb高级语法.html"><strong aria-hidden="true">2.2.</strong> mongodb高级语法</a></li><li class="chapter-item expanded "><a href="../MongoDB/权限管理.html"><strong aria-hidden="true">2.3.</strong> 权限管理</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> mysql</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../mysql/mysqlfunction.html"><strong aria-hidden="true">3.1.</strong> mysqlfunction</a></li><li class="chapter-item expanded "><a href="../mysql/mysqlpdump.html"><strong aria-hidden="true">3.2.</strong> mysqlpdump</a></li><li class="chapter-item expanded "><a href="../mysql/mysqlzip安装.html"><strong aria-hidden="true">3.3.</strong> mysqlzip安装</a></li><li class="chapter-item expanded "><a href="../mysql/mysql公用表达式.html"><strong aria-hidden="true">3.4.</strong> mysql公用表达式</a></li><li class="chapter-item expanded "><a href="../mysql/mysql学习.html"><strong aria-hidden="true">3.5.</strong> mysql学习</a></li><li class="chapter-item expanded "><a href="../mysql/mysql执行计划.html" class="active"><strong aria-hidden="true">3.6.</strong> mysql执行计划</a></li><li class="chapter-item expanded "><a href="../mysql/空值处理函数.html"><strong aria-hidden="true">3.7.</strong> 空值处理函数</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.8.</strong> mysql官方文档</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../mysql/mysql官方文档/mysql程序.html"><strong aria-hidden="true">3.8.1.</strong> mysql程序</a></li><li class="chapter-item expanded "><a href="../mysql/mysql官方文档/客户端.html"><strong aria-hidden="true">3.8.2.</strong> 客户端</a></li><li class="chapter-item expanded "><a href="../mysql/mysql官方文档/mysql程序/index.html"><strong aria-hidden="true">3.8.3.</strong> mysql程序</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../mysql/mysql官方文档/mysql程序/使用mysql相关程序.html"><strong aria-hidden="true">3.8.3.1.</strong> 使用mysql相关程序</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../mysql/mysql日志/index.html"><strong aria-hidden="true">3.9.</strong> mysql日志</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../mysql/mysql日志/mysql日志及分类.html"><strong aria-hidden="true">3.9.1.</strong> mysql日志及分类</a></li><li class="chapter-item expanded "><a href="../mysql/mysql日志/二进制日志.html"><strong aria-hidden="true">3.9.2.</strong> 二进制日志</a></li><li class="chapter-item expanded "><a href="../mysql/mysql日志/慢sql日志.html"><strong aria-hidden="true">3.9.3.</strong> 慢sql日志</a></li><li class="chapter-item expanded "><a href="../mysql/mysql日志/通用日志.html"><strong aria-hidden="true">3.9.4.</strong> 通用日志</a></li><li class="chapter-item expanded "><a href="../mysql/mysql日志/错误日志.html"><strong aria-hidden="true">3.9.5.</strong> 错误日志</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../elasticSearch/index.html"><strong aria-hidden="true">4.</strong> elasticSearch</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/BackUpACluster.html"><strong aria-hidden="true">4.1.</strong> BackUpACluster</a></li><li class="chapter-item expanded "><a href="../elasticSearch/KQL.html"><strong aria-hidden="true">4.2.</strong> KQL</a></li><li class="chapter-item expanded "><a href="../elasticSearch/dataStream.html"><strong aria-hidden="true">4.3.</strong> dataStream</a></li><li class="chapter-item expanded "><a href="../elasticSearch/es堆内存如何分配.html"><strong aria-hidden="true">4.4.</strong> es堆内存如何分配</a></li><li class="chapter-item expanded "><a href="../elasticSearch/scroll查询.html"><strong aria-hidden="true">4.5.</strong> scroll查询</a></li><li class="chapter-item expanded "><a href="../elasticSearch/乐观并发控制.html"><strong aria-hidden="true">4.6.</strong> 乐观并发控制</a></li><li class="chapter-item expanded "><a href="../elasticSearch/分布式检索.html"><strong aria-hidden="true">4.7.</strong> 分布式检索</a></li><li class="chapter-item expanded "><a href="../elasticSearch/分片内部原理.html"><strong aria-hidden="true">4.8.</strong> 分片内部原理</a></li><li class="chapter-item expanded "><a href="../elasticSearch/分词.html"><strong aria-hidden="true">4.9.</strong> 分词</a></li><li class="chapter-item expanded "><a href="../elasticSearch/前缀搜索与模糊搜索.html"><strong aria-hidden="true">4.10.</strong> 前缀搜索与模糊搜索</a></li><li class="chapter-item expanded "><a href="../elasticSearch/数据分片.html"><strong aria-hidden="true">4.11.</strong> 数据分片</a></li><li class="chapter-item expanded "><a href="../elasticSearch/映射.html"><strong aria-hidden="true">4.12.</strong> 映射</a></li><li class="chapter-item expanded "><a href="../elasticSearch/杂项学习.html"><strong aria-hidden="true">4.13.</strong> 杂项学习</a></li><li class="chapter-item expanded "><a href="../elasticSearch/索引和分片.html"><strong aria-hidden="true">4.14.</strong> 索引和分片</a></li><li class="chapter-item expanded "><a href="../elasticSearch/索引管理.html"><strong aria-hidden="true">4.15.</strong> 索引管理</a></li><li class="chapter-item expanded "><a href="../elasticSearch/评分标准与相关性.html"><strong aria-hidden="true">4.16.</strong> 评分标准与相关性</a></li><li class="chapter-item expanded "><a href="../elasticSearch/集群内原理.html"><strong aria-hidden="true">4.17.</strong> 集群内原理</a></li><li class="chapter-item expanded "><a href="../elasticSearch/Datamanagement/index.html"><strong aria-hidden="true">4.18.</strong> Datamanagement</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/Datamanagement/DataTier.html"><strong aria-hidden="true">4.18.1.</strong> DataTier</a></li></ol></li><li class="chapter-item expanded "><a href="../elasticSearch/ILM/index.html"><strong aria-hidden="true">4.19.</strong> ILM</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/ILM/1.AutomateRolloverWithILM.html"><strong aria-hidden="true">4.19.1.</strong> AutomateRolloverWithILM</a></li><li class="chapter-item expanded "><a href="../elasticSearch/ILM/FrozenIndices.html"><strong aria-hidden="true">4.19.2.</strong> FrozenIndices</a></li><li class="chapter-item expanded "><a href="../elasticSearch/ILM/ILM.html"><strong aria-hidden="true">4.19.3.</strong> ILM</a></li><li class="chapter-item expanded "><a href="../elasticSearch/ILM/RolloverAPI.html"><strong aria-hidden="true">4.19.4.</strong> RolloverAPI</a></li><li class="chapter-item expanded "><a href="../elasticSearch/ILM/ShrinkIndexAPI.html"><strong aria-hidden="true">4.19.5.</strong> ShrinkIndexAPI</a></li><li class="chapter-item expanded "><a href="../elasticSearch/ILM/ILMConcepts/index.html"><strong aria-hidden="true">4.19.6.</strong> ILMConcepts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/ILM/ILMConcepts/1.Rollover.html"><strong aria-hidden="true">4.19.6.1.</strong> Rollover</a></li><li class="chapter-item expanded "><a href="../elasticSearch/ILM/ILMConcepts/2.LifeCycleUpdates.html"><strong aria-hidden="true">4.19.6.2.</strong> LifeCycleUpdates</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/index.html"><strong aria-hidden="true">4.20.</strong> IndexModules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/1.Analysis.html"><strong aria-hidden="true">4.20.1.</strong> Analysis</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/2.IndexShardAllocation.html"><strong aria-hidden="true">4.20.2.</strong> IndexShardAllocation</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/3.Indexblocks.html"><strong aria-hidden="true">4.20.3.</strong> Indexblocks</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/4.Mapper.html"><strong aria-hidden="true">4.20.4.</strong> Mapper</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/5.Merge.html"><strong aria-hidden="true">4.20.5.</strong> Merge</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/6.SimilarityModule.html"><strong aria-hidden="true">4.20.6.</strong> SimilarityModule</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/7.Slowlog.html"><strong aria-hidden="true">4.20.7.</strong> Slowlog</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/8.Store.html"><strong aria-hidden="true">4.20.8.</strong> Store</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/9.Translog.html"><strong aria-hidden="true">4.20.9.</strong> Translog</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/10.HistoryRetention.html"><strong aria-hidden="true">4.20.10.</strong> HistoryRetention</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/11.IndexSorting.html"><strong aria-hidden="true">4.20.11.</strong> IndexSorting</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/12.IndexPressure.html"><strong aria-hidden="true">4.20.12.</strong> IndexPressure</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.21.</strong> IngestPipeline</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/IngestPipeline/1.IngestPipelines.html"><strong aria-hidden="true">4.21.1.</strong> IngestPipelines</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IngestPipeline/2.pipeLineExample.html"><strong aria-hidden="true">4.21.2.</strong> pipeLineExample</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IngestPipeline/3.EnrichYourData.html"><strong aria-hidden="true">4.21.3.</strong> EnrichYourData</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IngestPipeline/4.ExampleEnrichYourDataBasedOnGeolocation.html"><strong aria-hidden="true">4.21.4.</strong> ExampleEnrichYourDataBasedOnGeolocation</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IngestPipeline/5.IngestProcessorReference.html"><strong aria-hidden="true">4.21.5.</strong> IngestProcessorReference</a></li></ol></li><li class="chapter-item expanded "><a href="../elasticSearch/queryDSL/index.html"><strong aria-hidden="true">4.22.</strong> queryDSL</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/queryDSL/1.QueryAndFilterContext.html"><strong aria-hidden="true">4.22.1.</strong> QueryAndFilterContext</a></li><li class="chapter-item expanded "><a href="../elasticSearch/queryDSL/2.CompoundQueries.html"><strong aria-hidden="true">4.22.2.</strong> CompoundQueries</a></li><li class="chapter-item expanded "><a href="../elasticSearch/queryDSL/SearchAfter.html"><strong aria-hidden="true">4.22.3.</strong> SearchAfter</a></li><li class="chapter-item expanded "><a href="../elasticSearch/queryDSL/FullTextQueries/index.html"><strong aria-hidden="true">4.22.4.</strong> FullTextQueries</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/queryDSL/FullTextQueries/1.IntervalsQuery.html"><strong aria-hidden="true">4.22.4.1.</strong> IntervalsQuery</a></li><li class="chapter-item expanded "><a href="../elasticSearch/queryDSL/FullTextQueries/2.MatchQuery.html"><strong aria-hidden="true">4.22.4.2.</strong> MatchQuery</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/index.html"><strong aria-hidden="true">4.23.</strong> snapshotAndRestore</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/CleanUpSnapshotRepo.html"><strong aria-hidden="true">4.23.1.</strong> CleanUpSnapshotRepo</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/CloneSnapshot.html"><strong aria-hidden="true">4.23.2.</strong> CloneSnapshot</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/CreateOrUpdateSnapshotAPI.html"><strong aria-hidden="true">4.23.3.</strong> CreateOrUpdateSnapshotAPI</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/CreateSnapshot.html"><strong aria-hidden="true">4.23.4.</strong> CreateSnapshot</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/DeleteSnapShot.html"><strong aria-hidden="true">4.23.5.</strong> DeleteSnapShot</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/DeleteSnapshotRepository.html"><strong aria-hidden="true">4.23.6.</strong> DeleteSnapshotRepository</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/GetSnapshotAPI.html"><strong aria-hidden="true">4.23.7.</strong> GetSnapshotAPI</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/RegisterASnapshot.html"><strong aria-hidden="true">4.23.8.</strong> RegisterASnapshot</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/RestoreSnapshot.html"><strong aria-hidden="true">4.23.9.</strong> RestoreSnapshot</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/SLM.html"><strong aria-hidden="true">4.23.10.</strong> SLM</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/SearchableSnapshots.html"><strong aria-hidden="true">4.23.11.</strong> SearchableSnapshots</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/SearchableSnapshotsMountAPI.html"><strong aria-hidden="true">4.23.12.</strong> SearchableSnapshotsMountAPI</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/repository-s3.html"><strong aria-hidden="true">4.23.13.</strong> repository-s3</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/使用OSS备份恢复集群实战.html"><strong aria-hidden="true">4.23.14.</strong> 使用OSS备份恢复集群实战</a></li></ol></li><li class="chapter-item expanded "><a href="../elasticSearch/安装/index.html"><strong aria-hidden="true">4.24.</strong> 安装</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/安装/1.InstallingFromRpm.html"><strong aria-hidden="true">4.24.1.</strong> InstallingFromRpm</a></li><li class="chapter-item expanded "><a href="../elasticSearch/安装/2.InstallFromDeb.html"><strong aria-hidden="true">4.24.2.</strong> InstallFromDeb</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.25.</strong> 深入搜索</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/深入搜索/全文搜索.html"><strong aria-hidden="true">4.25.1.</strong> 全文搜索</a></li><li class="chapter-item expanded "><a href="../elasticSearch/深入搜索/多字段搜索.html"><strong aria-hidden="true">4.25.2.</strong> 多字段搜索</a></li><li class="chapter-item expanded "><a href="../elasticSearch/深入搜索/结构化搜索.html"><strong aria-hidden="true">4.25.3.</strong> 结构化搜索</a></li></ol></li><li class="chapter-item expanded "><a href="../elasticSearch/索引分片分配/index.html"><strong aria-hidden="true">4.26.</strong> 索引分片分配</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/索引分片分配/1.索引级别的分片分配控制.html"><strong aria-hidden="true">4.26.1.</strong> 索引级别的分片分配控制</a></li><li class="chapter-item expanded "><a href="../elasticSearch/索引分片分配/2.节点离开延迟分配.html"><strong aria-hidden="true">4.26.2.</strong> 节点离开延迟分配</a></li><li class="chapter-item expanded "><a href="../elasticSearch/索引分片分配/3.索引恢复优先级.html"><strong aria-hidden="true">4.26.3.</strong> 索引恢复优先级</a></li><li class="chapter-item expanded "><a href="../elasticSearch/索引分片分配/4.每个节点的总分片.html"><strong aria-hidden="true">4.26.4.</strong> 每个节点的总分片</a></li><li class="chapter-item expanded "><a href="../elasticSearch/索引分片分配/5.索引级别数据层分配过滤.html"><strong aria-hidden="true">4.26.5.</strong> 索引级别数据层分配过滤</a></li><li class="chapter-item expanded "><a href="../elasticSearch/索引分片分配/6.手动分配分片clusterRerouteAPI.html"><strong aria-hidden="true">4.26.6.</strong> 手动分配分片clusterRerouteAPI</a></li><li class="chapter-item expanded "><a href="../elasticSearch/索引分片分配/7.cluster-allocation-explain.html"><strong aria-hidden="true">4.26.7.</strong> cluster-allocation-explain</a></li></ol></li><li class="chapter-item expanded "><a href="../elasticSearch/考纲解读/index.html"><strong aria-hidden="true">4.27.</strong> 考纲解读</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/考纲解读/1.ClusterManagement.html"><strong aria-hidden="true">4.27.1.</strong> ClusterManagement</a></li><li class="chapter-item expanded "><a href="../elasticSearch/考纲解读/2.DataManagement.html"><strong aria-hidden="true">4.27.2.</strong> DataManagement</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.28.</strong> 聚合</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/聚合/RareTermsAggregation.html"><strong aria-hidden="true">4.28.1.</strong> RareTermsAggregation</a></li><li class="chapter-item expanded "><a href="../elasticSearch/聚合/Term.html"><strong aria-hidden="true">4.28.2.</strong> Term</a></li></ol></li><li class="chapter-item expanded "><a href="../elasticSearch/配置/index.html"><strong aria-hidden="true">4.29.</strong> 配置</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/配置/1.重要配置.html"><strong aria-hidden="true">4.29.1.</strong> 重要配置</a></li><li class="chapter-item expanded "><a href="../elasticSearch/配置/2.elasticsearch.yml核心配置.html"><strong aria-hidden="true">4.29.2.</strong> elasticsearch.yml核心配置</a></li><li class="chapter-item expanded "><a href="../elasticSearch/配置/3.es系统参数修改.html"><strong aria-hidden="true">4.29.3.</strong> es系统参数修改</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.30.</strong> 集群</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/集群/Health.html"><strong aria-hidden="true">4.30.1.</strong> Health</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.31.</strong> 高可用专题</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/高可用专题/弹性设计.html"><strong aria-hidden="true">4.31.1.</strong> 弹性设计</a></li><li class="chapter-item expanded "><a href="../elasticSearch/高可用专题/跨集群复制.html"><strong aria-hidden="true">4.31.2.</strong> 跨集群复制</a></li><li class="chapter-item expanded "><a href="../elasticSearch/高可用专题/集群备份.html"><strong aria-hidden="true">4.31.3.</strong> 集群备份</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="优化策略"><a class="header" href="#优化策略">优化策略</a></h1>
+<ul>
+<li>出现了 Using temporary；</li>
+<li>rows 过多，或者几乎是全表的记录数；</li>
+<li>filtered 太低</li>
+<li>key 是 (NULL)；</li>
+<li>possible_keys 出现过多（待选）索引。</li>
+</ul>
+<h1 id="explain"><a class="header" href="#explain">explain</a></h1>
+<h2 id="id"><a class="header" href="#id"><strong>ID</strong></a></h2>
+<blockquote>
+<p>表示表的读取顺序</p>
+</blockquote>
+<ul>
+<li>
+<p>id 相同的情况下:执行顺序由上至下</p>
+</li>
+<li>
+<p>id 不同的情况下: id 越大,越先被执行( 例如最里面的越先被执行)</p>
+</li>
+</ul>
+<h2 id="select_type"><a class="header" href="#select_type">select_type</a></h2>
+<blockquote>
+<p>数据是以何种方式读取的</p>
+</blockquote>
+<p><strong>simple</strong></p>
+<p>简单的子查询,不包含子查询或者<em>union</em></p>
+<p><strong>primary</strong></p>
+<p>查询中若包含多层子查询,最外层的查询为<em>primary</em>查询</p>
+<p><strong>subquery</strong></p>
+<p>子查询</p>
+<p><strong>derived</strong></p>
+<ul>
+<li>子查询衍生的虚表的表名格式为 derived${id},</li>
+<li>其中 id 为 explan 表 的 id,表示由这个 id 代表的某步骤产生的临时表</li>
+<li>用于 from 子句里有子查询的情况。MySQL 会递归执行这些子查询，把结果放在临时表里</li>
+</ul>
+<p><strong>union</strong></p>
+<ul>
+<li>若第二个 select 出现在 union 之后,则被标记为 union</li>
+<li>若 union 包含在 from 子句的 子查询中,则外层的 select 将被标记为 drived</li>
+</ul>
+<p><strong>union result</strong></p>
+<ul>
+<li>从 union 表获取结果的 select</li>
+</ul>
+<h2 id="table"><a class="header" href="#table">table</a></h2>
+<blockquote>
+<p>表名</p>
+</blockquote>
+<h2 id="type"><a class="header" href="#type">type</a></h2>
+<blockquote>
+<p>实际索引使用方式,性能升序增加</p>
+</blockquote>
+<p><strong>ALL</strong></p>
+<blockquote>
+<p>全表扫描</p>
+</blockquote>
+<p><strong>index</strong> （带索引的全表扫描）</p>
+<p>这种连接类型只是另外一种形式的全表扫描，只不过它的扫描顺序是按照索引的顺序。这种扫描根据索引然后回表取数据，和 all 相比，他们都是取得了全表的数据，而且 index 要先读索引而且要回表随机取数据，<strong>因此 index 不可能会比 all 快</strong>（取同一个表数据），但为什么官方的手册将它的效率说的比 all 好，唯一可能的场景在于，按照索引扫描全表的数据是有序的。这样一来使用该索引排序 时 比 ALL 要好</p>
+<pre><code class="language-m">mysql&gt; explain select * from employee order by `no` ;
++----+-------------+----------+------+---------------+------+---------+------+------+----------------+
+| id | select_type | table    | type | possible_keys | key  | key_len | ref  | rows | Extra          |
++----+-------------+----------+------+---------------+------+---------+------+------+----------------+
+|  1 | SIMPLE      | employee | ALL  | NULL          | NULL | NULL    | NULL |    5 | Using filesort |
++----+-------------+----------+------+---------------+------+---------+------+------+----------------+
+mysql&gt; explain select * from employee order by rec_id ;
++----+-------------+----------+-------+---------------+---------+---------+------+------+-------+
+| id | select_type | table    | type  | possible_keys | key     | key_len | ref  | rows | Extra |
++----+-------------+----------+-------+---------------+---------+---------+------+------+-------+
+|  1 | SIMPLE      | employee | index | NULL          | PRIMARY | 4       | NULL |    5 | NULL  |
++----+-------------+----------+-------+---------------+---------+---------+------+------+-------+
+</code></pre>
+<p><strong>range</strong></p>
+<ul>
+<li>只检索给定范围的行,使用一个索引来选择行,索引开始于某一点,结束于某一点</li>
+<li>例如 between in,&gt; &lt; , in, or 也是索引扫描</li>
+</ul>
+<p><strong>ref</strong></p>
+<ul>
+<li>非唯一性索引扫描,返回匹配某个单独值得所有行</li>
+</ul>
+<p><strong>eq_ref</strong></p>
+<ul>
+<li>唯一性索引扫描,对于每个索引键 只有一条记录与之匹配,常见于主键或唯一扫描</li>
+</ul>
+<p><strong>const</strong></p>
+<ul>
+<li>只有一条记录匹配,通常常见于 主键和唯一性索引</li>
+</ul>
+<p><strong>system</strong></p>
+<p>表只有一行记录,等于系统表,是 const 类型的特例</p>
+<pre><code>system&gt;const&gt;eq_ref&gt;ref&gt;fulltext&gt;ref_or_null&gt;index_merge&gt;unique_subquery&gt;index_subquery&gt;rang&gt;index&gt;all
+保证达到 range级别 即可,最好能达到ref
+</code></pre>
+<h2 id="possiblekeys"><a class="header" href="#possiblekeys">possibleKeys</a></h2>
+<blockquote>
+<p>可能用到的索引,因为一张表索引只能使用一个</p>
+</blockquote>
+<h2 id="keys"><a class="header" href="#keys">keys</a></h2>
+<blockquote>
+<p>实际使用到的索引</p>
+</blockquote>
+<ul>
+<li>
+<p>覆盖索引</p>
+<p>查询的字段 刚好建立了索引,且查询顺序一致</p>
+</li>
+</ul>
+<h2 id="key_len"><a class="header" href="#key_len">key_len</a></h2>
+<ul>
+<li>表示索引中使用的字节数,可通过该计算查询中使用的索引的长度,长度越短越好</li>
+<li>根据表定义计算得出得 索引字节数</li>
+</ul>
+<h2 id="ref"><a class="header" href="#ref">ref</a></h2>
+<blockquote>
+<p>显示该次查询 使用的索引的值 是 引用得哪个地方的, 一般有两种引用</p>
+</blockquote>
+<ul>
+<li>const 引用的常量</li>
+<li>test.t1.id 引用 某个库的某个表的某个字段 作为索引值的来源</li>
+</ul>
+<h2 id="rows"><a class="header" href="#rows">rows</a></h2>
+<ul>
+<li>找到记录大致要读取的行数</li>
+</ul>
+<h2 id="extra"><a class="header" href="#extra">extra</a></h2>
+<blockquote>
+<p>表示不适合在其他列中显示,但十分重要的额外信息</p>
+</blockquote>
+<ul>
+<li>
+<p><em>using filesort</em> 没有用到索引的排序,因为联合索引 字段顺序问题</p>
+<pre><code>example
+index(col1,col2,col3)
+col1='ac' order by col2,col3
+这种情况是会用到索引
+如何建索引 , 就 如何按照索引走
+</code></pre>
+</li>
+<li>
+<p><em>using temporary</em>:使用了临时表,保存中间结果,常见于 order by,group by</p>
+<ul>
+<li>对于联合索引 请按照建立的顺序使用</li>
+</ul>
+</li>
+<li>
+<p><em>using index</em></p>
+<ul>
+<li>select 操作中使用了覆盖索引,效率不错</li>
+<li>如果同时出现了<em>usingwhere</em> 表明索引被用来 执行索引键值的查找</li>
+<li>如果没有出现 <em>using where</em> 表明索引用来读取数据而非执行查找</li>
+</ul>
+</li>
+<li>
+<p><em>using where</em></p>
+<ul>
+<li>使用<em>where</em>过滤</li>
+</ul>
+</li>
+<li>
+<p><em>using join buffer</em></p>
+<ul>
+<li>使用了连接缓存</li>
+</ul>
+</li>
+<li>
+<p><em>impossiable where</em></p>
+<ul>
+<li>不可能的 where 过滤条件</li>
+</ul>
+</li>
+<li>
+<p><em>select table optimized away</em></p>
+<ul>
+<li>在没有 groupby 子句的情况下,基于索引优化 MIN/MAX 操作</li>
+<li>或 对于 MyISAM 存储引擎 优化 count(*) 操作,不必等到执行阶段计算</li>
+</ul>
+</li>
+<li>
+<p><em>distinct</em></p>
+</li>
+</ul>
+<h1 id="using-temporaryusing-filesort"><a class="header" href="#using-temporaryusing-filesort">Using temporary/Using filesort</a></h1>
+<h2 id="using-temporary"><a class="header" href="#using-temporary"><strong>Using temporary</strong></a></h2>
+<blockquote>
+<p>表示由于排序没有走索引、使用<code>union</code>、子查询连接查询、使用某些视图等原因（详见<a href="https://dev.mysql.com/doc/refman/5.6/en/internal-temporary-tables.html">internal-temporary-tables</a>），因此创建了一个内部临时表。</p>
+<p>注意这里的临时表<strong>可能是内存上的临时表</strong>，也有可能是<strong>硬盘上的临时表</strong></p>
+</blockquote>
+<p><strong>内存临时表 or 硬盘临时表</strong></p>
+<p>查看 sql 执行时使用的是内存临时表还是硬盘临时表，需要使用如下命令：</p>
+<pre><code>mysql&gt; show global status like '%tmp%';
++-------------------------+-------+
+| Variable_name           | Value |
++-------------------------+-------+
+| Created_tmp_disk_tables | 0     |
+| Created_tmp_files       | 5     |
+| Created_tmp_tables      | 11    |
++-------------------------+-------+
+3 rows in set
+</code></pre>
+<p><a href="https://dev.mysql.com/doc/refman/5.6/en/server-status-variables.html#statvar_Created_tmp_tables">Created_tmp_tables</a> 表示 mysql 创建的内部临时表的总数（包括内存临时表和硬盘临时表）；</p>
+<p><a href="https://dev.mysql.com/doc/refman/5.6/en/server-status-variables.html#statvar_Created_tmp_disk_tables">Created_tmp_disk_tables</a> 表示 mysql 创建的硬盘临时表的总数。</p>
+<p><strong>与临时表有关的参数</strong></p>
+<p>当 mysql 需要创建临时表时，选择内存临时表还是硬盘临时表取决于参数<a href="https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_tmp_table_size">tmp_table_size</a>和<a href="https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_max_heap_table_size">max_heap_table_size</a>，</p>
+<p>当<code>临时表的容量 &gt; Min(tmp_table_size ,max_heap_table_size )</code> , mysql 就会使用硬盘临时表存放数据。</p>
+<p>用户可以在 mysql 的配置文件里修改该两个参数的值，两者的默认值均为 16M。</p>
+<pre><code>tmp_table_size = 16M
+max_heap_table_size = 16M
+12
+</code></pre>
+<p>查看<code>tmp_table_size</code>和<code>max_heap_table_size</code>值：</p>
+<pre><code class="language-sql">mysql&gt; show global variables like 'max_heap_table_size' or 'tmp_table_size';
+</code></pre>
+<h2 id="using-filesort"><a class="header" href="#using-filesort">Using filesort</a></h2>
+<blockquote>
+<p><code>Using filesort</code>仅仅表示没有使用索引的排序,<code>filesort</code>与文件无关。消除<code>Using filesort</code>的方法就是让查询 sql 的排序走索引</p>
+</blockquote>
+<p><strong>简介</strong></p>
+<p><code>filesort</code>使用的算法是<code>QuickSort</code>，即对需要排序的记录生成元数据进行<strong>分块排序</strong>，然后再使用 mergesort 方法<strong>合并块</strong>。其中<code>filesort</code>可以使用的内存空间大小为参数<a href="https://dev.mysql.com/doc/refman/5.5/en/server-system-variables.html#sysvar_sort_buffer_size">sort_buffer_size</a>的值，默认为 2M。当排序记录太多<code>sort_buffer_size</code>不够用时，mysql 会<strong>使用临时文件来存放各个分块</strong>，然后各个分块排序后再多次合并分块最终全局完成排序。</p>
+<pre><code>mysql&gt; show global variables like 'sort_buffer_size';
++------------------+--------+
+| Variable_name    | Value  |
++------------------+--------+
+| sort_buffer_size | 262144 |
++------------------+--------+
+1 row in set
+</code></pre>
+<p><a href="https://dev.mysql.com/doc/refman/5.6/en/server-status-variables.html#statvar_Sort_merge_passes">Sort_merge_passes</a>表示<code>filesort</code>执行过的文件分块合并次数的总和，如果该值比较大，建议增大<code>sort_buffer_size</code>的值。</p>
+<p><strong>使用算法</strong></p>
+<p><code>filesort</code>使用的排序方法有两种：</p>
+<p><strong>rowid 回表排序</strong></p>
+<p>第一种方法是对需要排序的记录生成<code>&lt;sort_key,rowid&gt;</code>的元数据进行排序，该元数据仅包含排序字段和 rowid。排序完成后只有按字段排序的 rowid，因此还需要通过 rowid 进行回表操作获取所需要的列的值，可能会导致大量的随机 IO 读消耗；</p>
+<p><strong>带元数据排序</strong></p>
+<p>第二种方法是是对需要排序的记录生成<code>&lt;sort_key,additional_fields&gt;</code>的元数据，该元数据包含排序字段和需要返回的所有列。排序完后不需要回表，但是元数据要比第一种方法长得多，需要更多的空间用于排序。</p>
+<p>参数<a href="https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_max_length_for_sort_data">max_length_for_sort_data</a>字段用于控制<code>filesort</code>使用的排序方法，当所有需要排序记录的字段数量总和小于<code>max_length_for_sort_data</code>时使用第二种算法，否则会用第一种算法。该值的默认值为 1024</p>
+<h1 id="小表驱动大表"><a class="header" href="#小表驱动大表">小表驱动大表</a></h1>
+<h2 id="重要知识点"><a class="header" href="#重要知识点">重要知识点</a></h2>
+<ul>
+<li><strong>EXPLAIN 结果中，第一行出现的表就是驱动表</strong></li>
+<li><strong>对驱动表可以直接排序</strong>，<strong>对非驱动表（的字段排序）需要对循环查询的合并结果（临时表）进行排序**</strong>（Important!）**</li>
+<li><strong>永远用小结果集驱动大结果集(mysql 中)</strong></li>
+</ul>
+<h2 id="nested-loop-join"><a class="header" href="#nested-loop-join">Nested Loop Join</a></h2>
+<p>以驱动表的结果集作为循环的基础数据，然后将结果集中的数据作为过滤条件一条条地到下一个表中查询数据，最后合并结果；此时还有第三个表，则将前两个表的 Join 结果集作为循环基础数据，再一次通过循环查询条件到第三个表中查询数据，如此反复。</p>
+<h2 id="驱动表的定义"><a class="header" href="#驱动表的定义">驱动表的定义</a></h2>
+<p>进行多表连接查询时， <strong>[驱动表]</strong> 的定义为：
+1）指定了联接条件时，<strong>满足查询条件的记录行数少</strong>的表为[驱动表]；</p>
+<p>2）未指定联接条件时，<strong>行数少</strong>的表为[驱动表]</p>
+<ol start="3">
+<li>left join 一定程度上会 将 左表设置为 [驱动表] (除非 右表的查询足够小)</li>
+</ol>
+<h1 id="keylen-的计算"><a class="header" href="#keylen-的计算">KeyLen 的计算</a></h1>
+<p>key_len 表示索引使用的字节数，根据这个值可以判断索引的使用情况,<strong>特别是在组合索引的时候</strong>,判断该索引有多少部分被使用到
+在计算 key_len 时，下面是一些需要考虑的点:</p>
+<ul>
+<li>**索引字段的附加信息:**可以分为变长和定长数据类型讨论
+<ul>
+<li>当索引字段为定长数据类型时,如 char，int，datetime,需要有是否为空的标记,这个标记占用 1 个字节(对于 not null 的字段来说,则不需要这 1 字节);</li>
+<li>对于变长数据类型,比如 varchar,除了是否为空的标记外,还需要有长度信息,需要占用两个字节。</li>
+</ul>
+</li>
+<li>对于,char、varchar、blob、text 等字符集来说，key len 的长度还和字符集有关
+<ul>
+<li>latin1 一个字符占用 1 个字节</li>
+<li>gbk 一个字符占用 2 个字节</li>
+<li>utf8 一个字符占用 3 个字节。</li>
+</ul>
+</li>
+</ul>
+<p>综上，下面来看一些例子:</p>
+<table><thead><tr><th>列类型</th><th>KEY_LEN</th><th>备注</th></tr></thead><tbody>
+<tr><td>id int</td><td>key_len = 4+1</td><td>int 为 4bytes,允许为 NULL,加 1byte</td></tr>
+<tr><td>id bigint not null</td><td>key_len=8</td><td>bigint 为 8bytes</td></tr>
+<tr><td>user char(30) utf8</td><td>key_len=30*3+1</td><td>utf8 每个字符为 3bytes,允许为 NULL,加 1byte</td></tr>
+<tr><td>user varchar(30) not null utf8</td><td>key_len=30*3+2</td><td>utf8 每个字符为 3bytes,变长数据类型,加 2bytes</td></tr>
+<tr><td>user varchar(30) utf8</td><td>key_len=30*3+2+1</td><td>utf8 每个字符为 3bytes,允许为 NULL,加 1byte,变长数据类型,加 2bytes</td></tr>
+<tr><td>detail text(10) utf8</td><td>key_len=30*3+2+1</td><td>TEXT 截取部分,被视为动态列类型。</td></tr>
+</tbody></table>
+<p>key_len 只指示了<strong>where 中用于条件过滤时被选中的索引列</strong>，是不包含 order by/group by 这一部分被选中的索引列的
+例如,有个联合索引 idx(c1,c2,c3),3 列均是 int not null,那么下面的 SQL 执行计划中</p>
+<pre><code class="language-sql">//key_len的值是8而不是12:
+select ... from tb where c1=? and c2=? order by c1;
+</code></pre>
+<h1 id="indexmerge"><a class="header" href="#indexmerge">indexMerge</a></h1>
+<blockquote>
+<p><strong>对多个索引分别进行条件扫描，然后将它们各自的结果进行合并(intersect/union)</strong> 同一个表的多个索引的范围扫描可以对结果进行合并</p>
+</blockquote>
+<h2 id="示例"><a class="header" href="#示例"><strong>示例</strong></a></h2>
+<pre><code class="language-sql">SELECT * FROM tbl_name WHERE key1 = 10 OR key2 = 20;
+SELECT * FROM tbl_name WHERE (key1 = 10 OR key2 = 20) AND non_key=30;
+SELECT * FROM t1, t2 WHERE (t1.key1 IN (1,2) OR t1.key2 LIKE 'value%') AND t2.key1=t1.some_col;
+SELECT * FROM t1, t2 WHERE t1.key1=1 AND (t2.key1=t1.some_col OR t2.key2=t1.some_col2);
+</code></pre>
+<pre><code>1,SIMPLE,a,,index_merge,&quot;index_shift_results_worker_id,index_shift_results_org_code&quot;,&quot;index_shift_results_worker_id,index_shift_results_org_code&quot;,&quot;51,81&quot;,,61,100,&quot;Using union(index_shift_results_worker_id,index_shift_results_org_code); Using where
+</code></pre>
+<h2 id="using-intersectindex_1index_2"><a class="header" href="#using-intersectindex_1index_2">Using intersect(index_1,index_2...)</a></h2>
+<pre><code>//取交集
+SELECT * FROM tbl_name WHERE key1 = 10 and key2 = 20;
+</code></pre>
+<h2 id="using-unionindex_1index_2"><a class="header" href="#using-unionindex_1index_2"><strong>Using union(index_1,index_2)</strong></a></h2>
+<pre><code>//取并集
+SELECT * FROM tbl_name WHERE key1 = 10 or key2 = 20;
+</code></pre>
+<p>以及它们的组合(先内部 intersect 然后在外面 union)。</p>
+<h2 id="using-sort_unionindex_1index_2"><a class="header" href="#using-sort_unionindex_1index_2">Using sort_union(index_1,index_2)</a></h2>
+<pre><code class="language-sql">select id,worker_id,org_code from shift_results a where worker_id between '10197' and '102000' or org_code between  '100101100' and '100201100'
+</code></pre>
+<p>两个结果集进行并集 运算 需要排序去重</p>
+<h1 id="ref_or_null"><a class="header" href="#ref_or_null">ref_or_null</a></h1>
+<p>https://dev.mysql.com/doc/refman/8.0/en/is-null-optimization.html</p>
+<pre><code class="language-sql">select id,worker_id,org_code from shift_results a where
+worker_id = '10197' or worker_id is null
+</code></pre>
+<h1 id="mysql-子查询"><a class="header" href="#mysql-子查询">mysql 子查询</a></h1>
+<h2 id="子查询定义"><a class="header" href="#子查询定义">子查询定义</a></h2>
+<p><strong>SUBQUERY</strong></p>
+<p>子查询中的第一个 SELECT</p>
+<p><strong>DEPENDENT SUBQUERY</strong></p>
+<p>子查询中的第一个 SELECT，<strong>取决于外面的查询</strong> 。</p>
+<pre><code>换句话说，就是 子查询对 g2 的查询方式依赖于外层 g1 的查询。
+
+
+第一步，MySQL 根据 select gid,count(id) from shop_goods where status=0 group by gid; 得到一个大结果集 t1，其数据量就是上图中的 rows=850672 了。
+
+第二步，上面的大结果集 t1 中的每一条记录，都将与子查询 SQL 组成新的查询语句：select gid from shop_goods where sid in (15...blabla..29) and gid=%t1.gid%。等于说，子查询要执行85万次……即使这两步查询都用到了索引，但不慢才怪。
+
+如此一来，子查询的执行效率居然受制于外层查询的记录数，那还不如拆成两个独立查询顺序执行呢。
+</code></pre>
+<p>**优化策略 **</p>
+<p>子查询转临时表 做 join<strong>关联</strong></p>
+<h1 id="where条件分析"><a class="header" href="#where条件分析">where条件分析</a></h1>
+<p>所有SQL的where条件，均可归纳为3大类</p>
+<p><em>Index Key (First Key &amp; Last Key)</em></p>
+<p><em>Index Filter</em></p>
+<p><em>Table Filter</em></p>
+<p>对 where 中过滤条件的处理 ,根据索引使用情况分成了三种：index key, index filter, table filter</p>
+<p><strong>index key</strong></p>
+<p>用于确定SQL查询在索引中的连续范围(起始范围+结束范围)的查询条件，被称之为Index Key。由于一个范围，至少包含一个起始与一个终止，因此Index Key也被拆分为Index First Key和Index Last Key，分别用于定位索引查找的起始，以及索引查询的终止条件。也就是说根据索引来确定扫描的范围。</p>
+<p><strong>index filter</strong></p>
+<p>在使用 index key 确定了起始范围和介绍范围之后，在此范围之内，还有一些记录不符合where 条件，如果这些条件可以使用索引进行过滤，那么就是 index filter。也就是说用索引来进行where条件过滤。</p>
+<p><strong>table filter</strong></p>
+<p>where 中的条件不能使用索引进行处理的，只能访问table，进行条件过滤了。</p>
+<h3 id="什么是icp"><a class="header" href="#什么是icp">什么是ICP？</a></h3>
+<p>即所索引条件下推（index condition pushdown）</p>
+<p>它能减少在使用 二级索引 过滤where条件时的回表次数 和 减少MySQL server层和引擎层的交互次数。在索引组织表中，使用二级索引进行回表的代价相比堆表中是要高一些的。</p>
+<p>也就是说各种各样的 where 条件，在进行处理时，分成了上面三种情况，一种条件会使用索引确定扫描的范围；一种条件可以在索引中进行过滤；一种必须回表进行过滤；</p>
+<p>在 MySQL5.6 之前，并不区分Index Filter与Table Filter，统统将Index First Key与Index Last Key范围内的索引记录，回表读取完整记录，然后返回给MySQL Server层进行过滤。</p>
+<p>而在MySQL 5.6之后，Index Filter与Table Filter分离，Index Filter下降到InnoDB的索引层面进行过滤，减少了回表与返回MySQL Server层的记录交互开销，提高了SQL的执行效率。</p>
+<p>所以所谓的 ICP 技术，其实就是 index filter 技术而已。只不过因为MySQL的架构原因，分成了server层和引擎层，才有所谓的“下推”的说法。所以ICP其实就是实现了index filter技术，将原来的在server层进行的table filter中可以进行index filter的部分，在引擎层面使用index filter进行处理，不再需要回表进行table filter。</p>
+<p>using index</p>
+<p>using index;using where</p>
+<p>using where</p>
+<p>using index condition</p>
+<h2 id="示例-1"><a class="header" href="#示例-1">示例</a></h2>
+<pre><code class="language-sql">// 索引`INDEX(zipcode, lastname, firstname)`
+
+SELECT * FROM people
+WHERE zipcode='95054'
+AND lastname LIKE '%etrunia%'
+AND address LIKE '%Main Street%';
+</code></pre>
+<p>MySQL可以使用索引去定位那些<code>zipcode='95054'</code>的信息，但是第二个条件<code>lastname LIKE '%etrunia%'</code>却没法用于减少必须要扫描的表行，所以如果没有ICP优化，在执行此查询时必须读取所有<code>zipcode='95054'</code>的表行数据。</p>
+<p>如果启用了ICP优化，因为MySQL使用了索引<code>INDEX(zipcode, lastname, firstname)</code>，并且WHERE语句中的第二部分<code>lastname LIKE '%etrunia%'</code>仅仅使用了索引中的列<code>lastname</code>，所以在读取完整表行数据前可以基于此过滤那些索引中<code>lastname</code>不符合条件的索引数据，这样就能避免对那些满足<code>zipcode='95054'</code>但是不满足条件<code>lastname LIKE '%etrunia%'</code>表行数据的访问。</p>
+<p>ICP可以通过系统变量<code>optimizer_switch</code>中的<code>index_condition_pushdown</code>进行启用和关闭：</p>
+<pre><code class="language-sql">SET optimizer_switch = 'index_condition_pushdown=off';
+SET optimizer_switch = 'index_condition_pushdown=on';
+</code></pre>
+<h1 id="物化表"><a class="header" href="#物化表">物化表</a></h1>
+<blockquote>
+<p>MySQL 引入了<code>Materialization</code>（物化）这一关键特性用于子查询（比如在 IN/NOT IN 子查询以及 FROM 子查询）优化。</p>
+</blockquote>
+<p><strong>具体方式是</strong></p>
+<ul>
+<li>
+<p>在 SQL 执行过程中，第一次需要子查询结果时执行子查询并将子查询的结果保存为临时表 ，后续对子查询结果集的访问将直接通过临时表获得。</p>
+</li>
+<li>
+<p>与此同时，优化器还具有延迟物化子查询的能力，先通过其它条件判断子查询是否真的需要执行。</p>
+</li>
+<li>
+<p>物化子查询优化 SQL 执行的关键点在于对子查询只需要执行一次。 与之相对的执行方式是对外表的每一行都对子查询进行调用，其执行计划中的查询类型为“DEPENDENT SUBQUERY”。</p>
+</li>
+</ul>
+<h1 id="查询优化开关"><a class="header" href="#查询优化开关">查询优化开关</a></h1>
+<pre><code>show variables  like 'optimizer_switch'
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../mysql/mysql学习.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../mysql/空值处理函数.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../mysql/mysql学习.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../mysql/空值处理函数.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

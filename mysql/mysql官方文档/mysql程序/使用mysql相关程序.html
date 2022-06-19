@@ -1,0 +1,439 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>使用mysql相关程序</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../../favicon.svg">
+        <link rel="shortcut icon" href="../../../favicon.png">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../../index.html">数据存储</a></li><li class="chapter-item expanded affix "><li class="part-title"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> oracle</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../oracle/Oracle小知识点.html"><strong aria-hidden="true">1.1.</strong> Oracle小知识点</a></li><li class="chapter-item expanded "><a href="../../../oracle/oracledocker快速搭建.html"><strong aria-hidden="true">1.2.</strong> oracledocker快速搭建</a></li><li class="chapter-item expanded "><a href="../../../oracle/oracle多表更新方法.html"><strong aria-hidden="true">1.3.</strong> oracle多表更新方法</a></li></ol></li><li class="chapter-item expanded "><a href="../../../MongoDB/index.html"><strong aria-hidden="true">2.</strong> MongoDB</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../MongoDB/mongodb基本操作.html"><strong aria-hidden="true">2.1.</strong> mongodb基本操作</a></li><li class="chapter-item expanded "><a href="../../../MongoDB/mongodb高级语法.html"><strong aria-hidden="true">2.2.</strong> mongodb高级语法</a></li><li class="chapter-item expanded "><a href="../../../MongoDB/权限管理.html"><strong aria-hidden="true">2.3.</strong> 权限管理</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> mysql</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../mysql/mysqlfunction.html"><strong aria-hidden="true">3.1.</strong> mysqlfunction</a></li><li class="chapter-item expanded "><a href="../../../mysql/mysqlpdump.html"><strong aria-hidden="true">3.2.</strong> mysqlpdump</a></li><li class="chapter-item expanded "><a href="../../../mysql/mysqlzip安装.html"><strong aria-hidden="true">3.3.</strong> mysqlzip安装</a></li><li class="chapter-item expanded "><a href="../../../mysql/mysql公用表达式.html"><strong aria-hidden="true">3.4.</strong> mysql公用表达式</a></li><li class="chapter-item expanded "><a href="../../../mysql/mysql学习.html"><strong aria-hidden="true">3.5.</strong> mysql学习</a></li><li class="chapter-item expanded "><a href="../../../mysql/mysql执行计划.html"><strong aria-hidden="true">3.6.</strong> mysql执行计划</a></li><li class="chapter-item expanded "><a href="../../../mysql/空值处理函数.html"><strong aria-hidden="true">3.7.</strong> 空值处理函数</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.8.</strong> mysql官方文档</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../mysql/mysql官方文档/mysql程序.html"><strong aria-hidden="true">3.8.1.</strong> mysql程序</a></li><li class="chapter-item expanded "><a href="../../../mysql/mysql官方文档/客户端.html"><strong aria-hidden="true">3.8.2.</strong> 客户端</a></li><li class="chapter-item expanded "><a href="../../../mysql/mysql官方文档/mysql程序/index.html"><strong aria-hidden="true">3.8.3.</strong> mysql程序</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../mysql/mysql官方文档/mysql程序/使用mysql相关程序.html" class="active"><strong aria-hidden="true">3.8.3.1.</strong> 使用mysql相关程序</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../../mysql/mysql日志/index.html"><strong aria-hidden="true">3.9.</strong> mysql日志</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../mysql/mysql日志/mysql日志及分类.html"><strong aria-hidden="true">3.9.1.</strong> mysql日志及分类</a></li><li class="chapter-item expanded "><a href="../../../mysql/mysql日志/二进制日志.html"><strong aria-hidden="true">3.9.2.</strong> 二进制日志</a></li><li class="chapter-item expanded "><a href="../../../mysql/mysql日志/慢sql日志.html"><strong aria-hidden="true">3.9.3.</strong> 慢sql日志</a></li><li class="chapter-item expanded "><a href="../../../mysql/mysql日志/通用日志.html"><strong aria-hidden="true">3.9.4.</strong> 通用日志</a></li><li class="chapter-item expanded "><a href="../../../mysql/mysql日志/错误日志.html"><strong aria-hidden="true">3.9.5.</strong> 错误日志</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../../elasticSearch/index.html"><strong aria-hidden="true">4.</strong> elasticSearch</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/BackUpACluster.html"><strong aria-hidden="true">4.1.</strong> BackUpACluster</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/KQL.html"><strong aria-hidden="true">4.2.</strong> KQL</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/dataStream.html"><strong aria-hidden="true">4.3.</strong> dataStream</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/es堆内存如何分配.html"><strong aria-hidden="true">4.4.</strong> es堆内存如何分配</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/scroll查询.html"><strong aria-hidden="true">4.5.</strong> scroll查询</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/乐观并发控制.html"><strong aria-hidden="true">4.6.</strong> 乐观并发控制</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/分布式检索.html"><strong aria-hidden="true">4.7.</strong> 分布式检索</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/分片内部原理.html"><strong aria-hidden="true">4.8.</strong> 分片内部原理</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/分词.html"><strong aria-hidden="true">4.9.</strong> 分词</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/前缀搜索与模糊搜索.html"><strong aria-hidden="true">4.10.</strong> 前缀搜索与模糊搜索</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/数据分片.html"><strong aria-hidden="true">4.11.</strong> 数据分片</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/映射.html"><strong aria-hidden="true">4.12.</strong> 映射</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/杂项学习.html"><strong aria-hidden="true">4.13.</strong> 杂项学习</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/索引和分片.html"><strong aria-hidden="true">4.14.</strong> 索引和分片</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/索引管理.html"><strong aria-hidden="true">4.15.</strong> 索引管理</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/评分标准与相关性.html"><strong aria-hidden="true">4.16.</strong> 评分标准与相关性</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/集群内原理.html"><strong aria-hidden="true">4.17.</strong> 集群内原理</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/Datamanagement/index.html"><strong aria-hidden="true">4.18.</strong> Datamanagement</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/Datamanagement/DataTier.html"><strong aria-hidden="true">4.18.1.</strong> DataTier</a></li></ol></li><li class="chapter-item expanded "><a href="../../../elasticSearch/ILM/index.html"><strong aria-hidden="true">4.19.</strong> ILM</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/ILM/1.AutomateRolloverWithILM.html"><strong aria-hidden="true">4.19.1.</strong> AutomateRolloverWithILM</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/ILM/FrozenIndices.html"><strong aria-hidden="true">4.19.2.</strong> FrozenIndices</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/ILM/ILM.html"><strong aria-hidden="true">4.19.3.</strong> ILM</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/ILM/RolloverAPI.html"><strong aria-hidden="true">4.19.4.</strong> RolloverAPI</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/ILM/ShrinkIndexAPI.html"><strong aria-hidden="true">4.19.5.</strong> ShrinkIndexAPI</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/ILM/ILMConcepts/index.html"><strong aria-hidden="true">4.19.6.</strong> ILMConcepts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/ILM/ILMConcepts/1.Rollover.html"><strong aria-hidden="true">4.19.6.1.</strong> Rollover</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/ILM/ILMConcepts/2.LifeCycleUpdates.html"><strong aria-hidden="true">4.19.6.2.</strong> LifeCycleUpdates</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/index.html"><strong aria-hidden="true">4.20.</strong> IndexModules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/1.Analysis.html"><strong aria-hidden="true">4.20.1.</strong> Analysis</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/2.IndexShardAllocation.html"><strong aria-hidden="true">4.20.2.</strong> IndexShardAllocation</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/3.Indexblocks.html"><strong aria-hidden="true">4.20.3.</strong> Indexblocks</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/4.Mapper.html"><strong aria-hidden="true">4.20.4.</strong> Mapper</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/5.Merge.html"><strong aria-hidden="true">4.20.5.</strong> Merge</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/6.SimilarityModule.html"><strong aria-hidden="true">4.20.6.</strong> SimilarityModule</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/7.Slowlog.html"><strong aria-hidden="true">4.20.7.</strong> Slowlog</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/8.Store.html"><strong aria-hidden="true">4.20.8.</strong> Store</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/9.Translog.html"><strong aria-hidden="true">4.20.9.</strong> Translog</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/10.HistoryRetention.html"><strong aria-hidden="true">4.20.10.</strong> HistoryRetention</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/11.IndexSorting.html"><strong aria-hidden="true">4.20.11.</strong> IndexSorting</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/12.IndexPressure.html"><strong aria-hidden="true">4.20.12.</strong> IndexPressure</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.21.</strong> IngestPipeline</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/IngestPipeline/1.IngestPipelines.html"><strong aria-hidden="true">4.21.1.</strong> IngestPipelines</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IngestPipeline/2.pipeLineExample.html"><strong aria-hidden="true">4.21.2.</strong> pipeLineExample</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IngestPipeline/3.EnrichYourData.html"><strong aria-hidden="true">4.21.3.</strong> EnrichYourData</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IngestPipeline/4.ExampleEnrichYourDataBasedOnGeolocation.html"><strong aria-hidden="true">4.21.4.</strong> ExampleEnrichYourDataBasedOnGeolocation</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IngestPipeline/5.IngestProcessorReference.html"><strong aria-hidden="true">4.21.5.</strong> IngestProcessorReference</a></li></ol></li><li class="chapter-item expanded "><a href="../../../elasticSearch/queryDSL/index.html"><strong aria-hidden="true">4.22.</strong> queryDSL</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/queryDSL/1.QueryAndFilterContext.html"><strong aria-hidden="true">4.22.1.</strong> QueryAndFilterContext</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/queryDSL/2.CompoundQueries.html"><strong aria-hidden="true">4.22.2.</strong> CompoundQueries</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/queryDSL/SearchAfter.html"><strong aria-hidden="true">4.22.3.</strong> SearchAfter</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/queryDSL/FullTextQueries/index.html"><strong aria-hidden="true">4.22.4.</strong> FullTextQueries</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/queryDSL/FullTextQueries/1.IntervalsQuery.html"><strong aria-hidden="true">4.22.4.1.</strong> IntervalsQuery</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/queryDSL/FullTextQueries/2.MatchQuery.html"><strong aria-hidden="true">4.22.4.2.</strong> MatchQuery</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/index.html"><strong aria-hidden="true">4.23.</strong> snapshotAndRestore</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/CleanUpSnapshotRepo.html"><strong aria-hidden="true">4.23.1.</strong> CleanUpSnapshotRepo</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/CloneSnapshot.html"><strong aria-hidden="true">4.23.2.</strong> CloneSnapshot</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/CreateOrUpdateSnapshotAPI.html"><strong aria-hidden="true">4.23.3.</strong> CreateOrUpdateSnapshotAPI</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/CreateSnapshot.html"><strong aria-hidden="true">4.23.4.</strong> CreateSnapshot</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/DeleteSnapShot.html"><strong aria-hidden="true">4.23.5.</strong> DeleteSnapShot</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/DeleteSnapshotRepository.html"><strong aria-hidden="true">4.23.6.</strong> DeleteSnapshotRepository</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/GetSnapshotAPI.html"><strong aria-hidden="true">4.23.7.</strong> GetSnapshotAPI</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/RegisterASnapshot.html"><strong aria-hidden="true">4.23.8.</strong> RegisterASnapshot</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/RestoreSnapshot.html"><strong aria-hidden="true">4.23.9.</strong> RestoreSnapshot</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/SLM.html"><strong aria-hidden="true">4.23.10.</strong> SLM</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/SearchableSnapshots.html"><strong aria-hidden="true">4.23.11.</strong> SearchableSnapshots</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/SearchableSnapshotsMountAPI.html"><strong aria-hidden="true">4.23.12.</strong> SearchableSnapshotsMountAPI</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/repository-s3.html"><strong aria-hidden="true">4.23.13.</strong> repository-s3</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/使用OSS备份恢复集群实战.html"><strong aria-hidden="true">4.23.14.</strong> 使用OSS备份恢复集群实战</a></li></ol></li><li class="chapter-item expanded "><a href="../../../elasticSearch/安装/index.html"><strong aria-hidden="true">4.24.</strong> 安装</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/安装/1.InstallingFromRpm.html"><strong aria-hidden="true">4.24.1.</strong> InstallingFromRpm</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/安装/2.InstallFromDeb.html"><strong aria-hidden="true">4.24.2.</strong> InstallFromDeb</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.25.</strong> 深入搜索</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/深入搜索/全文搜索.html"><strong aria-hidden="true">4.25.1.</strong> 全文搜索</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/深入搜索/多字段搜索.html"><strong aria-hidden="true">4.25.2.</strong> 多字段搜索</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/深入搜索/结构化搜索.html"><strong aria-hidden="true">4.25.3.</strong> 结构化搜索</a></li></ol></li><li class="chapter-item expanded "><a href="../../../elasticSearch/索引分片分配/index.html"><strong aria-hidden="true">4.26.</strong> 索引分片分配</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/索引分片分配/1.索引级别的分片分配控制.html"><strong aria-hidden="true">4.26.1.</strong> 索引级别的分片分配控制</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/索引分片分配/2.节点离开延迟分配.html"><strong aria-hidden="true">4.26.2.</strong> 节点离开延迟分配</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/索引分片分配/3.索引恢复优先级.html"><strong aria-hidden="true">4.26.3.</strong> 索引恢复优先级</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/索引分片分配/4.每个节点的总分片.html"><strong aria-hidden="true">4.26.4.</strong> 每个节点的总分片</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/索引分片分配/5.索引级别数据层分配过滤.html"><strong aria-hidden="true">4.26.5.</strong> 索引级别数据层分配过滤</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/索引分片分配/6.手动分配分片clusterRerouteAPI.html"><strong aria-hidden="true">4.26.6.</strong> 手动分配分片clusterRerouteAPI</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/索引分片分配/7.cluster-allocation-explain.html"><strong aria-hidden="true">4.26.7.</strong> cluster-allocation-explain</a></li></ol></li><li class="chapter-item expanded "><a href="../../../elasticSearch/考纲解读/index.html"><strong aria-hidden="true">4.27.</strong> 考纲解读</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/考纲解读/1.ClusterManagement.html"><strong aria-hidden="true">4.27.1.</strong> ClusterManagement</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/考纲解读/2.DataManagement.html"><strong aria-hidden="true">4.27.2.</strong> DataManagement</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.28.</strong> 聚合</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/聚合/RareTermsAggregation.html"><strong aria-hidden="true">4.28.1.</strong> RareTermsAggregation</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/聚合/Term.html"><strong aria-hidden="true">4.28.2.</strong> Term</a></li></ol></li><li class="chapter-item expanded "><a href="../../../elasticSearch/配置/index.html"><strong aria-hidden="true">4.29.</strong> 配置</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/配置/1.重要配置.html"><strong aria-hidden="true">4.29.1.</strong> 重要配置</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/配置/2.elasticsearch.yml核心配置.html"><strong aria-hidden="true">4.29.2.</strong> elasticsearch.yml核心配置</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/配置/3.es系统参数修改.html"><strong aria-hidden="true">4.29.3.</strong> es系统参数修改</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.30.</strong> 集群</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/集群/Health.html"><strong aria-hidden="true">4.30.1.</strong> Health</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.31.</strong> 高可用专题</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/高可用专题/弹性设计.html"><strong aria-hidden="true">4.31.1.</strong> 弹性设计</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/高可用专题/跨集群复制.html"><strong aria-hidden="true">4.31.2.</strong> 跨集群复制</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/高可用专题/集群备份.html"><strong aria-hidden="true">4.31.3.</strong> 集群备份</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="选项参数与非选项参数"><a class="header" href="#选项参数与非选项参数">选项参数与非选项参数</a></h2>
+<p><strong>选项参数</strong>以 <code>- 或者 --</code>   开始的命令选项</p>
+<p><strong>非选项参数</strong> 提供额外信息给命令行程序</p>
+<p>例如 mysql命令 的第一个非选项 参数 为数据库名</p>
+<p>使用最多的选项 <strong>连接参数</strong></p>
+<p><code>--host -h</code></p>
+<p><code>--user -u</code></p>
+<p><code>--password -p</code></p>
+<p><code>--port -P</code></p>
+<p><code>--socket -S</code> 指定 UnixSocketFile 或者windows上的具名管道</p>
+<h2 id="指定选项参数的-几种方式"><a class="header" href="#指定选项参数的-几种方式">指定选项参数的 几种方式</a></h2>
+<h3 id="命令名称后面-跟随"><a class="header" href="#命令名称后面-跟随">命令名称后面 跟随</a></h3>
+<ul>
+<li><strong>后面的覆盖前面的</strong></li>
+</ul>
+<pre><code>mysql --column-names --skip-column-names
+</code></pre>
+<ul>
+<li>
+<p><code>--</code> 为选项全拼 <code>-</code> 为选项缩写</p>
+</li>
+<li>
+<p>缩写没有 等于号,选项名 与选项值 直接可以有 空格</p>
+<pre><code>-h localhost or --host=localhost
+</code></pre>
+</li>
+<li>
+<p>大小写敏感</p>
+</li>
+<li>
+<p><code>- _</code> 一致</p>
+<pre><code>--skip-grant-tables and --skip_grant_tables是一样的
+</code></pre>
+</li>
+<li>
+<p>数值类型可以 有 <code>K M G</code></p>
+</li>
+</ul>
+<pre><code>mysqladmin --count=1K --sleep=10 ping
+ping服务器 1024次 每次等10s
+</code></pre>
+<ul>
+<li>带有空格的 选项值 带引号</li>
+</ul>
+<pre><code>shell&gt; mysql -u root -p -e &quot;SELECT VERSION();SELECT NOW()&quot;
+Enter password: ******
++------------+
+| VERSION()  |
++------------+
+| 5.7.29     |
++------------+
++---------------------+
+| NOW()               |
++---------------------+
+| 2019-09-03 10:36:28 |
++---------------------+
+shell&gt;
+</code></pre>
+<h3 id="选项文件"><a class="header" href="#选项文件">选项文件</a></h3>
+<p>忽略空行</p>
+<p>头尾空格自动去除</p>
+<p>非空行有以下几种形式</p>
+<ul>
+<li>
+<p>注释 #<em><code>comment</code></em><code>, </code>;<em><code>comment</code></em></p>
+<p>Comment lines start with <code>#</code> or <code>;</code>. A <code>#</code> comment can start in the middle of a line as well.</p>
+</li>
+<li>
+<p>[<em><code>group</code></em>]</p>
+<p>组号,或程序的 名称, 后面跟着的是 应用与该程序的 选项</p>
+<ul>
+<li>
+<p>the <code>[mysqld]</code> and <code>[mysql]</code> groups apply to the <a href="https://dev.mysql.com/doc/refman/5.7/en/mysqld.html"><strong>mysqld</strong></a> server and the <a href="https://dev.mysql.com/doc/refman/5.7/en/mysql.html"><strong>mysql</strong></a> client program, respectively.</p>
+</li>
+<li>
+<p>The <code>[client]</code> option group is read by all client programs provided in MySQL distributions (but <em>not</em> by <a href="https://dev.mysql.com/doc/refman/5.7/en/mysqld.html"><strong>mysqld</strong></a>). </p>
+<p>To understand how third-party client programs that use the C API can use option files, see the C API documentation at <a href="https://dev.mysql.com/doc/c-api/5.7/en/mysql-options.html">mysql_options()</a>.</p>
+</li>
+<li>
+<p><code>[mysqldump]</code> enables <a href="https://dev.mysql.com/doc/refman/5.7/en/mysqldump.html"><strong>mysqldump</strong></a>-specific options to override <code>[client]</code> options. 可以覆盖前面的 client指定的同名选项</p>
+</li>
+<li>
+<p>指定版本</p>
+<pre><code>[mysqld-5.7]
+sql_mode=TRADITIONAL
+</code></pre>
+</li>
+<li>
+<p>包含其他 选项文件</p>
+<pre><code>!include /home/mydir/myopt.cnf
+
+查找目录
+!includedir /home/mydir, 查找任何以 .cnf .ini
+Any files to be found and included using the !includedir directive on Unix operating systems must have file names ending in .cnf. On Windows, this directive checks for files with the .ini or .cnf extension.
+</code></pre>
+</li>
+</ul>
+</li>
+<li>
+<p><code>opt_name</code><em>=</em><code>value</code></p>
+<p>选项名, 相比命令行 选项 去掉 短横杠</p>
+</li>
+<li>
+<p>转义处理</p>
+<pre><code>\b, \t, \n, \r, \\ \s
+backspace, tab, newline, carriage return, backslash, and space characters.
+windows路径目录特殊处理
+
+
+basedir=&quot;C:\Program Files\MySQL\MySQL Server 5.7&quot;
+basedir=&quot;C:\\Program Files\\MySQL\\MySQL Server 5.7&quot;
+basedir=&quot;C:/Program Files/MySQL/MySQL Server 5.7&quot;
+basedir=C:\\Program\sFiles\\MySQL\\MySQL\sServer\s5.7
+</code></pre>
+</li>
+<li>
+<p>影响 选项文件处理 的命令行参数</p>
+<ul>
+<li>
+<p><code>--print-defaults</code></p>
+<p>打印所有从 文件中读取的选项,密码会被掩盖</p>
+</li>
+<li>
+<p><code>--no-defaults</code></p>
+<p>不要从文件中读取选项</p>
+<p>有一个例外是 客户端程序 从  .mylogin.cnf  文件中读取选项  不受影响</p>
+<p><code>.mylogin.cnf</code> is created by the <a href="https://dev.mysql.com/doc/refman/5.7/en/mysql-config-editor.html"><strong>mysql_config_editor</strong></a> </p>
+</li>
+<li>
+<p><code>--login-path=name</code></p>
+<p>从 loginFile中读取 选项 , 其中的选项 涉及 登录信息,  mysql_config_editor 工具来编辑此文件</p>
+<pre><code>mysql --login-path=mypath
+默认读取 [client] [mysql] 组
+还有  [mypath] 组
+</code></pre>
+<p>指定备用登录文件组名</p>
+<pre><code>MYSQL_TEST_LOGIN_FILE 环境变量
+</code></pre>
+</li>
+<li>
+<p><code>--defaults-group-suffix=str</code></p>
+<pre><code>指定其他组名前缀读取
+[client] and [mysql]
+--defaults-group-suffix=_other
+mysql also reads the [client_other] and [mysql_other] groups.
+</code></pre>
+</li>
+<li>
+<p><code>--defaults-file=file_name</code></p>
+<p>给定 指定的 选项文件读取</p>
+<p>同样不会影响  <code>.mylogin.cnf</code></p>
+</li>
+<li>
+<p><code>--defaults-extra-file=file_name</code></p>
+<p>全局选项文件 读取后 , 用户选项文件读取前,  .mylogin.cnf 读取前</p>
+</li>
+</ul>
+</li>
+<li>
+<p>程序选项 修饰符</p>
+<p>在查询时 不输出字段名</p>
+<pre><code>--disable-column-names 
+--skip-column-names 
+--column-names=0
+</code></pre>
+<pre><code>--column-names
+--enable-column-names
+--column-names=1
+</code></pre>
+<p>使用 <code>--loose</code> 前缀 时 如果不存在该选项 会警告 而不报错退出</p>
+<pre><code>shell&gt; mysql --loose-no-such-option
+mysql: WARNING: unknown option '--loose-no-such-option'
+</code></pre>
+<p><code>--maximum</code> 设置 session级别 变量 的最大值</p>
+<pre><code> --maximum-max_heap_table_size=32M  最大表堆的大小
+</code></pre>
+</li>
+<li>
+<p>在执行时可以使用表达式. 在启动时使用标识符 </p>
+<pre><code> mysql --max_allowed_packet=16M
+ SET GLOBAL max_allowed_packet=16*1024*1024;
+</code></pre>
+</li>
+</ul>
+<p><strong>建立连接的命令行选项</strong></p>
+<table><thead><tr><th style="text-align: left"></th><th style="text-align: left"></th><th style="text-align: left"></th></tr></thead><tbody>
+<tr><td style="text-align: left">Option Name</td><td style="text-align: left">Description</td><td style="text-align: left">Deprecated</td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_default-auth">--default-auth</a></td><td style="text-align: left">客户端认证所使用的插件,See <a href="https://dev.mysql.com/doc/refman/5.7/en/pluggable-authentication.html">Section 6.2.13, “Pluggable Authentication”</a>.</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_host">--host</a></td><td style="text-align: left">主机名或者IPV4 地址</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_password">--password</a></td><td style="text-align: left">密码,使用命令行输入密码不安全, See <a href="https://dev.mysql.com/doc/refman/5.7/en/password-security-user.html">Section 6.1.2.1, “End-User Guidelines for Password Security”</a>.</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_pipe">--pipe</a></td><td style="text-align: left">Connect to server using named pipe (Windows only)<br />This option applies only if the server was started with the <a href="https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_named_pipe"><code>named_pipe</code></a> system variable enabled to support named-pipe connections. In addition, the user making the connection must be a member of the Windows group specified by the <a href="https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_named_pipe_full_access_group"><code>named_pipe_full_access_group</code></a> system variable.</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_plugin-dir">--plugin-dir</a></td><td style="text-align: left">寻找插件的目录,See <a href="https://dev.mysql.com/doc/refman/5.7/en/pluggable-authentication.html">Section 6.2.13, “Pluggable Authentication”</a>.</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_port">--port</a></td><td style="text-align: left">TCP/IP port number for connection</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_protocol">--protocol</a></td><td style="text-align: left">`TCP</td><td style="text-align: left">SOCKET</td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_secure-auth">--secure-auth</a></td><td style="text-align: left">Do not send passwords to server in old (pre-4.1) format<br /><a href="https://dev.mysql.com/doc/refman/5.7/en/account-upgrades.html">Section 6.4.1.3, “Migrating Away from Pre-4.1 Password Hashing and the mysql_old_password Plugin”</a>.</td><td style="text-align: left">Yes</td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_shared-memory-base-name">--shared-memory-base-name</a></td><td style="text-align: left">On Windows, the shared-memory name to use for connections made using shared memory to a local server. The default value is <code>MYSQL</code>. The shared-memory name is case-sensitive.<br />This option applies only if the server was started with the <a href="https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_shared_memory"><code>shared_memory</code></a> system variable enabled to support shared-memory connections.</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_socket">--socket</a></td><td style="text-align: left">Unix socket file 用来做本地连接,默认名是 /tmp/mysql.sock<br />在Windows是命名管道,默认名是MySQL<br />On Windows, this option applies only if the server was started with the named_pipe system variable enabled to support named-pipe connections. In addition, the user making the connection must be a member of the Windows group specified by the named_pipe_full_access_group system variable.</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_user">--user</a></td><td style="text-align: left">MySQL user name to use when connecting to server</td><td style="text-align: left"></td></tr>
+</tbody></table>
+<p><strong>协议介绍</strong></p>
+<table><thead><tr><th style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_protocol"><code>--protocol</code></a> Value</th><th style="text-align: left">Transport Protocol Used</th><th style="text-align: left">Applicable Platforms</th></tr></thead><tbody>
+<tr><td style="text-align: left"><code>TCP</code></td><td style="text-align: left">TCP/IP transport to local or remote server</td><td style="text-align: left">All</td></tr>
+<tr><td style="text-align: left"><code>SOCKET</code></td><td style="text-align: left">Unix socket-file transport to local server</td><td style="text-align: left">Unix and Unix-like systems</td></tr>
+<tr><td style="text-align: left"><code>PIPE</code></td><td style="text-align: left">Named-pipe transport to local server</td><td style="text-align: left">Windows</td></tr>
+<tr><td style="text-align: left"><code>MEMORY</code></td><td style="text-align: left">Shared-memory transport to local server</td><td style="text-align: left">Windows</td></tr>
+</tbody></table>
+<p><strong>加密连接选项</strong></p>
+<table><thead><tr><th style="text-align: left">Option Name</th><th style="text-align: left">Description</th><th style="text-align: left">Introduced</th></tr></thead><tbody>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_get-server-public-key">--get-server-public-key</a></td><td style="text-align: left">Request RSA public key from server</td><td style="text-align: left">5.7.23</td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_server-public-key-path">--server-public-key-path</a></td><td style="text-align: left">Path name to file containing RSA public key</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_ssl">--skip-ssl</a></td><td style="text-align: left">Disable connection encryption</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_ssl">--ssl</a></td><td style="text-align: left">Enable connection encryption</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_ssl-ca">--ssl-ca</a></td><td style="text-align: left">File that contains list of trusted SSL Certificate Authorities</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_ssl-capath">--ssl-capath</a></td><td style="text-align: left">Directory that contains trusted SSL Certificate Authority certificate files</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_ssl-cert">--ssl-cert</a></td><td style="text-align: left">File that contains X.509 certificate</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_ssl-cipher">--ssl-cipher</a></td><td style="text-align: left">Permissible ciphers for connection encryption</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_ssl-crl">--ssl-crl</a></td><td style="text-align: left">File that contains certificate revocation lists</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_ssl-crlpath">--ssl-crlpath</a></td><td style="text-align: left">Directory that contains certificate revocation-list files</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_ssl-key">--ssl-key</a></td><td style="text-align: left">File that contains X.509 key</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_ssl-mode">--ssl-mode</a></td><td style="text-align: left">Desired security state of connection to server</td><td style="text-align: left">5.7.11</td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_ssl-verify-server-cert">--ssl-verify-server-cert</a></td><td style="text-align: left">Verify host name against server certificate Common Name identity</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left"><a href="https://dev.mysql.com/doc/refman/5.7/en/connection-options.html#option_general_tls-version">--tls-version</a></td><td style="text-align: left">Permissible TLS protocols for encrypted connections</td><td style="text-align: left">5.7.10</td></tr>
+</tbody></table>
+<p><strong>--ssl-mode=mode</strong></p>
+<ul>
+<li>
+<p>disable</p>
+<p>没有加密的连接</p>
+<pre><code> --ssl=0 option or its synonyms (--skip-ssl, --disable-ssl).
+</code></pre>
+</li>
+<li>
+<p>PREFERRED</p>
+<p>尝试建立加密连接,如果不能建立 则建立非加密连接</p>
+</li>
+<li>
+<p>REQUIRED</p>
+<p>需要建立加密连接,否则无法建立连接</p>
+</li>
+<li>
+<p>VERIFY_CA</p>
+</li>
+</ul>
+<h3 id="读环境变量"><a class="header" href="#读环境变量">读环境变量</a></h3>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../mysql/mysql官方文档/mysql程序/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../../mysql/mysql日志/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../mysql/mysql官方文档/mysql程序/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../../mysql/mysql日志/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

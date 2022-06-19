@@ -1,0 +1,520 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>IntervalsQuery</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../../favicon.svg">
+        <link rel="shortcut icon" href="../../../favicon.png">
+        <link rel="stylesheet" href="../../../css/variables.css">
+        <link rel="stylesheet" href="../../../css/general.css">
+        <link rel="stylesheet" href="../../../css/chrome.css">
+        <link rel="stylesheet" href="../../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../../highlight.css">
+        <link rel="stylesheet" href="../../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../../index.html">数据存储</a></li><li class="chapter-item expanded affix "><li class="part-title"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> oracle</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../oracle/Oracle小知识点.html"><strong aria-hidden="true">1.1.</strong> Oracle小知识点</a></li><li class="chapter-item expanded "><a href="../../../oracle/oracledocker快速搭建.html"><strong aria-hidden="true">1.2.</strong> oracledocker快速搭建</a></li><li class="chapter-item expanded "><a href="../../../oracle/oracle多表更新方法.html"><strong aria-hidden="true">1.3.</strong> oracle多表更新方法</a></li></ol></li><li class="chapter-item expanded "><a href="../../../MongoDB/index.html"><strong aria-hidden="true">2.</strong> MongoDB</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../MongoDB/mongodb基本操作.html"><strong aria-hidden="true">2.1.</strong> mongodb基本操作</a></li><li class="chapter-item expanded "><a href="../../../MongoDB/mongodb高级语法.html"><strong aria-hidden="true">2.2.</strong> mongodb高级语法</a></li><li class="chapter-item expanded "><a href="../../../MongoDB/权限管理.html"><strong aria-hidden="true">2.3.</strong> 权限管理</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> mysql</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../mysql/mysqlfunction.html"><strong aria-hidden="true">3.1.</strong> mysqlfunction</a></li><li class="chapter-item expanded "><a href="../../../mysql/mysqlpdump.html"><strong aria-hidden="true">3.2.</strong> mysqlpdump</a></li><li class="chapter-item expanded "><a href="../../../mysql/mysqlzip安装.html"><strong aria-hidden="true">3.3.</strong> mysqlzip安装</a></li><li class="chapter-item expanded "><a href="../../../mysql/mysql公用表达式.html"><strong aria-hidden="true">3.4.</strong> mysql公用表达式</a></li><li class="chapter-item expanded "><a href="../../../mysql/mysql学习.html"><strong aria-hidden="true">3.5.</strong> mysql学习</a></li><li class="chapter-item expanded "><a href="../../../mysql/mysql执行计划.html"><strong aria-hidden="true">3.6.</strong> mysql执行计划</a></li><li class="chapter-item expanded "><a href="../../../mysql/空值处理函数.html"><strong aria-hidden="true">3.7.</strong> 空值处理函数</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.8.</strong> mysql官方文档</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../mysql/mysql官方文档/mysql程序.html"><strong aria-hidden="true">3.8.1.</strong> mysql程序</a></li><li class="chapter-item expanded "><a href="../../../mysql/mysql官方文档/客户端.html"><strong aria-hidden="true">3.8.2.</strong> 客户端</a></li><li class="chapter-item expanded "><a href="../../../mysql/mysql官方文档/mysql程序/index.html"><strong aria-hidden="true">3.8.3.</strong> mysql程序</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../mysql/mysql官方文档/mysql程序/使用mysql相关程序.html"><strong aria-hidden="true">3.8.3.1.</strong> 使用mysql相关程序</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../../mysql/mysql日志/index.html"><strong aria-hidden="true">3.9.</strong> mysql日志</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../mysql/mysql日志/mysql日志及分类.html"><strong aria-hidden="true">3.9.1.</strong> mysql日志及分类</a></li><li class="chapter-item expanded "><a href="../../../mysql/mysql日志/二进制日志.html"><strong aria-hidden="true">3.9.2.</strong> 二进制日志</a></li><li class="chapter-item expanded "><a href="../../../mysql/mysql日志/慢sql日志.html"><strong aria-hidden="true">3.9.3.</strong> 慢sql日志</a></li><li class="chapter-item expanded "><a href="../../../mysql/mysql日志/通用日志.html"><strong aria-hidden="true">3.9.4.</strong> 通用日志</a></li><li class="chapter-item expanded "><a href="../../../mysql/mysql日志/错误日志.html"><strong aria-hidden="true">3.9.5.</strong> 错误日志</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../../elasticSearch/index.html"><strong aria-hidden="true">4.</strong> elasticSearch</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/BackUpACluster.html"><strong aria-hidden="true">4.1.</strong> BackUpACluster</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/KQL.html"><strong aria-hidden="true">4.2.</strong> KQL</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/dataStream.html"><strong aria-hidden="true">4.3.</strong> dataStream</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/es堆内存如何分配.html"><strong aria-hidden="true">4.4.</strong> es堆内存如何分配</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/scroll查询.html"><strong aria-hidden="true">4.5.</strong> scroll查询</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/乐观并发控制.html"><strong aria-hidden="true">4.6.</strong> 乐观并发控制</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/分布式检索.html"><strong aria-hidden="true">4.7.</strong> 分布式检索</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/分片内部原理.html"><strong aria-hidden="true">4.8.</strong> 分片内部原理</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/分词.html"><strong aria-hidden="true">4.9.</strong> 分词</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/前缀搜索与模糊搜索.html"><strong aria-hidden="true">4.10.</strong> 前缀搜索与模糊搜索</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/数据分片.html"><strong aria-hidden="true">4.11.</strong> 数据分片</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/映射.html"><strong aria-hidden="true">4.12.</strong> 映射</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/杂项学习.html"><strong aria-hidden="true">4.13.</strong> 杂项学习</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/索引和分片.html"><strong aria-hidden="true">4.14.</strong> 索引和分片</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/索引管理.html"><strong aria-hidden="true">4.15.</strong> 索引管理</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/评分标准与相关性.html"><strong aria-hidden="true">4.16.</strong> 评分标准与相关性</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/集群内原理.html"><strong aria-hidden="true">4.17.</strong> 集群内原理</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/Datamanagement/index.html"><strong aria-hidden="true">4.18.</strong> Datamanagement</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/Datamanagement/DataTier.html"><strong aria-hidden="true">4.18.1.</strong> DataTier</a></li></ol></li><li class="chapter-item expanded "><a href="../../../elasticSearch/ILM/index.html"><strong aria-hidden="true">4.19.</strong> ILM</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/ILM/1.AutomateRolloverWithILM.html"><strong aria-hidden="true">4.19.1.</strong> AutomateRolloverWithILM</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/ILM/FrozenIndices.html"><strong aria-hidden="true">4.19.2.</strong> FrozenIndices</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/ILM/ILM.html"><strong aria-hidden="true">4.19.3.</strong> ILM</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/ILM/RolloverAPI.html"><strong aria-hidden="true">4.19.4.</strong> RolloverAPI</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/ILM/ShrinkIndexAPI.html"><strong aria-hidden="true">4.19.5.</strong> ShrinkIndexAPI</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/ILM/ILMConcepts/index.html"><strong aria-hidden="true">4.19.6.</strong> ILMConcepts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/ILM/ILMConcepts/1.Rollover.html"><strong aria-hidden="true">4.19.6.1.</strong> Rollover</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/ILM/ILMConcepts/2.LifeCycleUpdates.html"><strong aria-hidden="true">4.19.6.2.</strong> LifeCycleUpdates</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/index.html"><strong aria-hidden="true">4.20.</strong> IndexModules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/1.Analysis.html"><strong aria-hidden="true">4.20.1.</strong> Analysis</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/2.IndexShardAllocation.html"><strong aria-hidden="true">4.20.2.</strong> IndexShardAllocation</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/3.Indexblocks.html"><strong aria-hidden="true">4.20.3.</strong> Indexblocks</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/4.Mapper.html"><strong aria-hidden="true">4.20.4.</strong> Mapper</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/5.Merge.html"><strong aria-hidden="true">4.20.5.</strong> Merge</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/6.SimilarityModule.html"><strong aria-hidden="true">4.20.6.</strong> SimilarityModule</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/7.Slowlog.html"><strong aria-hidden="true">4.20.7.</strong> Slowlog</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/8.Store.html"><strong aria-hidden="true">4.20.8.</strong> Store</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/9.Translog.html"><strong aria-hidden="true">4.20.9.</strong> Translog</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/10.HistoryRetention.html"><strong aria-hidden="true">4.20.10.</strong> HistoryRetention</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/11.IndexSorting.html"><strong aria-hidden="true">4.20.11.</strong> IndexSorting</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IndexModules/12.IndexPressure.html"><strong aria-hidden="true">4.20.12.</strong> IndexPressure</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.21.</strong> IngestPipeline</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/IngestPipeline/1.IngestPipelines.html"><strong aria-hidden="true">4.21.1.</strong> IngestPipelines</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IngestPipeline/2.pipeLineExample.html"><strong aria-hidden="true">4.21.2.</strong> pipeLineExample</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IngestPipeline/3.EnrichYourData.html"><strong aria-hidden="true">4.21.3.</strong> EnrichYourData</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IngestPipeline/4.ExampleEnrichYourDataBasedOnGeolocation.html"><strong aria-hidden="true">4.21.4.</strong> ExampleEnrichYourDataBasedOnGeolocation</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/IngestPipeline/5.IngestProcessorReference.html"><strong aria-hidden="true">4.21.5.</strong> IngestProcessorReference</a></li></ol></li><li class="chapter-item expanded "><a href="../../../elasticSearch/queryDSL/index.html"><strong aria-hidden="true">4.22.</strong> queryDSL</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/queryDSL/1.QueryAndFilterContext.html"><strong aria-hidden="true">4.22.1.</strong> QueryAndFilterContext</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/queryDSL/2.CompoundQueries.html"><strong aria-hidden="true">4.22.2.</strong> CompoundQueries</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/queryDSL/SearchAfter.html"><strong aria-hidden="true">4.22.3.</strong> SearchAfter</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/queryDSL/FullTextQueries/index.html"><strong aria-hidden="true">4.22.4.</strong> FullTextQueries</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/queryDSL/FullTextQueries/1.IntervalsQuery.html" class="active"><strong aria-hidden="true">4.22.4.1.</strong> IntervalsQuery</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/queryDSL/FullTextQueries/2.MatchQuery.html"><strong aria-hidden="true">4.22.4.2.</strong> MatchQuery</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/index.html"><strong aria-hidden="true">4.23.</strong> snapshotAndRestore</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/CleanUpSnapshotRepo.html"><strong aria-hidden="true">4.23.1.</strong> CleanUpSnapshotRepo</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/CloneSnapshot.html"><strong aria-hidden="true">4.23.2.</strong> CloneSnapshot</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/CreateOrUpdateSnapshotAPI.html"><strong aria-hidden="true">4.23.3.</strong> CreateOrUpdateSnapshotAPI</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/CreateSnapshot.html"><strong aria-hidden="true">4.23.4.</strong> CreateSnapshot</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/DeleteSnapShot.html"><strong aria-hidden="true">4.23.5.</strong> DeleteSnapShot</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/DeleteSnapshotRepository.html"><strong aria-hidden="true">4.23.6.</strong> DeleteSnapshotRepository</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/GetSnapshotAPI.html"><strong aria-hidden="true">4.23.7.</strong> GetSnapshotAPI</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/RegisterASnapshot.html"><strong aria-hidden="true">4.23.8.</strong> RegisterASnapshot</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/RestoreSnapshot.html"><strong aria-hidden="true">4.23.9.</strong> RestoreSnapshot</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/SLM.html"><strong aria-hidden="true">4.23.10.</strong> SLM</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/SearchableSnapshots.html"><strong aria-hidden="true">4.23.11.</strong> SearchableSnapshots</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/SearchableSnapshotsMountAPI.html"><strong aria-hidden="true">4.23.12.</strong> SearchableSnapshotsMountAPI</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/repository-s3.html"><strong aria-hidden="true">4.23.13.</strong> repository-s3</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/snapshotAndRestore/使用OSS备份恢复集群实战.html"><strong aria-hidden="true">4.23.14.</strong> 使用OSS备份恢复集群实战</a></li></ol></li><li class="chapter-item expanded "><a href="../../../elasticSearch/安装/index.html"><strong aria-hidden="true">4.24.</strong> 安装</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/安装/1.InstallingFromRpm.html"><strong aria-hidden="true">4.24.1.</strong> InstallingFromRpm</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/安装/2.InstallFromDeb.html"><strong aria-hidden="true">4.24.2.</strong> InstallFromDeb</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.25.</strong> 深入搜索</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/深入搜索/全文搜索.html"><strong aria-hidden="true">4.25.1.</strong> 全文搜索</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/深入搜索/多字段搜索.html"><strong aria-hidden="true">4.25.2.</strong> 多字段搜索</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/深入搜索/结构化搜索.html"><strong aria-hidden="true">4.25.3.</strong> 结构化搜索</a></li></ol></li><li class="chapter-item expanded "><a href="../../../elasticSearch/索引分片分配/index.html"><strong aria-hidden="true">4.26.</strong> 索引分片分配</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/索引分片分配/1.索引级别的分片分配控制.html"><strong aria-hidden="true">4.26.1.</strong> 索引级别的分片分配控制</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/索引分片分配/2.节点离开延迟分配.html"><strong aria-hidden="true">4.26.2.</strong> 节点离开延迟分配</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/索引分片分配/3.索引恢复优先级.html"><strong aria-hidden="true">4.26.3.</strong> 索引恢复优先级</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/索引分片分配/4.每个节点的总分片.html"><strong aria-hidden="true">4.26.4.</strong> 每个节点的总分片</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/索引分片分配/5.索引级别数据层分配过滤.html"><strong aria-hidden="true">4.26.5.</strong> 索引级别数据层分配过滤</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/索引分片分配/6.手动分配分片clusterRerouteAPI.html"><strong aria-hidden="true">4.26.6.</strong> 手动分配分片clusterRerouteAPI</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/索引分片分配/7.cluster-allocation-explain.html"><strong aria-hidden="true">4.26.7.</strong> cluster-allocation-explain</a></li></ol></li><li class="chapter-item expanded "><a href="../../../elasticSearch/考纲解读/index.html"><strong aria-hidden="true">4.27.</strong> 考纲解读</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/考纲解读/1.ClusterManagement.html"><strong aria-hidden="true">4.27.1.</strong> ClusterManagement</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/考纲解读/2.DataManagement.html"><strong aria-hidden="true">4.27.2.</strong> DataManagement</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.28.</strong> 聚合</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/聚合/RareTermsAggregation.html"><strong aria-hidden="true">4.28.1.</strong> RareTermsAggregation</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/聚合/Term.html"><strong aria-hidden="true">4.28.2.</strong> Term</a></li></ol></li><li class="chapter-item expanded "><a href="../../../elasticSearch/配置/index.html"><strong aria-hidden="true">4.29.</strong> 配置</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/配置/1.重要配置.html"><strong aria-hidden="true">4.29.1.</strong> 重要配置</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/配置/2.elasticsearch.yml核心配置.html"><strong aria-hidden="true">4.29.2.</strong> elasticsearch.yml核心配置</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/配置/3.es系统参数修改.html"><strong aria-hidden="true">4.29.3.</strong> es系统参数修改</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.30.</strong> 集群</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/集群/Health.html"><strong aria-hidden="true">4.30.1.</strong> Health</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.31.</strong> 高可用专题</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../../elasticSearch/高可用专题/弹性设计.html"><strong aria-hidden="true">4.31.1.</strong> 弹性设计</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/高可用专题/跨集群复制.html"><strong aria-hidden="true">4.31.2.</strong> 跨集群复制</a></li><li class="chapter-item expanded "><a href="../../../elasticSearch/高可用专题/集群备份.html"><strong aria-hidden="true">4.31.3.</strong> 集群备份</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="intervals-query"><a class="header" href="#intervals-query">Intervals query</a></h2>
+<p>Returns documents based on the order and proximity of matching terms.</p>
+<p>The <code>intervals</code> query uses <strong>matching rules</strong>, constructed from a small set of definitions. </p>
+<p>These rules are then applied to terms from a specified <code>field</code>.</p>
+<p>The definitions produce sequences of minimal intervals that span terms in a body of text. These intervals can be further combined and filtered by parent sources.</p>
+<h2 id="example-request"><a class="header" href="#example-request">Example request</a></h2>
+<p>The following <code>intervals</code> search returns documents containing <code>my favorite food</code> without any gap, followed by <code>hot water</code> or <code>cold porridge</code> in the <code>my_text</code> field.</p>
+<p>This search would match a <code>my_text</code> value of <code>my favorite food is cold porridge</code> but not <code>when it's cold my favorite food is porridge</code>.</p>
+<pre><code class="language-json">POST _search
+{
+  &quot;query&quot;: { 
+    &quot;intervals&quot; : {
+      &quot;my_text&quot; : {
+        &quot;all_of&quot; : {
+          &quot;ordered&quot; : true,
+          &quot;intervals&quot; : [
+            {
+              &quot;match&quot; : {
+                &quot;query&quot; : &quot;my favorite food&quot;,
+                &quot;max_gaps&quot; : 0,
+                &quot;ordered&quot; : true
+              }
+            },
+            {
+              &quot;any_of&quot; : {
+                &quot;intervals&quot; : [
+                  { &quot;match&quot; : { &quot;query&quot; : &quot;hot water&quot; } },
+                  { &quot;match&quot; : { &quot;query&quot; : &quot;cold porridge&quot; } }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<h2 id="top-level-parameters-for-intervals"><a class="header" href="#top-level-parameters-for-intervals">Top-level parameters for <code>intervals</code></a></h2>
+<ul>
+<li>
+<p><strong><code>&lt;field&gt;</code></strong></p>
+<p>(必填，规则对象) 您希望搜索的字段。此参数的值是一个规则对象，用于根据匹配的术语、顺序和接近度来匹配文档。Valid rules include:<a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/query-dsl-intervals-query.html#intervals-match"><code>match</code></a><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/query-dsl-intervals-query.html#intervals-prefix"><code>prefix</code></a><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/query-dsl-intervals-query.html#intervals-wildcard"><code>wildcard</code></a><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/query-dsl-intervals-query.html#intervals-fuzzy"><code>fuzzy</code></a><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/query-dsl-intervals-query.html#intervals-all_of"><code>all_of</code></a><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/query-dsl-intervals-query.html#intervals-any_of"><code>any_of</code></a></p>
+</li>
+</ul>
+<h3 id="match-rule-parameters"><a class="header" href="#match-rule-parameters"><code>match</code> rule parameters</a></h3>
+<p>The <code>match</code> rule matches analyzed text.</p>
+<ul>
+<li>
+<p><strong><code>query</code></strong></p>
+<p>(Required, string) Text you wish to find in the provided <code>&lt;field&gt;</code>.</p>
+</li>
+<li>
+<p><strong><code>max_gaps</code></strong></p>
+<p>(Optional, integer) Maximum number of positions between the matching terms. Terms further apart than this are not considered matches. Defaults to <code>-1</code>.If unspecified or set to <code>-1</code>, there is no width restriction on the match. If set to <code>0</code>, the terms must appear next to each other.</p>
+</li>
+<li>
+<p><strong><code>ordered</code></strong></p>
+<p>(Optional, Boolean) If <code>true</code>, matching terms must appear in their specified order. Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><strong><code>analyzer</code></strong></p>
+<p>(Optional, string) <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/analysis.html">analyzer</a> used to analyze terms in the <code>query</code>. Defaults to the top-level <code>&lt;field&gt;</code>'s analyzer.</p>
+</li>
+<li>
+<p><strong><code>filter</code></strong></p>
+<p>(Optional, <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/query-dsl-intervals-query.html#interval_filter">interval filter</a> rule object) An optional interval filter.</p>
+</li>
+<li>
+<p><strong><code>use_field</code></strong></p>
+<p>(Optional, string) If specified, then match intervals from this field rather than the top-level <code>&lt;field&gt;</code>. Terms are analyzed using the search analyzer from this field. This allows you to search across multiple fields as if they were all the same field; for example, you could index the same text into stemmed and unstemmed fields, and search for stemmed tokens near unstemmed ones.</p>
+</li>
+</ul>
+<h3 id="prefix-rule-parameters"><a class="header" href="#prefix-rule-parameters"><code>prefix</code> rule parameters</a></h3>
+<p>The <code>prefix</code> rule matches terms that start with a specified set of characters. This prefix can expand to match at most 128 terms. If the prefix matches more than 128 terms, Elasticsearch returns an error. You can use the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/index-prefixes.html"><code>index-prefixes</code></a> option in the field mapping to avoid this limit.</p>
+<ul>
+<li>
+<p><strong><code>prefix</code></strong></p>
+<p>(Required, string) Beginning characters of terms you wish to find in the top-level <code>&lt;field&gt;</code>.</p>
+</li>
+<li>
+<p><strong><code>analyzer</code></strong></p>
+<p>(Optional, string) <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/analysis.html">analyzer</a> used to normalize the <code>prefix</code>. Defaults to the top-level <code>&lt;field&gt;</code>'s analyzer.</p>
+</li>
+<li>
+<p><strong><code>use_field</code></strong></p>
+<p>(Optional, string) If specified, then match intervals from this field rather than the top-level <code>&lt;field&gt;</code>.The <code>prefix</code> is normalized using the search analyzer from this field, unless a separate <code>analyzer</code> is specified.</p>
+</li>
+</ul>
+<h3 id="wildcard-rule-parameters"><a class="header" href="#wildcard-rule-parameters"><code>wildcard</code> rule parameters</a></h3>
+<p>The <code>wildcard</code> rule matches terms using a wildcard pattern. This pattern can expand to match at most 128 terms. If the pattern matches more than 128 terms, Elasticsearch returns an error.</p>
+<ul>
+<li>
+<p><strong><code>pattern</code></strong></p>
+<p>(Required, string) Wildcard pattern used to find matching terms.This parameter supports two wildcard operators:<code>?</code>, which matches any single character<code>*</code>, which can match zero or more characters, including an empty oneAvoid beginning patterns with <code>*</code> or <code>?</code>. This can increase the iterations needed to find matching terms and slow search performance.</p>
+</li>
+<li>
+<p><strong><code>analyzer</code></strong></p>
+<p>(Optional, string) <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/analysis.html">analyzer</a> used to normalize the <code>pattern</code>. Defaults to the top-level <code>&lt;field&gt;</code>'s analyzer.</p>
+</li>
+<li>
+<p><strong><code>use_field</code></strong></p>
+<p>(Optional, string) If specified, match intervals from this field rather than the top-level <code>&lt;field&gt;</code>.The <code>pattern</code> is normalized using the search analyzer from this field, unless <code>analyzer</code> is specified separately.</p>
+</li>
+</ul>
+<h3 id="fuzzy-rule-parameters"><a class="header" href="#fuzzy-rule-parameters"><code>fuzzy</code> rule parameters</a></h3>
+<p>The <code>fuzzy</code> rule matches terms that are similar to the provided term, within an edit distance defined by <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/common-options.html#fuzziness">Fuzziness</a>. If the fuzzy expansion matches more than 128 terms, Elasticsearch returns an error.</p>
+<ul>
+<li>
+<p><strong><code>term</code></strong></p>
+<p>(Required, string) The term to match</p>
+</li>
+<li>
+<p><strong><code>prefix_length</code></strong></p>
+<p>(Optional, integer) Number of beginning characters left unchanged when creating expansions. Defaults to <code>0</code>.</p>
+</li>
+<li>
+<p><strong><code>transpositions</code></strong></p>
+<p>(Optional, Boolean) Indicates whether edits include transpositions of two adjacent characters (ab → ba). Defaults to <code>true</code>.</p>
+</li>
+<li>
+<p><strong><code>fuzziness</code></strong></p>
+<p>(Optional, string) Maximum edit distance allowed for matching. See <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/common-options.html#fuzziness">Fuzziness</a> for valid values and more information. Defaults to <code>auto</code>.</p>
+</li>
+<li>
+<p><strong><code>analyzer</code></strong></p>
+<p>(Optional, string) <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/analysis.html">analyzer</a> used to normalize the <code>term</code>. Defaults to the top-level <code>&lt;field&gt;</code> 's analyzer.</p>
+</li>
+<li>
+<p><strong><code>use_field</code></strong></p>
+<p>(Optional, string) If specified, match intervals from this field rather than the top-level <code>&lt;field&gt;</code>.The <code>term</code> is normalized using the search analyzer from this field, unless <code>analyzer</code> is specified separately.</p>
+</li>
+</ul>
+<h3 id="all_of-rule-parameters"><a class="header" href="#all_of-rule-parameters"><code>all_of</code> rule parameters</a></h3>
+<p>The <code>all_of</code> rule returns matches that span a combination of other rules.</p>
+<ul>
+<li>
+<p><strong><code>intervals</code></strong></p>
+<p>(Required, array of rule objects) An array of rules to combine. All rules must produce a match in a document for the overall source to match.</p>
+</li>
+<li>
+<p><strong><code>max_gaps</code></strong></p>
+<p>(Optional, integer) Maximum number of positions between the matching terms. Intervals produced by the rules further apart than this are not considered matches. Defaults to <code>-1</code>.If unspecified or set to <code>-1</code>, there is no width restriction on the match. If set to <code>0</code>, the terms must appear next to each other.</p>
+<p>(可选，整数) 匹配项之间的最大位置数。比这更远的规则产生的间隔不被视为匹配。默认值为-1。如果未指定或设置为-1，则匹配项没有宽度限制。如果设置为0，则术语必须彼此相邻出现。</p>
+</li>
+<li>
+<p><strong><code>ordered</code></strong></p>
+<p>(Optional, Boolean) If <code>true</code>, intervals produced by the rules should appear in the order in which they are specified. Defaults to <code>false</code>.</p>
+</li>
+<li>
+<p><strong><code>filter</code></strong></p>
+<p>(Optional, <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/query-dsl-intervals-query.html#interval_filter">interval filter</a> rule object) Rule used to filter returned intervals.</p>
+</li>
+</ul>
+<h3 id="any_of-rule-parameters"><a class="header" href="#any_of-rule-parameters"><code>any_of</code> rule parameters</a></h3>
+<p>The <code>any_of</code> rule returns intervals produced by any of its sub-rules.</p>
+<ul>
+<li>
+<p><strong><code>intervals</code></strong></p>
+<p>(Required, array of rule objects) An array of rules to match.</p>
+</li>
+<li>
+<p><strong><code>filter</code></strong></p>
+<p>(Optional, <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/query-dsl-intervals-query.html#interval_filter">interval filter</a> rule object) Rule used to filter returned intervals.</p>
+</li>
+</ul>
+<h3 id="filter-rule-parameters"><a class="header" href="#filter-rule-parameters"><code>filter</code> rule parameters</a></h3>
+<p>The <code>filter</code> rule returns intervals based on a query. See <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/query-dsl-intervals-query.html#interval-filter-rule-ex">Filter example</a> for an example.</p>
+<ul>
+<li>
+<p><strong><code>after</code></strong></p>
+<p>(Optional, query object) Query used to return intervals that follow an interval from the <code>filter</code> rule.</p>
+</li>
+<li>
+<p><strong><code>before</code></strong></p>
+<p>(Optional, query object) Query used to return intervals that occur before an interval from the <code>filter</code> rule.</p>
+</li>
+<li>
+<p><strong><code>contained_by</code></strong></p>
+<p>(Optional, query object) Query used to return intervals contained by an interval from the <code>filter</code> rule.</p>
+</li>
+<li>
+<p><strong><code>containing</code></strong></p>
+<p>(Optional, query object) Query used to return intervals that contain an interval from the <code>filter</code> rule.</p>
+</li>
+<li>
+<p><strong><code>not_contained_by</code></strong></p>
+<p>(Optional, query object) Query used to return intervals that are <strong>not</strong> contained by an interval from the <code>filter</code> rule.</p>
+</li>
+<li>
+<p><strong><code>not_containing</code></strong></p>
+<p>(Optional, query object) Query used to return intervals that do <strong>not</strong> contain an interval from the <code>filter</code> rule.</p>
+</li>
+<li>
+<p><strong><code>not_overlapping</code></strong></p>
+<p>(Optional, query object) Query used to return intervals that do <strong>not</strong> overlap with an interval from the <code>filter</code> rule.</p>
+</li>
+<li>
+<p><strong><code>overlapping</code></strong></p>
+<p>(Optional, query object) Query used to return intervals that overlap with an interval from the <code>filter</code> rule.</p>
+</li>
+<li>
+<p><strong><code>script</code></strong></p>
+<p>(Optional, <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/modules-scripting-using.html">script object</a>) Script used to return matching documents. This script must return a boolean value, <code>true</code> or <code>false</code>. See <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/query-dsl-intervals-query.html#interval-script-filter">Script filters</a> for an example.</p>
+</li>
+</ul>
+<h2 id="example"><a class="header" href="#example">Example</a></h2>
+<h3 id="filter-example"><a class="header" href="#filter-example">Filter example</a></h3>
+<ol>
+<li><code>hot</code> and <code>porridge</code>  之间不超过10个位置</li>
+<li>中间不能出现 <em>salty</em> 单词</li>
+</ol>
+<pre><code class="language-console">POST _search
+{
+  &quot;query&quot;: {
+    &quot;intervals&quot; : {
+      &quot;my_text&quot; : {
+        &quot;match&quot; : {
+          &quot;query&quot; : &quot;hot porridge&quot;,
+          &quot;max_gaps&quot; : 10,
+          &quot;filter&quot; : {
+            &quot;not_containing&quot; : {
+              &quot;match&quot; : {
+                &quot;query&quot; : &quot;salty&quot;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<h3 id="script-filters"><a class="header" href="#script-filters">Script filters</a></h3>
+<p>You can use a script to filter intervals based on their start position, end position, and internal gap count. The following <code>filter</code> script uses the <code>interval</code> variable with the <code>start</code>, <code>end</code>, and <code>gaps</code> methods:</p>
+<pre><code class="language-console">POST _search
+{
+  &quot;query&quot;: {
+    &quot;intervals&quot; : {
+      &quot;my_text&quot; : {
+        &quot;match&quot; : {
+          &quot;query&quot; : &quot;hot porridge&quot;,
+          &quot;filter&quot; : {
+            &quot;script&quot; : {
+              &quot;source&quot; : &quot;interval.start &gt; 10 &amp;&amp; interval.end &lt; 20 &amp;&amp; interval.gaps == 0&quot;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<h3 id="minimization"><a class="header" href="#minimization">Minimization</a></h3>
+<p>间隙查询优先选择最小化间隔以确保查询在线性时间执行完毕</p>
+<p>This can sometimes cause surprising results, particularly when using <code>max_gaps</code> restrictions or filters. For example, take the following query, searching for <code>salty</code> contained within the phrase <code>hot porridge</code>:</p>
+<pre><code class="language-console">POST _search
+{
+  &quot;query&quot;: {
+    &quot;intervals&quot; : {
+      &quot;my_text&quot; : {
+        &quot;match&quot; : {
+          &quot;query&quot; : &quot;salty&quot;,
+          &quot;filter&quot; : {
+            &quot;contained_by&quot; : {
+              &quot;match&quot; : {
+                &quot;query&quot; : &quot;hot porridge&quot;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<p>This query does <strong>not</strong> match a document containing the phrase <code>hot porridge is salty porridge</code>, because the intervals returned by the match query for <code>hot porridge</code> only cover the initial two terms in this document, and these do not overlap the intervals covering <code>salty</code>.</p>
+<h3 id="anyof"><a class="header" href="#anyof">Anyof</a></h3>
+<p>Another restriction to be aware of is the case of <code>any_of</code> rules that contain sub-rules which overlap. In particular, if one of the rules is a strict prefix of the other, then the longer rule can never match, which can cause surprises when used in combination with <code>max_gaps</code>. Consider the following query, searching for <code>the</code> immediately followed by <code>big</code> or <code>big bad</code>, immediately followed by <code>wolf</code>:</p>
+<pre><code class="language-console">POST _search
+{
+  &quot;query&quot;: {
+    &quot;intervals&quot; : {
+      &quot;my_text&quot; : {
+        &quot;all_of&quot; : {
+          &quot;intervals&quot; : [
+            { &quot;match&quot; : { &quot;query&quot; : &quot;the&quot; } },
+            { &quot;any_of&quot; : {
+                &quot;intervals&quot; : [
+                    { &quot;match&quot; : { &quot;query&quot; : &quot;big&quot; } },
+                    { &quot;match&quot; : { &quot;query&quot; : &quot;big bad&quot; } }
+                ] } },
+            { &quot;match&quot; : { &quot;query&quot; : &quot;wolf&quot; } }
+          ],
+          &quot;max_gaps&quot; : 0,
+          &quot;ordered&quot; : true
+        }
+      }
+    }
+  }
+}
+</code></pre>
+<p>Counter-intuitively（与直觉相反，）,不会匹配 <code>the big bad wolf</code>  因为<em>any_of</em> 规则 优先匹配 <em>big</em> 间隔查询，而不会匹配  <code>big bad</code> 间隔查询，因为是基于最小化匹配原则</p>
+<pre><code class="language-console">POST _search
+{
+  &quot;query&quot;: {
+    &quot;intervals&quot; : {
+      &quot;my_text&quot; : {
+        &quot;any_of&quot; : {
+          &quot;intervals&quot; : [
+            { &quot;match&quot; : {
+                &quot;query&quot; : &quot;the big bad wolf&quot;,
+                &quot;ordered&quot; : true,
+                &quot;max_gaps&quot; : 0 } },
+            { &quot;match&quot; : {
+                &quot;query&quot; : &quot;the big wolf&quot;,
+                &quot;ordered&quot; : true,
+                &quot;max_gaps&quot; : 0 } }
+           ]
+        }
+      }
+    }
+  }
+}
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../../elasticSearch/queryDSL/FullTextQueries/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../../elasticSearch/queryDSL/FullTextQueries/2.MatchQuery.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../../elasticSearch/queryDSL/FullTextQueries/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../../elasticSearch/queryDSL/FullTextQueries/2.MatchQuery.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>

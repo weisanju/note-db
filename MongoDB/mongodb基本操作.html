@@ -1,0 +1,493 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>mongodb基本操作</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">数据存储</a></li><li class="chapter-item expanded affix "><li class="part-title"></li><li class="chapter-item expanded "><div><strong aria-hidden="true">1.</strong> oracle</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../oracle/Oracle小知识点.html"><strong aria-hidden="true">1.1.</strong> Oracle小知识点</a></li><li class="chapter-item expanded "><a href="../oracle/oracledocker快速搭建.html"><strong aria-hidden="true">1.2.</strong> oracledocker快速搭建</a></li><li class="chapter-item expanded "><a href="../oracle/oracle多表更新方法.html"><strong aria-hidden="true">1.3.</strong> oracle多表更新方法</a></li></ol></li><li class="chapter-item expanded "><a href="../MongoDB/index.html"><strong aria-hidden="true">2.</strong> MongoDB</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../MongoDB/mongodb基本操作.html" class="active"><strong aria-hidden="true">2.1.</strong> mongodb基本操作</a></li><li class="chapter-item expanded "><a href="../MongoDB/mongodb高级语法.html"><strong aria-hidden="true">2.2.</strong> mongodb高级语法</a></li><li class="chapter-item expanded "><a href="../MongoDB/权限管理.html"><strong aria-hidden="true">2.3.</strong> 权限管理</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.</strong> mysql</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../mysql/mysqlfunction.html"><strong aria-hidden="true">3.1.</strong> mysqlfunction</a></li><li class="chapter-item expanded "><a href="../mysql/mysqlpdump.html"><strong aria-hidden="true">3.2.</strong> mysqlpdump</a></li><li class="chapter-item expanded "><a href="../mysql/mysqlzip安装.html"><strong aria-hidden="true">3.3.</strong> mysqlzip安装</a></li><li class="chapter-item expanded "><a href="../mysql/mysql公用表达式.html"><strong aria-hidden="true">3.4.</strong> mysql公用表达式</a></li><li class="chapter-item expanded "><a href="../mysql/mysql学习.html"><strong aria-hidden="true">3.5.</strong> mysql学习</a></li><li class="chapter-item expanded "><a href="../mysql/mysql执行计划.html"><strong aria-hidden="true">3.6.</strong> mysql执行计划</a></li><li class="chapter-item expanded "><a href="../mysql/空值处理函数.html"><strong aria-hidden="true">3.7.</strong> 空值处理函数</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.8.</strong> mysql官方文档</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../mysql/mysql官方文档/mysql程序.html"><strong aria-hidden="true">3.8.1.</strong> mysql程序</a></li><li class="chapter-item expanded "><a href="../mysql/mysql官方文档/客户端.html"><strong aria-hidden="true">3.8.2.</strong> 客户端</a></li><li class="chapter-item expanded "><a href="../mysql/mysql官方文档/mysql程序/index.html"><strong aria-hidden="true">3.8.3.</strong> mysql程序</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../mysql/mysql官方文档/mysql程序/使用mysql相关程序.html"><strong aria-hidden="true">3.8.3.1.</strong> 使用mysql相关程序</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../mysql/mysql日志/index.html"><strong aria-hidden="true">3.9.</strong> mysql日志</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../mysql/mysql日志/mysql日志及分类.html"><strong aria-hidden="true">3.9.1.</strong> mysql日志及分类</a></li><li class="chapter-item expanded "><a href="../mysql/mysql日志/二进制日志.html"><strong aria-hidden="true">3.9.2.</strong> 二进制日志</a></li><li class="chapter-item expanded "><a href="../mysql/mysql日志/慢sql日志.html"><strong aria-hidden="true">3.9.3.</strong> 慢sql日志</a></li><li class="chapter-item expanded "><a href="../mysql/mysql日志/通用日志.html"><strong aria-hidden="true">3.9.4.</strong> 通用日志</a></li><li class="chapter-item expanded "><a href="../mysql/mysql日志/错误日志.html"><strong aria-hidden="true">3.9.5.</strong> 错误日志</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../elasticSearch/index.html"><strong aria-hidden="true">4.</strong> elasticSearch</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/BackUpACluster.html"><strong aria-hidden="true">4.1.</strong> BackUpACluster</a></li><li class="chapter-item expanded "><a href="../elasticSearch/KQL.html"><strong aria-hidden="true">4.2.</strong> KQL</a></li><li class="chapter-item expanded "><a href="../elasticSearch/dataStream.html"><strong aria-hidden="true">4.3.</strong> dataStream</a></li><li class="chapter-item expanded "><a href="../elasticSearch/es堆内存如何分配.html"><strong aria-hidden="true">4.4.</strong> es堆内存如何分配</a></li><li class="chapter-item expanded "><a href="../elasticSearch/scroll查询.html"><strong aria-hidden="true">4.5.</strong> scroll查询</a></li><li class="chapter-item expanded "><a href="../elasticSearch/乐观并发控制.html"><strong aria-hidden="true">4.6.</strong> 乐观并发控制</a></li><li class="chapter-item expanded "><a href="../elasticSearch/分布式检索.html"><strong aria-hidden="true">4.7.</strong> 分布式检索</a></li><li class="chapter-item expanded "><a href="../elasticSearch/分片内部原理.html"><strong aria-hidden="true">4.8.</strong> 分片内部原理</a></li><li class="chapter-item expanded "><a href="../elasticSearch/分词.html"><strong aria-hidden="true">4.9.</strong> 分词</a></li><li class="chapter-item expanded "><a href="../elasticSearch/前缀搜索与模糊搜索.html"><strong aria-hidden="true">4.10.</strong> 前缀搜索与模糊搜索</a></li><li class="chapter-item expanded "><a href="../elasticSearch/数据分片.html"><strong aria-hidden="true">4.11.</strong> 数据分片</a></li><li class="chapter-item expanded "><a href="../elasticSearch/映射.html"><strong aria-hidden="true">4.12.</strong> 映射</a></li><li class="chapter-item expanded "><a href="../elasticSearch/杂项学习.html"><strong aria-hidden="true">4.13.</strong> 杂项学习</a></li><li class="chapter-item expanded "><a href="../elasticSearch/索引和分片.html"><strong aria-hidden="true">4.14.</strong> 索引和分片</a></li><li class="chapter-item expanded "><a href="../elasticSearch/索引管理.html"><strong aria-hidden="true">4.15.</strong> 索引管理</a></li><li class="chapter-item expanded "><a href="../elasticSearch/评分标准与相关性.html"><strong aria-hidden="true">4.16.</strong> 评分标准与相关性</a></li><li class="chapter-item expanded "><a href="../elasticSearch/集群内原理.html"><strong aria-hidden="true">4.17.</strong> 集群内原理</a></li><li class="chapter-item expanded "><a href="../elasticSearch/Datamanagement/index.html"><strong aria-hidden="true">4.18.</strong> Datamanagement</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/Datamanagement/DataTier.html"><strong aria-hidden="true">4.18.1.</strong> DataTier</a></li></ol></li><li class="chapter-item expanded "><a href="../elasticSearch/ILM/index.html"><strong aria-hidden="true">4.19.</strong> ILM</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/ILM/1.AutomateRolloverWithILM.html"><strong aria-hidden="true">4.19.1.</strong> AutomateRolloverWithILM</a></li><li class="chapter-item expanded "><a href="../elasticSearch/ILM/FrozenIndices.html"><strong aria-hidden="true">4.19.2.</strong> FrozenIndices</a></li><li class="chapter-item expanded "><a href="../elasticSearch/ILM/ILM.html"><strong aria-hidden="true">4.19.3.</strong> ILM</a></li><li class="chapter-item expanded "><a href="../elasticSearch/ILM/RolloverAPI.html"><strong aria-hidden="true">4.19.4.</strong> RolloverAPI</a></li><li class="chapter-item expanded "><a href="../elasticSearch/ILM/ShrinkIndexAPI.html"><strong aria-hidden="true">4.19.5.</strong> ShrinkIndexAPI</a></li><li class="chapter-item expanded "><a href="../elasticSearch/ILM/ILMConcepts/index.html"><strong aria-hidden="true">4.19.6.</strong> ILMConcepts</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/ILM/ILMConcepts/1.Rollover.html"><strong aria-hidden="true">4.19.6.1.</strong> Rollover</a></li><li class="chapter-item expanded "><a href="../elasticSearch/ILM/ILMConcepts/2.LifeCycleUpdates.html"><strong aria-hidden="true">4.19.6.2.</strong> LifeCycleUpdates</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/index.html"><strong aria-hidden="true">4.20.</strong> IndexModules</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/1.Analysis.html"><strong aria-hidden="true">4.20.1.</strong> Analysis</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/2.IndexShardAllocation.html"><strong aria-hidden="true">4.20.2.</strong> IndexShardAllocation</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/3.Indexblocks.html"><strong aria-hidden="true">4.20.3.</strong> Indexblocks</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/4.Mapper.html"><strong aria-hidden="true">4.20.4.</strong> Mapper</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/5.Merge.html"><strong aria-hidden="true">4.20.5.</strong> Merge</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/6.SimilarityModule.html"><strong aria-hidden="true">4.20.6.</strong> SimilarityModule</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/7.Slowlog.html"><strong aria-hidden="true">4.20.7.</strong> Slowlog</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/8.Store.html"><strong aria-hidden="true">4.20.8.</strong> Store</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/9.Translog.html"><strong aria-hidden="true">4.20.9.</strong> Translog</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/10.HistoryRetention.html"><strong aria-hidden="true">4.20.10.</strong> HistoryRetention</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/11.IndexSorting.html"><strong aria-hidden="true">4.20.11.</strong> IndexSorting</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IndexModules/12.IndexPressure.html"><strong aria-hidden="true">4.20.12.</strong> IndexPressure</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.21.</strong> IngestPipeline</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/IngestPipeline/1.IngestPipelines.html"><strong aria-hidden="true">4.21.1.</strong> IngestPipelines</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IngestPipeline/2.pipeLineExample.html"><strong aria-hidden="true">4.21.2.</strong> pipeLineExample</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IngestPipeline/3.EnrichYourData.html"><strong aria-hidden="true">4.21.3.</strong> EnrichYourData</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IngestPipeline/4.ExampleEnrichYourDataBasedOnGeolocation.html"><strong aria-hidden="true">4.21.4.</strong> ExampleEnrichYourDataBasedOnGeolocation</a></li><li class="chapter-item expanded "><a href="../elasticSearch/IngestPipeline/5.IngestProcessorReference.html"><strong aria-hidden="true">4.21.5.</strong> IngestProcessorReference</a></li></ol></li><li class="chapter-item expanded "><a href="../elasticSearch/queryDSL/index.html"><strong aria-hidden="true">4.22.</strong> queryDSL</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/queryDSL/1.QueryAndFilterContext.html"><strong aria-hidden="true">4.22.1.</strong> QueryAndFilterContext</a></li><li class="chapter-item expanded "><a href="../elasticSearch/queryDSL/2.CompoundQueries.html"><strong aria-hidden="true">4.22.2.</strong> CompoundQueries</a></li><li class="chapter-item expanded "><a href="../elasticSearch/queryDSL/SearchAfter.html"><strong aria-hidden="true">4.22.3.</strong> SearchAfter</a></li><li class="chapter-item expanded "><a href="../elasticSearch/queryDSL/FullTextQueries/index.html"><strong aria-hidden="true">4.22.4.</strong> FullTextQueries</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/queryDSL/FullTextQueries/1.IntervalsQuery.html"><strong aria-hidden="true">4.22.4.1.</strong> IntervalsQuery</a></li><li class="chapter-item expanded "><a href="../elasticSearch/queryDSL/FullTextQueries/2.MatchQuery.html"><strong aria-hidden="true">4.22.4.2.</strong> MatchQuery</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/index.html"><strong aria-hidden="true">4.23.</strong> snapshotAndRestore</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/CleanUpSnapshotRepo.html"><strong aria-hidden="true">4.23.1.</strong> CleanUpSnapshotRepo</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/CloneSnapshot.html"><strong aria-hidden="true">4.23.2.</strong> CloneSnapshot</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/CreateOrUpdateSnapshotAPI.html"><strong aria-hidden="true">4.23.3.</strong> CreateOrUpdateSnapshotAPI</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/CreateSnapshot.html"><strong aria-hidden="true">4.23.4.</strong> CreateSnapshot</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/DeleteSnapShot.html"><strong aria-hidden="true">4.23.5.</strong> DeleteSnapShot</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/DeleteSnapshotRepository.html"><strong aria-hidden="true">4.23.6.</strong> DeleteSnapshotRepository</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/GetSnapshotAPI.html"><strong aria-hidden="true">4.23.7.</strong> GetSnapshotAPI</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/RegisterASnapshot.html"><strong aria-hidden="true">4.23.8.</strong> RegisterASnapshot</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/RestoreSnapshot.html"><strong aria-hidden="true">4.23.9.</strong> RestoreSnapshot</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/SLM.html"><strong aria-hidden="true">4.23.10.</strong> SLM</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/SearchableSnapshots.html"><strong aria-hidden="true">4.23.11.</strong> SearchableSnapshots</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/SearchableSnapshotsMountAPI.html"><strong aria-hidden="true">4.23.12.</strong> SearchableSnapshotsMountAPI</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/repository-s3.html"><strong aria-hidden="true">4.23.13.</strong> repository-s3</a></li><li class="chapter-item expanded "><a href="../elasticSearch/snapshotAndRestore/使用OSS备份恢复集群实战.html"><strong aria-hidden="true">4.23.14.</strong> 使用OSS备份恢复集群实战</a></li></ol></li><li class="chapter-item expanded "><a href="../elasticSearch/安装/index.html"><strong aria-hidden="true">4.24.</strong> 安装</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/安装/1.InstallingFromRpm.html"><strong aria-hidden="true">4.24.1.</strong> InstallingFromRpm</a></li><li class="chapter-item expanded "><a href="../elasticSearch/安装/2.InstallFromDeb.html"><strong aria-hidden="true">4.24.2.</strong> InstallFromDeb</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.25.</strong> 深入搜索</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/深入搜索/全文搜索.html"><strong aria-hidden="true">4.25.1.</strong> 全文搜索</a></li><li class="chapter-item expanded "><a href="../elasticSearch/深入搜索/多字段搜索.html"><strong aria-hidden="true">4.25.2.</strong> 多字段搜索</a></li><li class="chapter-item expanded "><a href="../elasticSearch/深入搜索/结构化搜索.html"><strong aria-hidden="true">4.25.3.</strong> 结构化搜索</a></li></ol></li><li class="chapter-item expanded "><a href="../elasticSearch/索引分片分配/index.html"><strong aria-hidden="true">4.26.</strong> 索引分片分配</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/索引分片分配/1.索引级别的分片分配控制.html"><strong aria-hidden="true">4.26.1.</strong> 索引级别的分片分配控制</a></li><li class="chapter-item expanded "><a href="../elasticSearch/索引分片分配/2.节点离开延迟分配.html"><strong aria-hidden="true">4.26.2.</strong> 节点离开延迟分配</a></li><li class="chapter-item expanded "><a href="../elasticSearch/索引分片分配/3.索引恢复优先级.html"><strong aria-hidden="true">4.26.3.</strong> 索引恢复优先级</a></li><li class="chapter-item expanded "><a href="../elasticSearch/索引分片分配/4.每个节点的总分片.html"><strong aria-hidden="true">4.26.4.</strong> 每个节点的总分片</a></li><li class="chapter-item expanded "><a href="../elasticSearch/索引分片分配/5.索引级别数据层分配过滤.html"><strong aria-hidden="true">4.26.5.</strong> 索引级别数据层分配过滤</a></li><li class="chapter-item expanded "><a href="../elasticSearch/索引分片分配/6.手动分配分片clusterRerouteAPI.html"><strong aria-hidden="true">4.26.6.</strong> 手动分配分片clusterRerouteAPI</a></li><li class="chapter-item expanded "><a href="../elasticSearch/索引分片分配/7.cluster-allocation-explain.html"><strong aria-hidden="true">4.26.7.</strong> cluster-allocation-explain</a></li></ol></li><li class="chapter-item expanded "><a href="../elasticSearch/考纲解读/index.html"><strong aria-hidden="true">4.27.</strong> 考纲解读</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/考纲解读/1.ClusterManagement.html"><strong aria-hidden="true">4.27.1.</strong> ClusterManagement</a></li><li class="chapter-item expanded "><a href="../elasticSearch/考纲解读/2.DataManagement.html"><strong aria-hidden="true">4.27.2.</strong> DataManagement</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.28.</strong> 聚合</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/聚合/RareTermsAggregation.html"><strong aria-hidden="true">4.28.1.</strong> RareTermsAggregation</a></li><li class="chapter-item expanded "><a href="../elasticSearch/聚合/Term.html"><strong aria-hidden="true">4.28.2.</strong> Term</a></li></ol></li><li class="chapter-item expanded "><a href="../elasticSearch/配置/index.html"><strong aria-hidden="true">4.29.</strong> 配置</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/配置/1.重要配置.html"><strong aria-hidden="true">4.29.1.</strong> 重要配置</a></li><li class="chapter-item expanded "><a href="../elasticSearch/配置/2.elasticsearch.yml核心配置.html"><strong aria-hidden="true">4.29.2.</strong> elasticsearch.yml核心配置</a></li><li class="chapter-item expanded "><a href="../elasticSearch/配置/3.es系统参数修改.html"><strong aria-hidden="true">4.29.3.</strong> es系统参数修改</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.30.</strong> 集群</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/集群/Health.html"><strong aria-hidden="true">4.30.1.</strong> Health</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.31.</strong> 高可用专题</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elasticSearch/高可用专题/弹性设计.html"><strong aria-hidden="true">4.31.1.</strong> 弹性设计</a></li><li class="chapter-item expanded "><a href="../elasticSearch/高可用专题/跨集群复制.html"><strong aria-hidden="true">4.31.2.</strong> 跨集群复制</a></li><li class="chapter-item expanded "><a href="../elasticSearch/高可用专题/集群备份.html"><strong aria-hidden="true">4.31.3.</strong> 集群备份</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title"></h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="mongodb-连接"><a class="header" href="#mongodb-连接">MongoDB 连接</a></h1>
+<p><strong>格式</strong></p>
+<pre><code class="language-js">//username:password@hostname/dbname
+./mongo mongodb://admin:123456@localhost/test
+</code></pre>
+<h2 id="连接实例"><a class="header" href="#连接实例">连接实例</a></h2>
+<p><strong>连接本地数据库服务器，端口是默认的。</strong></p>
+<pre><code>mongodb://localhost
+</code></pre>
+<p><strong>使用用户名fred，密码foobar登录localhost的admin数据库。</strong></p>
+<pre><code>mongodb://fred:foobar@localhost
+</code></pre>
+<p><strong>使用用户名fred，密码foobar登录localhost的baz数据库。</strong></p>
+<pre><code>mongodb://fred:foobar@localhost/baz
+</code></pre>
+<p><strong>连接 replica pair, 服务器1为example1.com服务器2为example2。</strong></p>
+<pre><code>mongodb://example1.com:27017,example2.com:27017
+</code></pre>
+<p><strong>连接 replica set 三台服务器 (端口 27017, 27018, 和27019):</strong></p>
+<pre><code>mongodb://localhost,localhost:27018,localhost:27019
+</code></pre>
+<p><strong>连接 replica set 三台服务器, 写入操作应用在主服务器 并且分布查询到从服务器。</strong></p>
+<pre><code>mongodb://host1,host2,host3/?slaveOk=true
+</code></pre>
+<p><strong>直接连接第一个服务器，无论是replica set一部分或者主服务器或者从服务器。</strong></p>
+<pre><code>mongodb://host1,host2,host3/?connect=direct;slaveOk=true
+</code></pre>
+<p>当你的连接服务器有优先级，还需要列出所有服务器，你可以使用上述连接方式。</p>
+<p><strong>安全模式连接到localhost:</strong></p>
+<pre><code>mongodb://localhost/?safe=true
+</code></pre>
+<p><strong>以安全模式连接到replica set，并且等待至少两个复制服务器成功写入，超时时间设置为2秒。</strong></p>
+<pre><code>mongodb://host1,host2,host3/?safe=true;w=2;wtimeoutMS=2000
+</code></pre>
+<h2 id="标准格式"><a class="header" href="#标准格式">标准格式</a></h2>
+<p><code>mongodb://[username:password@]host1[:port1][,host2[:port2],...[,hostN[:portN]]][/[database][?options]]</code></p>
+<h2 id="选项"><a class="header" href="#选项">选项</a></h2>
+<table><thead><tr><th>选项</th><th>描述</th></tr></thead><tbody>
+<tr><td>replicaSet=name</td><td>验证replica set的名称。 Impliesconnect=replicaSet.</td></tr>
+<tr><td>slaveOk=true|false</td><td>true:在connect=direct模式下，驱动会连接第一台机器，即使这台服务器不是主。在connect=replicaSet模式下，驱动会发送所有的写请求到主并且把读取操作分布在其他从服务器。false: 在 connect=direct模式下，驱动会自动找寻主服务器. 在connect=replicaSet 模式下，驱动仅仅连接主服务器，并且所有的读写命令都连接到主服务器。</td></tr>
+<tr><td>safe=true|false</td><td>true: 在执行更新操作之后，驱动都会发送getLastError命令来确保更新成功。(还要参考 wtimeoutMS).false: 在每次更新之后，驱动不会发送getLastError来确保更新成功。</td></tr>
+<tr><td>w=n</td><td>驱动添加 { w : n } 到getLastError命令. 应用于safe=true。</td></tr>
+<tr><td>wtimeoutMS=ms</td><td>驱动添加 { wtimeout : ms } 到 getlasterror 命令. 应用于 safe=true.</td></tr>
+<tr><td>fsync=true|false</td><td>true: 驱动添加 { fsync : true } 到 getlasterror 命令.应用于 safe=true.false: 驱动不会添加到getLastError命令中。</td></tr>
+<tr><td>journal=true|false</td><td>如果设置为 true, 同步到 journal (在提交到数据库前写入到实体中). 应用于 safe=true</td></tr>
+<tr><td>connectTimeoutMS=ms</td><td>可以打开连接的时间。</td></tr>
+<tr><td>socketTimeoutMS=ms</td><td>发送和接受sockets的时间。</td></tr>
+</tbody></table>
+<h1 id="mongodb数据库创建与删除"><a class="header" href="#mongodb数据库创建与删除">MongoDB数据库创建与删除</a></h1>
+<h2 id="创建数据库"><a class="header" href="#创建数据库">创建数据库</a></h2>
+<p>MongoDB 创建数据库的语法格式如下：</p>
+<pre><code>use DATABASE_NAME
+</code></pre>
+<p>如果数据库不存在，则创建数据库，否则切换到指定数据库。</p>
+<h3 id="实例"><a class="header" href="#实例">实例</a></h3>
+<p>以下实例我们创建了数据库 php:</p>
+<pre><code>&gt; use php
+switched to db php
+&gt; db
+php
+&gt;
+</code></pre>
+<p>如果你想查看所有数据库，可以使用 <strong>show dbs</strong> 命令：</p>
+<pre><code>&gt; show dbs
+local  0.078GB
+test   0.078GB
+&gt;
+</code></pre>
+<p>可以看到，我们刚创建的数据库 php 并不在数据库的列表中， 要显示它，我们需要向 php 数据库插入一些数据。</p>
+<pre><code>&gt; db.php.insert({&quot;name&quot;:&quot;php中文网&quot;})
+WriteResult({ &quot;nInserted&quot; : 1 })
+&gt; show dbs
+local   0.078GB
+php  0.078GB
+test    0.078GB
+&gt;
+</code></pre>
+<h2 id="删除数据库"><a class="header" href="#删除数据库">删除数据库</a></h2>
+<h3 id="语法"><a class="header" href="#语法">语法</a></h3>
+<p>MongoDB 删除数据库的语法格式如下：</p>
+<pre><code>db.dropDatabase()
+</code></pre>
+<p>删除当前数据库，默认为 test，你可以使用 db 命令查看当前数据库名。</p>
+<h1 id="文档管理"><a class="header" href="#文档管理">文档管理</a></h1>
+<p>本章节中我们将向大家介绍如何将数据插入到MongoDB的集合中。</p>
+<p>文档的数据结构和JSON基本一样。</p>
+<p>所有存储在集合中的数据都是BSON格式。</p>
+<p>BSON是一种类json的一种二进制形式的存储格式,简称Binary JSON。</p>
+<h2 id="插入文档"><a class="header" href="#插入文档">插入文档</a></h2>
+<p>MongoDB 使用 insert() 或 save() 方法向集合中插入文档，语法如下：</p>
+<pre><code>db.COLLECTION_NAME.insert(document)
+</code></pre>
+<h3 id="实例-1"><a class="header" href="#实例-1">实例</a></h3>
+<p>以下文档可以存储在 MongoDB 的 php 数据库 的 col集合中：</p>
+<pre><code>&gt;db.col.insert({title: 'MongoDB 教程', 
+    description: 'MongoDB 是一个 Nosql 数据库',
+    by: 'php中文网',
+    url: 'http://www.php.cn',
+    tags: ['mongodb', 'database', 'NoSQL'],
+    likes: 100
+})
+</code></pre>
+<h2 id="更新文档"><a class="header" href="#更新文档">更新文档</a></h2>
+<p>MongoDB 使用 <strong>update()</strong> 和 <strong>save()</strong> 方法来更新集合中的文档。接下来让我们详细来看下两个函数的应用及其区别。</p>
+<h3 id="update-方法"><a class="header" href="#update-方法">update() 方法</a></h3>
+<p>update() 方法用于更新已存在的文档。语法格式如下：</p>
+<pre><code>db.collection.update(
+   &lt;query&gt;,
+   &lt;update&gt;,
+   {
+     upsert: &lt;boolean&gt;,
+     multi: &lt;boolean&gt;,
+     writeConcern: &lt;document&gt;
+   }
+)
+</code></pre>
+<p><strong>参数说明：</strong></p>
+<ul>
+<li><strong>query</strong> : update的查询条件，类似sql update查询内where后面的。</li>
+<li><strong>update</strong> : update的对象和一些更新的操作符（如$,$inc...）等，也可以理解为sql update查询内set后面的</li>
+<li><strong>upsert</strong> : 可选，这个参数的意思是，如果不存在update的记录，是否插入objNew,true为插入，默认是false，不插入。</li>
+<li><strong>multi</strong> : 可选，mongodb 默认是false,只更新找到的第一条记录，如果这个参数为true,就把按条件查出来多条记录全部更新。</li>
+<li><strong>writeConcern</strong> :可选，抛出异常的级别。</li>
+</ul>
+<p><strong>实例</strong></p>
+<pre><code class="language-js">db.col.update(
+	//query
+	{'title':'MongoDB 教程'},
+	//updates
+	{$set:{'title':'MongoDB'}}
+	//options
+	{multi:true}
+)
+</code></pre>
+<h3 id="save-方法"><a class="header" href="#save-方法">save() 方法</a></h3>
+<p>save() 方法通过传入的文档来替换已有文档。语法格式如下：</p>
+<pre><code class="language-js">db.collection.save(
+   &lt;document&gt;,
+   {
+     writeConcern: &lt;document&gt;
+   }
+)
+</code></pre>
+<p><strong>参数说明：</strong></p>
+<ul>
+<li><strong>document</strong> : 文档数据。</li>
+<li><strong>writeConcern</strong> :可选，抛出异常的级别。</li>
+</ul>
+<p>以下实例中我们替换了 _id  为 56064f89ade2f21f36b03136 的文档数据：</p>
+<pre><code class="language-js">&gt;db.col.save({
+	&quot;_id&quot; : ObjectId(&quot;56064f89ade2f21f36b03136&quot;),
+    &quot;title&quot; : &quot;MongoDB&quot;,
+    &quot;description&quot; : &quot;MongoDB 是一个 Nosql 数据库&quot;,
+    &quot;by&quot; : &quot;php&quot;,
+    &quot;url&quot; : &quot;http://www.php.cn&quot;,
+    &quot;tags&quot; : [
+            &quot;mongodb&quot;,
+            &quot;NoSQL&quot;
+    ],
+    &quot;likes&quot; : 110
+})
+</code></pre>
+<h3 id="更多实例"><a class="header" href="#更多实例">更多实例</a></h3>
+<pre><code>只更新第一条记录：
+db.col.update( { &quot;count&quot; : { $gt : 1 } } , { $set : { &quot;test2&quot; : &quot;OK&quot;} } );
+全部更新：
+
+db.col.update( { &quot;count&quot; : { $gt : 3 } } , { $set : { &quot;test2&quot; : &quot;OK&quot;} },false,true );
+只添加第一条：
+
+db.col.update( { &quot;count&quot; : { $gt : 4 } } , { $set : { &quot;test5&quot; : &quot;OK&quot;} },true,false );
+全部添加加进去:
+
+db.col.update( { &quot;count&quot; : { $gt : 5 } } , { $set : { &quot;test5&quot; : &quot;OK&quot;} },true,true );
+全部更新：
+
+db.col.update( { &quot;count&quot; : { $gt : 15 } } , { $inc : { &quot;count&quot; : 1} },false,true );
+只更新第一条记录：
+
+db.col.update( { &quot;count&quot; : { $gt : 10 } } , { $inc : { &quot;count&quot; : 1} },false,false );
+</code></pre>
+<h2 id="删除文档"><a class="header" href="#删除文档">删除文档</a></h2>
+<p>remove() 方法的基本语法格式如下所示：</p>
+<pre><code class="language-js">db.collection.remove(
+   &lt;query&gt;,
+   &lt;justOne&gt;
+)
+</code></pre>
+<p>如果你的 MongoDB 是 2.6 版本以后的，语法格式如下：</p>
+<pre><code class="language-js">db.collection.remove(
+   &lt;query&gt;,
+   {
+     justOne: &lt;boolean&gt;,
+     writeConcern: &lt;document&gt;
+   }
+)
+</code></pre>
+<p><strong>参数说明：</strong></p>
+<ul>
+<li><strong>query</strong> :（可选）删除的文档的条件。</li>
+<li><strong>justOne</strong> : （可选）如果设为 true 或 1，则只删除一个文档。</li>
+<li><strong>writeConcern</strong> :（可选）抛出异常的级别。</li>
+</ul>
+<h2 id="查询文档"><a class="header" href="#查询文档">查询文档</a></h2>
+<h3 id="mongodb-与-rdbms-where-语句比较"><a class="header" href="#mongodb-与-rdbms-where-语句比较">MongoDB 与 RDBMS Where 语句比较</a></h3>
+<p>如果你熟悉常规的 SQL 数据，通过下表可以更好的理解 MongoDB 的条件语句查询：</p>
+<table><thead><tr><th>操作</th><th>格式</th><th>范例</th><th>RDBMS中的类似语句</th></tr></thead><tbody>
+<tr><td>等于</td><td><code>{&lt;key&gt;:&lt;value&gt;</code>}</td><td><code>db.col.find({&quot;by&quot;:&quot;php中文网&quot;}).pretty()</code></td><td><code>where by = 'php中文网'</code></td></tr>
+<tr><td>小于</td><td><code>{&lt;key&gt;:{$lt:&lt;value&gt;}}</code></td><td><code>db.col.find({&quot;likes&quot;:{$lt:50}}).pretty()</code></td><td><code>where likes &lt; 50</code></td></tr>
+<tr><td>小于或等于</td><td><code>{&lt;key&gt;:{$lte:&lt;value&gt;}}</code></td><td><code>db.col.find({&quot;likes&quot;:{$lte:50}}).pretty()</code></td><td><code>where likes &lt;= 50</code></td></tr>
+<tr><td>大于</td><td><code>{&lt;key&gt;:{$gt:&lt;value&gt;}}</code></td><td><code>db.col.find({&quot;likes&quot;:{$gt:50}}).pretty()</code></td><td><code>where likes &gt; 50</code></td></tr>
+<tr><td>大于或等于</td><td><code>{&lt;key&gt;:{$gte:&lt;value&gt;}}</code></td><td><code>db.col.find({&quot;likes&quot;:{$gte:50}}).pretty()</code></td><td><code>where likes &gt;= 50</code></td></tr>
+<tr><td>不等于</td><td><code>{&lt;key&gt;:{$ne:&lt;value&gt;}}</code></td><td><code>db.col.find({&quot;likes&quot;:{$ne:50}}).pretty()</code></td><td><code>where likes != 50</code></td></tr>
+</tbody></table>
+<h3 id="find"><a class="header" href="#find">find</a></h3>
+<p><strong>findOne用于查一个</strong></p>
+<p>MongoDB 查询数据的语法格式如下：</p>
+<pre><code>&gt;db.COLLECTION_NAME.find({query})
+</code></pre>
+<p><strong>find() 方法以非结构化的方式来显示所有文档。</strong></p>
+<p>如果你需要以易读的方式来读取数据，可以使用 pretty() 方法，语法格式如下：</p>
+<pre><code>&gt;db.col.find().pretty()
+</code></pre>
+<h3 id="mongodb-and-条件"><a class="header" href="#mongodb-and-条件">MongoDB AND 条件</a></h3>
+<pre><code>&gt;db.col.find({key1:value1, key2:value2}).pretty()
+</code></pre>
+<h3 id="mongodb-or-条件"><a class="header" href="#mongodb-or-条件">MongoDB OR 条件</a></h3>
+<pre><code class="language-js">&gt;db.col.find(
+   {
+      $or: [
+	     {key1: value1}, {key2:value2}
+      ]
+   }
+).pretty()
+
+</code></pre>
+<h3 id="and-和-or-联合使用"><a class="header" href="#and-和-or-联合使用">AND 和 OR 联合使用</a></h3>
+<p><strong>'where likes&gt;50 AND (by = 'php中文网' OR title = 'MongoDB 教程')'</strong></p>
+<pre><code>db.col.find({&quot;likes&quot;: {$gt:50}, $or: [{&quot;by&quot;: &quot;php中文网&quot;},{&quot;title&quot;: &quot;MongoDB 教程&quot;}]}).pretty()
+</code></pre>
+<p>查看已插入文档：</p>
+<pre><code class="language-js">&gt; db.col.find()
+{ &quot;_id&quot; : ObjectId(&quot;56064886ade2f21f36b03134&quot;), &quot;title&quot; : &quot;MongoDB 教程&quot;, &quot;description&quot; : &quot;MongoDB 是一个 Nosql 数据库&quot;, &quot;by&quot; : &quot;php中文网&quot;, &quot;url&quot; : &quot;http://www.php.cn&quot;, &quot;tags&quot; : [ &quot;mongodb&quot;, &quot;database&quot;, &quot;NoSQL&quot; ], &quot;likes&quot; : 100 }
+&gt;
+</code></pre>
+<p><strong>定义变量</strong></p>
+<p>我们也可以将数据定义为一个变量，如下所示：</p>
+<pre><code class="language-js">document=({title: 'MongoDB 教程', 
+    description: 'MongoDB 是一个 Nosql 数据库',
+    by: 'php中文网',
+    url: 'http://www.php.cn',
+    tags: ['mongodb', 'database', 'NoSQL'],
+    likes: 100
+});
+
+db.col.insert(document)
+</code></pre>
+<p>插入文档你也可以使用 db.col.save(document) 命令。如果不指定 _id 字段 save() 方法类似于 insert() 方法。如果指定 _id 字段，则会更新该 _id 的数据。</p>
+<h1 id="其他关键字"><a class="header" href="#其他关键字">其他关键字</a></h1>
+<h2 id="type-操作符"><a class="header" href="#type-操作符">$type 操作符</a></h2>
+<p>MongoDB 中可以使用的类型如下表所示：</p>
+<table><thead><tr><th><strong>类型</strong></th><th><strong>数字</strong></th><th><strong>备注</strong></th></tr></thead><tbody>
+<tr><td>Double</td><td>1</td><td></td></tr>
+<tr><td>String</td><td>2</td><td></td></tr>
+<tr><td>Object</td><td>3</td><td></td></tr>
+<tr><td>Array</td><td>4</td><td></td></tr>
+<tr><td>Binary data</td><td>5</td><td></td></tr>
+<tr><td>Undefined</td><td>6</td><td>已废弃。</td></tr>
+<tr><td>Object id</td><td>7</td><td></td></tr>
+<tr><td>Boolean</td><td>8</td><td></td></tr>
+<tr><td>Date</td><td>9</td><td></td></tr>
+<tr><td>Null</td><td>10</td><td></td></tr>
+<tr><td>Regular Expression</td><td>11</td><td></td></tr>
+<tr><td>JavaScript</td><td>13</td><td></td></tr>
+<tr><td>Symbol</td><td>14</td><td></td></tr>
+<tr><td>JavaScript (with scope)</td><td>15</td><td></td></tr>
+<tr><td>32-bit integer</td><td>16</td><td></td></tr>
+<tr><td>Timestamp</td><td>17</td><td></td></tr>
+<tr><td>64-bit integer</td><td>18</td><td></td></tr>
+<tr><td>Min key</td><td>255</td><td>Query with <code>-1</code>.</td></tr>
+<tr><td>Max key</td><td>127</td><td></td></tr>
+</tbody></table>
+<p>$type操作符是基于BSON类型来检索集合中匹配的数据类型，并返回结果。</p>
+<p>如果想获取 &quot;col&quot; 集合中 title 为 String 的数据，你可以使用以下命令：</p>
+<pre><code>db.col.find({&quot;title&quot; : {$type : 2}})
+</code></pre>
+<h2 id="limit"><a class="header" href="#limit">Limit()</a></h2>
+<p>如果你需要在MongoDB中读取指定数量的数据记录，可以使用MongoDB的Limit方法，limit()方法接受一个数字参数，该参数指定从MongoDB中读取的记录条数。</p>
+<pre><code>&gt;db.COLLECTION_NAME.find().limit(NUMBER)
+</code></pre>
+<h2 id="skip"><a class="header" href="#skip">Skip()</a></h2>
+<p>我们除了可以使用limit()方法来读取指定数量的数据外，还可以使用skip()方法来跳过指定数量的数据，skip方法同样接受一个数字参数作为跳过的记录条数。</p>
+<pre><code>&gt;db.COLLECTION_NAME.find().limit(NUMBER).skip(NUMBER)
+</code></pre>
+<h2 id="sort"><a class="header" href="#sort">sort()</a></h2>
+<p>sort()方法可以通过参数指定排序的字段，并使用 1 和 -1 来指定排序的方式，其中 1 为升序排列，而-1是用于降序排列。</p>
+<pre><code>db.COLLECTION_NAME.find().sort({KEY:1})
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../MongoDB/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../MongoDB/mongodb高级语法.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../MongoDB/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../MongoDB/mongodb高级语法.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>
